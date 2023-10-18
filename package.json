@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --base=/vanilla-app-template/",
+    "dev": "vite --open",
+    "build": "vite build --base=/your_energy_app/",
     "preview": "vite preview"
   },
   "devDependencies": {
