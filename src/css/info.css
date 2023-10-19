@@ -1,0 +1,29 @@
+.icon-run-men {
+  width: 34px;
+  height: 32px;
+  border-radius: 50%; /* Задаём радиус, чтобы сделать форму круглой */
+  background-color: #ccc; /* Цвет фона (по желанию) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  strike: black;
+}
+
+.icon-run-men use {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-equipment {
+  width: 34px;
+  height: 32px;
+  border-radius: 50%; /* Задаём радиус, чтобы сделать форму круглой */
+  background-color: #ccc; /* Цвет фона (по желанию) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-equipment use {
+  width: 100%;
+  height: 100%;
+}
