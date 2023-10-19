@@ -2,13 +2,78 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Favorites</title>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <load ="partials/header.html" />
     <load ="partials/mob-menu.html" />
-    <load ="partials/info.html" />
+
+    <div class="favorite container">
+      <h1 class="favorite__title">Favorites</h1>
+
+      <div class="favorite__general-block">
+        <div class="favorite__info-container">
+          <!--  для цитати -->
+          <div class="favorite__quote-block quote-block"></div>
+
+          <!-- бокс для інфо з хвилинами для спорту -->
+          <div class="favorite__info-block">
+            <svg class="favorite__info-icon" width="20" height="20">
+              <use href="./img/icons.svg#icon-barbell"></use>
+              >
+            </svg>
+            <p class="favorite__info-subtitle">110 min</p>
+            <p class="favorite__info-text">Daily norm of sports</p>
+          </div>
+
+          <!-- картинка -->
+
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                ./img/favourites/women-working-out-desktop.webp   1x,
+                ./img/favourites/women-working-out-desktop2x.webp 2x
+              "
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./img/favourites/women-working-out-tablet.webp   1x,
+                ./img/favourites/women-working-out-tablet2x.webp 2x
+              "
+            />
+
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./img/favourites/women-working-out-mob.webp   1x,
+                ./img/favourites/women-working-out-mob2x.webp 2x
+              "
+            />
+
+            <img
+              src="./img/favourites/women-working-out-mob.webp"
+              alt="women working out"
+              width="335"
+              height="119"
+            />
+          </picture>
+        </div>
+
+        <div class="favourite__exercise-block">
+          <p class="favourite__text-block">
+            It appears that you haven't added any exercises to your favorites
+            yet. To get started, you can add exercises that you like to your
+            favorites for easier access in the future.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
