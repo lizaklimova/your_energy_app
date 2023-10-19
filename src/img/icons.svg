@@ -9,3 +9,13 @@
 </symbol>
 </defs>
 </svg>
+
+<!-- exercise-modal -->
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="modalclose" viewBox="0 0 32 32">
+<path fill="none" stroke="#f4f4f4" style="stroke: var(--color1, #f4f4f4)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M22.667 9.333l-13.333 13.333M9.333 9.333l13.333 13.333"></path>
+</symbol>
+</defs>
+</svg>
+
