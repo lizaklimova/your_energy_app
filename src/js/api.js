@@ -2,45 +2,60 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://your-energy.b.goit.study/api';
 
-// запит по фільтрам
-async function fetchFilter(page, perPage, filter) {
+// get for filter
+export async function fetchFilter(page, perPage, filter) {
   return await axios
     .get(`/filters?filter=${filter}&page=${page}&limit=${perPage}`)
     .then(response => response.data);
 }
 
-// data.results.name
-// data.results.imgURL
-const filters = {
-  bodyParts: 'Body%20parts',
-  muscles: 'Muscles',
-  equipment: 'Equipment',
-};
-fetchFilter(1, 12, filters.equipment)
-  .then(data => console.log(data.results))
-  .catch(error => console.log(error))
-  .finally(console.log('If you see it, fetch works :)'));
-  
+// const filters = {
+//   bodyParts: 'Body%20parts',
+//   muscles: 'Muscles',
+//   equipment: 'Equipment',
+// };
 
-
-//   запит на картки
-async function fetchCards(page, perPage, filter, name) {
+//   get for cards
+export async function fetchCards(page, perPage, filter, name) {
   return await axios
     .get(`/exercises?${filter}=${name}&${page}=1&limit=${perPage}`)
     .then(response => response.data);
 }
 
+// const cardFilter = {
+//   bodyParts: 'bodypart',
+//   muscles: 'muscles',
+//   equipment: 'equipment',
+// };
 
-const cardFilter = {
-  bodyParts: 'bodypart',
-  muscles: 'muscles',
-  equipment: 'equipment',
-};
-fetchCards(1, 12, cardFilter.muscles, 'abs')
-  .then(data => console.log(data.results))
-  .catch(error => console.log(error))
-    .finally(console.log('If you see it, fetch works :)'));
-  
+// get for exercise information
+export async function fetchExercise(id) {
+  return await axios.get(`/exercises/${id}`).then(response => response.data);
+}
 
-    // запит на повну інформацію
+//quote of the day
+export async function fetchQuote() {
+  return await axios.get('/quote').then(response => response.data);
+}
 
+//add rating
+export async function patchRating(id, data) {
+  return await axios
+      .patch(`/exercises/${id}/rating`, data, {
+          headers: {
+              'content-type': 'application/json'
+          }
+      })
+    .then(response => response.data);
+}
+
+//subscribe
+  export async function subscribe(data) {
+  return await axios
+      .post(`/subscription`, data, {
+        headers: {
+        'content-type': 'application/json'
+    }
+    })
+    .then(response => response.data);
+}
