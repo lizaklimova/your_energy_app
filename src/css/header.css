@@ -1,1 +1,19 @@
+header {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+} 
 
+.header__menu__link {
+    color: var(--dark-color);
+}
+
+.header__menu__link:hover,
+.header__menu__link:focus {
+    color: var(--accent-color);
+}
+
+.header__soc__icon {
+    fill: var(--dark-color);
+}
