@@ -1,4 +1,5 @@
 :root {
   --accent-color: #f4f4f4;
   --dark-color: #242424;
+  --transition: 300ms linear;
 }
