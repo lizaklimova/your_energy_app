@@ -9,19 +9,32 @@
         </a>
         <ul class="footer__soc-list">
           <li class="footer__soc-item">
-            <a class="footer__soc-link" href=""
+            <a
+              class="footer__soc-link"
+              href="https://www.facebook.com/goITclub/"
+              target="_blank"
+              rel="noopener noreferrer"
               ><svg class="footer__soc-icon" width="24" height="24">
                 <use href="../img/icons.svg#icon-facebook"></use></svg
             ></a>
           </li>
           <li class="footer__soc-item">
-            <a class="footer__soc-link" href=""
-              ><svg class="footer__soc-icon" width="24" height="24">
+            <a
+              class="footer__soc-link"
+              href="https://www.instagram.com/goitclub/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="footer__soc-icon" width="24" height="24">
                 <use href="../img/icons.svg#icon-instagram"></use></svg
             ></a>
           </li>
           <li class="footer__soc-item">
-            <a class="footer__soc-link" href=""
+            <a
+              class="footer__soc-link"
+              href="https://www.youtube.com/c/GoIT"
+              target="_blank"
+              rel="noopener noreferrer"
               ><svg class="footer__soc-icon" width="24" height="24">
                 <use href="../img/icons.svg#icon-youtube"></use></svg
             ></a>
@@ -40,9 +53,11 @@
           <form class="footer__form" action="submit">
             <input
               class="footer__input"
-              name="Email"
+              name="email"
               type="email"
               placeholder="Email"
+              pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
+              required
             />
             <button class="footer__btn" type="submit">Send</button>
           </form>
