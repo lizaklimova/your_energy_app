@@ -1,44 +1,64 @@
 <header class="container header">
-    <div>
+    <div class="header__container">
 
         <!-- logo -->
-        <a href="/" class="header__logo">
-            <svg>
+        <a href="../index.html" class="header__logo">
+            <svg width="132" height="24">
                 <use href="../img/icons.svg#icon-logo"></use>
               </svg>
         </a>
-
+    
+        <div class="is-hidden">
         <!-- menu -->
             <ul class="header__menu">
-                <li><a href="../index.html" class="header__menu__link">Home</a>
+                <li>
+                    <button type="button" class="header__menu-button
+                    header__home">Home</button> 
                 </li>
-                <li><a href="../favourite.html" class="header__menu__link">Favorites</a></li>
+                <li>
+                    <button type="button" class="header__menu-button header__favorites">Favorites</button>
+                </li>
             </ul>
 
             <!-- social links -->
             <ul class="header__soc">
                 <li>
-                    <a href="" class="header__soc__link">
-                        <svg class="header__soc__icon" width="40" height="40">
+                    <a 
+                    class="header__soc-link"
+                    href="https://www.facebook.com/goITclub/" 
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    >
+                        <svg class="header__soc-icon" width="28" height="28">
                             <use href="../img/icons.svg#icon-facebook"></use>
                         </svg>
                     </a>
                 </li>
                 <li>
-                    <a href="" class="header__soc__link">
-                        <svg class="header__soc__icon" width="40" height="40">
+                    <a 
+                    class="header__soc-link"
+                    href="https://www.instagram.com/goitclub/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                     >
+                        <svg class="header__soc-icon" width="28" height="28">
                             <use href="../img/icons.svg#icon-instagram"></use>
                         </svg>
                     </a>
                 </li>
                 <li>
-                    <a href="" class="header__soc__link">
-                        <svg class="header__soc__icon" width="40" height="40">
+                    <a 
+                    class="header__soc-link"
+                    href="https://www.youtube.com/c/GoIT" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    >
+                        <svg class="header__soc-icon" width="28" height="28">
                             <use href="../img/icons.svg#icon-youtube"></use>
                         </svg>
                     </a>
                 </li>
             </ul>
+        </div>
     </div>
-    
 </header>
