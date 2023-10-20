@@ -29,6 +29,7 @@
   border-radius: 30px;
   background: none;
   color: var(--accent-color);
+  transition: color var(--transition), background-color var(--transition);
 }
 
 .header__home:hover,
@@ -46,6 +47,7 @@
   border-radius: 30px;
   background: none;
   color: var(--accent-color);
+  transition: color var(--transition), background-color var(--transition);
 }
 
 .header__favorites:hover,
@@ -76,7 +78,7 @@
   justify-content: center;
   color: var(--dark-color);
   opacity: 0.8;
-  
+  transition: color var(--transition), background-color var(--transition);
   }
   
   .header__soc-link:hover,
