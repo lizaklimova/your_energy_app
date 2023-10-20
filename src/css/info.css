@@ -1,0 +1,128 @@
+.info__section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.info__block {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  background-color: var(--dark-color);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.info__wrapper-title {
+  color: var(--accent-color);
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.info__wrapper-quote {
+  color: var(--accent-color);
+  opacity: 0.6;
+  text-align: justify;
+}
+.info__wrapper-author {
+  color: var(--accent-color);
+  margin-top: 16px;
+}
+.info__block-icon-commas {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.info__image-block {
+  margin-bottom: 20px;
+}
+.info__image {
+  border-radius: 12px;
+}
+.info__trhd-block {
+  display: flex;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  background: #fff;
+}
+.info__trhd-icon-equipment {
+  display: block;
+}
+.info__trhd-block-list {
+  padding-left: 16px;
+}
+.info__trhd-title {
+  margin-bottom: 4px;
+  font-weight: 500;
+  line-height: 1;
+}
+.info__trhd-text {
+  opacity: 0.6;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .info__section {
+    padding-top: 64px;
+    padding-bottom: 100px;
+  }
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+  .info__block {
+    max-width: 400px;
+    padding: 30px;
+    margin: 0;
+  }
+
+  .info__wrapper-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.33;
+  }
+
+  .info__wrapper-author {
+    color: #f4f4f4;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .info__block-icon-commas {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 24px;
+    height: 24px;
+  }
+  .info__image-block {
+  }
+  .info__image {
+    width: 288px;
+    height: 258px;
+  }
+  .info__block,
+  .info__image-block,
+  .info__trhd-block {
+    /* max-width: calc((100% - 16px) / 3); */
+  }
+  .info__image {
+  }
+  .info__trhd-block {
+    max-width: 400px;
+    padding: 40px;
+  }
+
+  .info__trhd-title {
+    font-size: 24px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    line-height: 1.33;
+  }
+}
