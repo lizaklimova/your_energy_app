@@ -1,50 +1,75 @@
-<section class="info-section">
-  <div class="container">
-    <div class="quote">
-      <svg class="icon-run-men" width="18" height="20">
-        <use href="./img/icons.svg"></use>
+<section class="info__section">
+  <div class="container info">
+    <div class="info__block">
+      <div class="info__block-icon">
+        <svg class="info__block-icon" width="34" height="32">
+          <use href="./img/icons.svg#icon-run-men"></use>
+        </svg>
+      </div>
+      <div class="info__wrapper">
+        <h3 class="info__wrapper-title">Quote of the day</h3>
+        <p class="info__wrapper-quote">
+          A lot of times I find that people who are blessed with the most talent
+          don't competitive and have the biggest heart.
+        </p>
+        <p class="info__wrapper-author">Author</p>
+      </div>
+      <svg class="info__block-icon-commas" width="20" height="20">
+        <use href="./img/icons.svg#icon-inverted-commas"></use>
       </svg>
-      <h2>Quote of the day</h2>
-      <blockquote>
-        <!-- Додайте вашу цитату з бекенду, використовуючи шаблонні рядки та косі лапки -->
-      </blockquote>
     </div>
-    <div class="quote-image">
+    <div class="info__image-block">
       <picture>
         <source
           media="(min-width: 1440px)"
           srcset="
-            ./img/info/info-girls-dekstop1.webp 1x,
+            ./img/info/info-girls-dekstop.webp  1x,
             ./img/info/info-girls-dekstop2.webp 2x
           "
         />
         <source
           media="(min-width: 768px)"
+          type="image/webp"
           srcset="
-            ./img/info/info-girls-tablet.webp   1x,
+            ./img/info/info-girls-tabletx.webp  1x,
             ./img/info/info-girls-tabletx2.webp 2x
           "
         />
         <source
           media="(max-width: 767px)"
+          type="image/webp"
+          image=""
           srcset="
-            ./img/info/info-girls-mobile1.webp 1x,
+            ./img/info/info-girls-mobile.webp  1x,
             ./img/info/info-girls-mobile2.webp 2x
           "
         />
         <img
-          src="../img/info/info-girls-mobile1.webp"
-          alt="info-girl"
-          width=""
-          height=""
-          class=""
+          src="./img/info/info-girls-mobile.jpg"
+          srcset="
+            ./img/info/info-girls-mobile.jpg  1x,
+            ./img/info/info-girls-mobile2.jpg 2x
+          "
+          alt="info smiling girls with water"
+          class="info__image"
         />
       </picture>
     </div>
-    <div class="quote-author">
-      <svg class="icon-equipment" width="20" height="20">
-        <use href="./img/icons.svg"></use>
-      </svg>
+    <div class="info__trhd-block">
+      <div class="info__trhd-icon-equipment">
+        <svg class="info__trhd-icon-equipment" width="32" height="32">
+          <use href="./img/icons.svg#icon-equipment"></use>
+        </svg>
+      </div>
+      <div class="info__trhd-block-list">
+        <h2 class="info__trhd-title">110 min</h2>
+        <p class="info__trhd-text">Daily norm of sports</p>
+        <p class="info__trhd-recommendation" js-info-text>
+          The World Health Organization recommends at least 150 minutes of
+          moderate-intensity aerobic physical activity throughout the week for
+          adults aged 18-64. However, what happens if w...
+        </p>
+      </div>
     </div>
   </div>
 </section>
