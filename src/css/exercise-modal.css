@@ -54,7 +54,8 @@
     display: block;
     background-color:  transparent;
     border: none;
-    padding: 0;}
+    padding: 0;
+}
   
     @media screen and (min-width: 768px) {
       .exercise-modal__close-btn{
