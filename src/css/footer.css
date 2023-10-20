@@ -4,7 +4,7 @@
 .footer__container {
   padding-top: 40px;
   padding-bottom: 20px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   /* max-width: 335px; */
 }
 .container {
@@ -19,7 +19,7 @@
 }
 .footer__soc-list {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   margin-bottom: 40px;
 }
 .footer__soc-item {
@@ -68,6 +68,7 @@
   /* max-width: 335px; */
 }
 .footer__input {
+  display: block;
   border-radius: 30px;
   border: 1px solid var(--accent-color);
   background-color: transparent;
@@ -119,7 +120,7 @@
     max-width: 335px;
   }
   .footer__form {
-    max-width: 335px;
+    /* max-width: 335px; */
   }
 }
 @media screen and (min-width: 768px) {
