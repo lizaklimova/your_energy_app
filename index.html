@@ -17,6 +17,58 @@
     
     <!-- Ruslan + Svitlana -->
     
+    <!-- Maria -->
+    <!--Modal window - exercise
+ 
+    
+    Файли для роботи:
+    Стилі:
+    css/exercise-modal.css - стилі блоку;
+
+    css/vars.css - змінні;
+    css/styles.css - контейнер;
+
+    JS:
+     - запити на бек ;
+
+     - рендер HTML;
+
+    - логіка;
+
+    -->
+
+
+ 	
+<!-- Modal window з детальною інформацією про вправу включає:
+- відео з прикладом виконання вправи (у разі наявності)
+- назву вправи
+- її рейтинг  
+- мету, на яку. спрямовано результат виконання вправи
+- частину тілу, яка задіяна під час виконання вправи
+- популярність вправи серед користувачів компанії
+- кількість калорій, що можуть бути спалені за 3 хвилини виконання вправи
+- короткий опис 
+- кнопку додавання вправи до Favorites (або видалення з них)
+- кнопку для проставлення оцінки вправи користувачем з привʼязкою до email (це завдання є додатковим і у разі НЕреалізації - кнопку Give a rating у модальне вікно додавати не варто) -->
+
+<!-- Click по кнопці додавання вправи до Favorites (або видалення з них) повинен оновлювати інформацію про favorites, яка повинна зберігатися в localStorage -->
+
+<!-- Click по backdrop модального вікна, click по кнопці з іконкою хрестика або натискання на клавішу ESC повинен закривати модальне вікно (не забувайте знімати слухачі) -->
+
+<div class="backdrop is-hidden js-backdrop">
+
+    <div class="exercise-modal">
+        <button type="button" class="exercise-modal__close-btn close-btn">
+            <svg class="exercise-modal__close-icon close-icon">
+                <use href="/src/img/icons.svg#modalclose" width="28" height="28"></use>
+              </svg>
+        </button>
+        <div class="exercise-modal__content"></div>
+    </div> 
+    
+</div>
+    <!-- Oleksandr -->
+    
     <!-- Sergii -->
     
     <!-- Anastasia -->
