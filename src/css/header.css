@@ -8,27 +8,25 @@
   align-items: center;
 }
 
+
 .header__menu {
   min-width: 265px;
   height: 52px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
+  gap: 32px;
   border-radius: 60px;
   background: var(--dark-color);
-  justify-content: center;
-}
-
-.header__menu-button {
-  cursor: pointer;
-  border-radius: 30px;
-  font-size: 16px;
-  line-height: 1.5;
 }
 
 .header__home {
   min-width: 66px;
   height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
   background: none;
   color: var(--accent-color);
 }
@@ -42,6 +40,10 @@
 .header__favorites {
   min-width: 87px;
   height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
   background: none;
   color: var(--accent-color);
 }
@@ -50,6 +52,12 @@
 .header__favorites:focus {
   color: var(--dark-color);
   background: var(--accent-color);
+}
+
+.header__menu-link {
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .header__soc {
