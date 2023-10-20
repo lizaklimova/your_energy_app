@@ -1,41 +1,63 @@
-<footer class="footer container">
-  <div class="footer__logo-soc">
-    <a>
-      <svg class="footer__logo">
-        <use href="../img/icons.svg#icon-logo"></use>
-      </svg>
-    </a>
-    <ul class="footer__soc-list">
-      <li class="footer__soc-item">
-        <a href=""
-          ><svg><use href="../img/icons.svg#icon-facebook"></use></svg
-        ></a>
-      </li>
-      <li class="footer__soc-item">
-        <a href=""
-          ><svg><use href="../img/icons.svg#icon-instagram"></use></svg
-        ></a>
-      </li>
-      <li class="footer__soc-item">
-        <a href=""
-          ><svg><use href="../img/icons.svg#icon-youtube"></use></svg
-        ></a>
-      </li>
-    </ul>
-  </div>
-  <div class="footer__form-block">
-    <h3 class="footer__form-title">Transforming your body shape with us</h3>
-    <p class="footer__form-subtitle">
-      Subscribe and learn about new exercises!
-    </p>
-    <form class="footer__form" action="submit">
-      <input class="footer__input" type="email" placeholder="Email" />
-      <button class="footer__btn" type="submit"></button>
-    </form>
-  </div>
-  <div class="footer__policy-block">
-    <p>Your Energy. All rights reserved</p>
-    <p>Privacy Policy <span>/</span>Terms of Service</p>
-    <p>©2023</p>
+<footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__soc-form-wrapper">
+      <div class="footer__logo-soc">
+        <a>
+          <svg class="footer__logo">
+            <use href="../img/icons.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <ul class="footer__soc-list">
+          <li class="footer__soc-item">
+            <a href=""
+              ><svg class="footer__soc-icon" width="24" height="24">
+                <use href="../img/icons.svg#icon-facebook"></use></svg
+            ></a>
+          </li>
+          <li class="footer__soc-item">
+            <a href=""
+              ><svg class="footer__soc-icon" width="24" height="24">
+                <use href="../img/icons.svg#icon-instagram"></use></svg
+            ></a>
+          </li>
+          <li class="footer__soc-item">
+            <a href=""
+              ><svg class="footer__soc-icon" width="24" height="24">
+                <use href="../img/icons.svg#icon-youtube"></use></svg
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__form-block">
+        <h3 class="footer__form-title">
+          Transforming your <span class="footer__title-span">body</span> shape
+          with us
+        </h3>
+        <div class="footer__sub-form-wrapper">
+          <p class="footer__form-subtitle">
+            Subscribe and learn about new exercises!
+          </p>
+          <form class="footer__form" action="submit">
+            <input
+              class="footer__input"
+              name="Email"
+              type="email"
+              placeholder="Email"
+            />
+            <button class="footer__btn" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer__policy-block">
+      <p class="footer__reserved">Your Energy. All rights reserved</p>
+      <div class="footer__privacy-wrap">
+        <p class="footer__privacy">
+          Privacy Policy <span class="footer__reserved-span">/</span>Terms of
+          Service
+        </p>
+        <p class="footer__year">©2023</p>
+      </div>
+    </div>
   </div>
 </footer>
