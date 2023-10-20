@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YourEnergy</title>
     
-    <script type="module" crossorigin src="/your_energy_app/assets/index-8b6cb2be.js"></script>
-    <link rel="stylesheet" href="/your_energy_app/assets/styles-e4584b2b.css">
+    <script type="module" crossorigin src="/your_energy_app/assets/index-7d97a360.js"></script>
+    <link rel="stylesheet" href="/your_energy_app/assets/styles-e6ecaaa8.css">
   </head>
   <body>
     <!-- Svitlana -->
-    <header class="container header">
-  <div class="header__container">
+    <header class="header">
+  <div class="header__container container">
 
       <!-- logo -->
       <a href="../index.html" class="header__logo">
@@ -21,19 +21,23 @@
             </svg>
       </a>
   
-      <div class="is-hidden">
+      <!-- <div class="is-hidden"> -->
 
       <!-- menu -->
+      <nav>
           <ul class="header__menu">
-              <li>
-                  <button type="button" class="header__menu-button
-                  header__home">Home</button> 
+              <li class="header__home">
+                  <a 
+                  href="../index.html" 
+                  class="header__menu-link">Home</a>
               </li>
-              <li>
-                  <button type="button" class="header__menu-button 
-                  header__favorites">Favorites</button>
+              <li class="header__favorites">
+                  <a 
+                  href="../favourite.html" 
+                  class="header__menu-link">Favorites</a>
              </li>
           </ul>
+          </nav>
 
           <!-- social links -->
           <ul class="header__soc">
@@ -74,7 +78,7 @@
                   </a>
               </li>
           </ul>
-      </div>
+      <!-- </div> -->
   </div>
 </header>
     

@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites</title>
     
-    <link rel="stylesheet" href="/your_energy_app/assets/styles-e4584b2b.css">
+    <link rel="stylesheet" href="/your_energy_app/assets/styles-e6ecaaa8.css">
   </head>
   <body>
-    <header class="container header">
-  <div class="header__container">
+    <header class="header">
+  <div class="header__container container">
 
       <!-- logo -->
       <a href="../index.html" class="header__logo">
@@ -20,19 +20,23 @@
             </svg>
       </a>
   
-      <div class="is-hidden">
+      <!-- <div class="is-hidden"> -->
 
       <!-- menu -->
+      <nav>
           <ul class="header__menu">
-              <li>
-                  <button type="button" class="header__menu-button
-                  header__home">Home</button> 
+              <li class="header__home">
+                  <a 
+                  href="../index.html" 
+                  class="header__menu-link">Home</a>
               </li>
-              <li>
-                  <button type="button" class="header__menu-button 
-                  header__favorites">Favorites</button>
+              <li class="header__favorites">
+                  <a 
+                  href="../favourite.html" 
+                  class="header__menu-link">Favorites</a>
              </li>
           </ul>
+          </nav>
 
           <!-- social links -->
           <ul class="header__soc">
@@ -73,7 +77,7 @@
                   </a>
               </li>
           </ul>
-      </div>
+      <!-- </div> -->
   </div>
 </header>
     
