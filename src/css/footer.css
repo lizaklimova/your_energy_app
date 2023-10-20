@@ -3,7 +3,6 @@
   padding-top: 40px;
   padding-bottom: 20px;
 }
-
 .footer__logo {
   width: 132px;
   height: 24px;
@@ -29,6 +28,9 @@
   align-items: center;
 }
 .footer__soc-icon:hover {
+  fill: var(--dark-color);
+}
+.footer__soc-item {
   fill: var(--dark-color);
 }
 .footer__soc-item:hover {
