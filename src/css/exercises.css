@@ -3,10 +3,11 @@
   height: 225px;
   border-radius: 20px;
   display: block;
-  margin: auto;
+  margin-bottom: 20px;
   position: relative;
   background: #fff;
 }
+
 .skeleton-loader::after {
   content: '';
   width: calc(100% - 30px);
@@ -27,7 +28,7 @@
   background-size: 75px 175px, 100% 100px, 100% 16px, 100% 30px;
   background-position: -185px 0, center 0, center 115px, center 142px;
   box-sizing: border-box;
-  animation: animloader 1s linear infinite;
+  animation: animloader1 1s linear infinite;
 }
 
 .exercises {
@@ -81,7 +82,7 @@
   transition: width var(--transition);
 }
 
-.exercises__filter-card {
+.exercises__filter-card:not(:last-child) {
   margin-bottom: 20px;
 }
 
@@ -98,6 +99,7 @@
   align-items: center;
   justify-content: center;
   padding-top: 92.5px;
+  text-align: center;
 }
 
 .exercises__filter-category {
@@ -117,6 +119,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  margin-top: 20px;
 }
 
 .exercises__pagination-item {
@@ -126,6 +129,7 @@
   letter-spacing: 0.8px;
   cursor: pointer;
 }
+
 .exercises__pagination-item_active {
   color: var(--dark-color);
   border-radius: 50%;
@@ -138,7 +142,13 @@
 @media screen and (min-width: 768px) {
   .exercises__skeleton-loader {
     width: calc((100% - 30px) / 3);
+    height: 225px;
   }
+
+  .exercises__filter-card:not(:last-child) {
+    margin-bottom: 0;
+  }
+
   .exercises {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -170,6 +180,7 @@
   }
 
   .exercises__filter-card {
+    margin-bottom: 0;
     width: calc((100% - 30px) / 3);
   }
 
@@ -189,6 +200,10 @@
     width: 900px;
   }
 
+  .exercises__skeleton-loader {
+    height: 242px;
+  }
+
   .exercises__nav {
     display: flex;
     gap: 300px;
@@ -203,8 +218,6 @@
   }
 
   .exercises__heading-wrap {
-    /* max-width: 1406px; */
-
     padding-left: 150px;
     padding-right: 150px;
     position: absolute;
@@ -212,9 +225,13 @@
     left: 0;
     right: 0;
   }
+
+  .exercises__filter-img-container {
+    height: 242px;
+  }
 }
 
-@keyframes animloader {
+@keyframes animloader1 {
   to {
     background-position: 185px 0, center 0, center 115px, center 142px;
   }
