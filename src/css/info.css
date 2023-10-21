@@ -26,6 +26,7 @@
   color: var(--accent-color);
   opacity: 0.6;
   text-align: justify;
+  margin-bottom: 16px;
 }
 .info__wrapper-author {
   color: var(--accent-color);
