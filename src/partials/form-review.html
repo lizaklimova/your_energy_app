@@ -1,34 +1,32 @@
-  <div class="backdrop" data-modal>
-    <div class="modal">
-      <button type="button" class="modal-bt" data-modal-close>
-        <svg class="modal-icon" width="24" height="24">
-          <use href="./img/icons.svg#"></use>
-        </svg>
-      </button>
+<div class="backdrop" data-review-modal>
+  <div class="modal-review container">
+    <button class="" type="button" data-review-close>
+      <svg class="exercise-modal__close-icon close-icon">
+        <use href="../img/icons.svg#modalclose" width="24" height="24"></use>
+      </svg>
+    </button>
+    <p class="modal-title">Rating</p>
     <form class="modal-form">
-        <label class="modal-label" for="user-email">Email</label>
-          <div class="modal-type-form">
-            <input
-              class="modal-input"
-              type="email"
-              id="user-email"
-              name="user-email"
-            />
-            <svg class="svg-modal" width="24" height="24">
-              <use href="./img/icons.svg#icon-Star"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="modal-type-textarea">
-          <label class="modal-label" for="user-comment">Your comment</label>
-          <textarea
-            placeholder="Text input"
-            id="user-comment"
-            name="user-comment"
-            class="modal-textarea"
-          ></textarea>
-        </div>
-        <button class="modal-btn" type="submit">Send</button>
-      </form>
-    </div>
- 
+      <label class="modal-form__label" for="user-email">Email</label>
+      <div class="modal-form__type">
+        <input
+          class="modal-input"
+          type="email"
+          id="user-email"
+          name="user-email"
+        />
+        <div></div>
+      </div>
+      <div class="modal-form__textarea">
+        <label class="modal-form__label" for="user-comment">Your comment</label>
+        <textarea
+          placeholder="Text input"
+          id="user-comment"
+          name="user-comment"
+          class="modal-textarea"
+        ></textarea>
+      </div>
+      <button class="modal-form__send" type="submit">Send</button>
+    </form>
+  </div>
+</div>
