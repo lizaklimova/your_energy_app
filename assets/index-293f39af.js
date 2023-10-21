@@ -1,4 +1,4 @@
-import{f as i,l as n,s as c,a as l}from"./quote-65dc8b66.js";function o(e){return e.slice(0,1).toUpperCase()+e.slice(1)}function d(e){return e.map(({imgURL:r,filter:t,name:s})=>`<li class="exercises__filter-card">
+import{f as i,l as n,s as c,a as l}from"./quote-c9b8247a.js";function o(e){return e.slice(0,1).toUpperCase()+e.slice(1)}function d(e){return e.map(({imgURL:r,filter:t,name:s})=>`<li class="exercises__filter-card">
 
    <div class="exercises__filter-img-container" style=" background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), 
               url('${r}') ;
