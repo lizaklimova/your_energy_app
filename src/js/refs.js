@@ -11,3 +11,9 @@ export const filterFilterBtnsRefs = document.querySelectorAll(
 export const activeFilter = document.querySelector('.active-filter');
 
 export const quoteContainer = document.querySelectorAll('.info__wrapper');
+
+export const paginationList = document.querySelectorAll(
+  '.exercises__pagination-item'
+);
+
+export const activePagination = document.querySelector('.active-pagination');
