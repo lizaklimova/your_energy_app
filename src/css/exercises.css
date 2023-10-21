@@ -160,12 +160,23 @@
   .exercises {
     padding-bottom: 132px;
   }
-  .exercises__heading-wrap {
+
+  .exercises__nav {
     display: flex;
     justify-content: space-between;
   }
 
-  .exercises__filter-list {
-    justify-content: flex-end;
+  .main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    position: relative;
+  }
+
+  .exercises__heading-wrap {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 40px;
   }
 }
