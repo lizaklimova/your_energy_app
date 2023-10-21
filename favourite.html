@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites</title>
     
-    <link rel="stylesheet" href="/your_energy_app/assets/styles-8ba93a6f.css">
+    <link rel="stylesheet" href="/your_energy_app/assets/styles-5356a0e4.css">
   </head>
   <body>
     <header class="header">
@@ -90,45 +90,50 @@
           <!--  для цитати -->
           <div class="favorite__quote-block quote-block"></div>
 
-          <!-- бокс для інфо з хвилинами для спорту -->
-          <div class="favorite__info-block">
-            <svg class="favorite__info-icon" width="20" height="20">
-              <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-barbell"></use>
-              >
-            </svg>
-            <p class="favorite__info-subtitle">110 min</p>
-            <p class="favorite__info-text">Daily norm of sports</p>
+          <div class="favorite__botton-block">
+            <!-- бокс для інфо з хвилинами для спорту -->
+            <div class="favorite__info-block">
+              <svg class="favorite__info-icon" width="20" height="20">
+                <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-barbell"></use>
+                >
+              </svg>
+              <p class="favorite__info-subtitle">110 min</p>
+              <p class="favorite__info-text">Daily norm of sports</p>
+            </div>
+
+            <!-- картинка -->
+
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="/your_energy_app/assets/women-sportswear-working-desk-0b8e1e84.webp 1x, /your_energy_app/assets/women-sportswear-working-desk2x-1c1728da.webp 2x"
+              />
+
+              <source
+                media="(min-width: 768px)"
+                type="image/webp"
+                srcset="/your_energy_app/assets/women-sportswear-working-tablet-3807c762.webp 1x, /your_energy_app/assets/women-sportswear-working-tablet2x-24e546a7.webp 2x"
+              />
+
+              <source
+                media="(max-width: 767px)"
+                type="image/webp"
+                srcset="/your_energy_app/assets/women-sportswear-working-mob-195f72e2.webp 1x, /your_energy_app/assets/women-sportswear-working-mob2x-6878ea23.webp 2x"
+              />
+
+              <img
+                src="/your_energy_app/assets/women-sportswear-working-mob-d03ebdd2.jpg"
+                srcset="/your_energy_app/assets/women-sportswear-working-mob-d03ebdd2.jpg 1x, /your_energy_app/assets/women-sportswear-working-mob2x-0564af69.jpg 2x"
+                alt="women working out"
+                loading="lazy"
+              />
+            </picture>
           </div>
-
-          <!-- картинка -->
-
-          <picture>
-            <source
-              media="(min-width: 1440px)"
-              srcset="data:image/webp;base64,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 1x, /your_energy_app/assets/women-working-out-desktop2x-47b92c11.webp 2x"
-            />
-
-            <source
-              media="(min-width: 768px)"
-              srcset="/your_energy_app/assets/women-working-out-tablet-51ff4254.webp 1x, /your_energy_app/assets/women-working-out-tablet2x-f7e4d658.webp 2x"
-            />
-
-            <source
-              media="(max-width: 767px)"
-              srcset="/your_energy_app/assets/women-working-out-mob-f779bb35.webp 1x, /your_energy_app/assets/women-working-out-mob2x-bb8c0839.webp 2x"
-            />
-
-            <img
-              src="/your_energy_app/assets/women-working-out-mob-f779bb35.webp"
-              alt="women working out"
-              width="335"
-              height="119"
-            />
-          </picture>
         </div>
 
-        <div class="favourite__exercise-block">
-          <p class="favourite__text-block">
+        <div class="favourite__exercise-block"></div>
+        <div class="favourite__text-block">
+          <p class="favourite__text">
             It appears that you haven't added any exercises to your favorites
             yet. To get started, you can add exercises that you like to your
             favorites for easier access in the future.
