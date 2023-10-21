@@ -3,6 +3,7 @@
 @import url('./header.css');
 @import url('./mob-menu.css');
 @import url('./hero.css');
+@import url('./loader.css');
 @import url('./exercises.css');
 @import url('./info.css');
 @import url('./footer.css');
@@ -30,4 +31,20 @@
   .container {
     max-width: 1406px;
   }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(4, 4, 4, 0.4);
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.backdrop.is-hidden {
+  display: none;
 }
