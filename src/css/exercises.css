@@ -1,11 +1,11 @@
 .skeleton-loader {
-  width: 215px;
-  height: 215px;
+  width: 100%;
+  height: 225px;
+  border-radius: 20px;
   display: block;
   margin: auto;
   position: relative;
   background: #fff;
-  box-sizing: border-box;
 }
 .skeleton-loader::after {
   content: '';
@@ -20,9 +20,9 @@
       rgba(255, 255, 255, 0.5) 50%,
       transparent 100%
     ),
-    linear-gradient(#ddd 100px, transparent 0),
-    linear-gradient(#ddd 16px, transparent 0),
-    linear-gradient(#ddd 50px, transparent 0);
+    linear-gradient(rgba(4, 4, 4, 0.4) 100px, transparent 0),
+    linear-gradient(rgba(4, 4, 4, 0.4) 16px, transparent 0),
+    linear-gradient(rgba(4, 4, 4, 0.4) 50px, transparent 0);
   background-repeat: no-repeat;
   background-size: 75px 175px, 100% 100px, 100% 16px, 100% 30px;
   background-position: -185px 0, center 0, center 115px, center 142px;
@@ -30,25 +30,17 @@
   animation: animloader 1s linear infinite;
 }
 
-@keyframes animloader {
-  to {
-    background-position: 185px 0, center 0, center 115px, center 142px;
-  }
-}
-
 .exercises {
   padding-top: 40px;
   padding-bottom: 80px;
 }
-.exercises__block {
-}
-.container {
-}
+
 .exercises__loader {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .exercises__title {
   color: var(--dark-color);
   font-size: 28px;
@@ -64,8 +56,7 @@
   gap: 20px;
   margin-bottom: 28px;
 }
-.exercises__filter-item {
-}
+
 .exercises__filter-btn {
   position: relative;
   color: rgba(36, 36, 36, 0.6);
@@ -89,8 +80,6 @@
   transition: width var(--transition);
 }
 
-.exercises__filter-cards-list {
-}
 .exercises__filter-card {
   margin-bottom: 20px;
 }
@@ -146,6 +135,9 @@
 @media screen and (min-width: 375px) {
 }
 @media screen and (min-width: 768px) {
+  .exercises__skeleton-loader {
+    width: calc((100% - 30px) / 3);
+  }
   .exercises {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -217,5 +209,11 @@
     top: 0;
     left: calc((100% - 100vw) / 1406px);
     right: calc((100% - 100vw) / 1406px);
+  }
+}
+
+@keyframes animloader {
+  to {
+    background-position: 185px 0, center 0, center 115px, center 142px;
   }
 }

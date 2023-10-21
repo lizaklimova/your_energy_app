@@ -1,5 +1,4 @@
 import { capitalizeFirstLetter } from '../fn-helpers';
-import { filterListRef } from '../refs';
 
 // ! Створення картки по фільтрам
 export function createFilterString(arr) {
