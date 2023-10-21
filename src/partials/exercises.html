@@ -1,24 +1,28 @@
 <section class="exercises">
   <div class="exercises__block container">
-    <h2 class="exercises__title">Exercises</h2>
+    <div class="exercises__heading-wrap">
+      <h2 class="exercises__title">Exercises</h2>
+
+      <ul class="exercises__filter-list">
+        <li class="exercises__filter-item">
+          <button class="exercises__filter-btn exercises__filter-btn_active">
+            Body parts
+          </button>
+        </li>
+
+        <li class="exercises__filter-item">
+          <button class="exercises__filter-btn">Muscles</button>
+        </li>
+
+        <li class="exercises__filter-item">
+          <button class="exercises__filter-btn">Equipment</button>
+        </li>
+      </ul>
+    </div>
+
     <div class="backdrop is-hidden exercises__loader">
       <span class="loader is-hidden"></span>
     </div>
-    <ul class="exercises__filter-list">
-      <li class="exercises__filter-item">
-        <button class="exercises__filter-btn exercises__filter-btn_active">
-          Body parts
-        </button>
-      </li>
-
-      <li class="exercises__filter-item">
-        <button class="exercises__filter-btn">Muscles</button>
-      </li>
-
-      <li class="exercises__filter-item">
-        <button class="exercises__filter-btn">Equipment</button>
-      </li>
-    </ul>
 
     <ul class="exercises__filter-cards-list"></ul>
 

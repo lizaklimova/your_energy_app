@@ -14,6 +14,7 @@
 .exercises__title {
   color: var(--dark-color);
   font-size: 28px;
+  font-weight: 400;
   line-height: 1.36;
   letter-spacing: -0.56px;
   margin-bottom: 20px;
@@ -118,6 +119,9 @@
     letter-spacing: -0.88px;
   }
 
+  .exercises__filter-list {
+    margin-bottom: 32px;
+  }
   .exercises__filter-btn {
     font-size: 16px;
     line-height: 1.5;
@@ -125,6 +129,10 @@
 
   .exercises__filter-category {
     font-size: 24px;
+  }
+
+  .exercises__filter-btn_active::after {
+    width: 75px;
   }
 
   .exercises__filter-cards-list {
@@ -138,8 +146,26 @@
     width: calc((100% - 30px) / 3);
   }
 
-  .exercises__filter-img-container {
+  .exercises__pagination-item {
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: 0.96px;
+  }
+
+  .exercises__pagination-item_active {
+    padding: 0px 9px;
   }
 }
 @media screen and (min-width: 1440px) {
+  .exercises {
+    padding-bottom: 132px;
+  }
+  .exercises__heading-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .exercises__filter-list {
+    justify-content: flex-end;
+  }
 }
