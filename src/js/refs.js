@@ -9,3 +9,5 @@ export const filterFilterBtnsRefs = document.querySelectorAll(
 );
 
 export const activeFilter = document.querySelector('.active-filter');
+
+export const quoteContainer = document.querySelectorAll('.info__wrapper');

@@ -204,11 +204,14 @@
   }
 
   .exercises__heading-wrap {
-    max-width: 1406px;
+    /* max-width: 1406px; */
+
+    padding-left: 150px;
+    padding-right: 150px;
     position: absolute;
     top: 0;
-    left: calc((100% - 100vw) / 1406px);
-    right: calc((100% - 100vw) / 1406px);
+    left: 0;
+    right: 0;
   }
 }
 
