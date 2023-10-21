@@ -19,6 +19,7 @@
   display: flex;
   gap: 18px;
   width: 100%;
+
   background-color: var(--dark-color);
   border-radius: 20px;
   margin-bottom: 20px;

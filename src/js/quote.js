@@ -8,8 +8,8 @@ async function getQuote() {
     const data = await fetchQuote();
     createQuote(data);
     saveToLocalStorage(data);
-  } catch {
-    e => console.log(e);
+  } catch (e) {
+    console.log(e.message);
   }
 }
 
@@ -40,8 +40,8 @@ function saveToLocalStorage({ author, quote }) {
     const quoteInfoJson = JSON.stringify(quoteInfo);
 
     localStorage.setItem(LOCAL_STORAGE_KEY, quoteInfoJson);
-  } catch {
-    error => console.log(error.message);
+  } catch (e) {
+    console.log(e.message);
   }
 }
 
@@ -50,11 +50,11 @@ function checkQuoteInLocalStorage() {
     const savedQuote = localStorage.getItem(LOCAL_STORAGE_KEY);
     const parsedData = JSON.parse(savedQuote);
 
-    if (parsedData.data !== date) {
+    if (parsedData.date !== date) {
       getQuote();
     }
-  } catch {
-    error => console.log(error.message);
+  } catch (e) {
+    console.log(e.message);
   }
 }
 checkQuoteInLocalStorage();
