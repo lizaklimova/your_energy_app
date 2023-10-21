@@ -130,9 +130,11 @@
   .container {
     display: flex;
     flex-direction: column;
+    gap: 32px;
   }
   .info {
   }
+
   .info__block {
     width: 444px;
     margin: 0;
