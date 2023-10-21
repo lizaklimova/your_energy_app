@@ -22,7 +22,9 @@ function createQuote({ author, quote }) {
   <p class="info__wrapper-author">${author}</p>
 </div>`;
 
-  quoteContainer.innerHTML = markup;
+  quoteContainer.forEach(container => {
+    container.innerHTML = markup;
+  });
 }
 
 const LOCAL_STORAGE_KEY = 'quote';
