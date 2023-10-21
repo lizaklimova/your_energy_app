@@ -80,7 +80,6 @@
   .info__block {
     width: 400px;
     padding: 40px;
-    /* height: 249px; */
   }
 
   .info__image {
@@ -96,7 +95,7 @@
     right: 40px;
   }
   .info__wrapper-author {
-    color: #f4f4f4;
+    color: var(--accent-color);
     font-size: 16px;
     margin-top: 18px;
     line-height: 1.5;
@@ -108,8 +107,6 @@
     width: 24px;
     height: 24px;
   }
-
-  /* height: 258px; */
 
   .info__trhd-block {
     width: 400px;
