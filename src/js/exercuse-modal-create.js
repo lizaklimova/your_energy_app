@@ -1,17 +1,4 @@
-//  {
-
-//     "_id": "64f389465ae26083f39b17a4",
-//     "bodyPart": "waist",
-//     "equipment": "body weight",
-//     "gifUrl": "https://ftp.goit.study/img/power-pulse/gifs/0003.gif",
-//     "name": "air bike",
-//     "target": "abs",
-//     "description": "This refers to your core muscles, which include the rectus abdominis, obliques, and transverse abdominis. They're essential for maintaining posture, stability, and generating force in many movements. Exercises that target the abs include crunches, leg raises, and planks.",
-//     "rating": 4.33,
-//     "burnedCalories": 312,
-//     "time": 3,
-//     "popularity": 4
-//   }
+import { capitalizeFirstLetter } from './fn-helpers';
 
 export function renderExerciseModal({
   bodyPart,
@@ -35,24 +22,26 @@ export function renderExerciseModal({
               height="259"
             />
             <div class="exercise-modal-tumb_card">
-              <h2 class="exercise-modal__title">${makeUpperCaseFirst(name)}</h2>
+              <h2 class="exercise-modal__title">${capitalizeFirstLetter(
+                name
+              )}</h2>
               <p class="exercise-modal-rating__number">${rating}</p>
               <ul class="exercise-modal-list">
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Target</h3>
-                  <p class="exercise-modal-list__text">${makeUpperCaseFirst(
+                  <p class="exercise-modal-list__text">${capitalizeFirstLetter(
                     target
                   )}</p>
                 </li>
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Body Part</h3>
-                  <p class="exercise-modal-list__text">${makeUpperCaseFirst(
+                  <p class="exercise-modal-list__text">${capitalizeFirstLetter(
                     bodyPart
                   )}</p>
                 </li>
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Equipment</h3>
-                  <p class="exercise-modal-list__text">${makeUpperCaseFirst(
+                  <p class="exercise-modal-list__text">${capitalizeFirstLetter(
                     equipment
                   )}</p>
                 </li>
@@ -66,7 +55,7 @@ export function renderExerciseModal({
                 </li>
               </ul>
               <p class="exercise-modal__description">
-               ${makeUpperCaseFirst(description)}
+               ${capitalizeFirstLetter(description)}
               </p>
             </div>
           </div>
@@ -90,8 +79,4 @@ export function renderExerciseModal({
             </button>
             </li>
           </ul>`;
-}
-
-function makeUpperCaseFirst(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1); //Метод charAt() возвращает указанный символ из строки.
 }
