@@ -1,16 +1,17 @@
 .modal-review {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 335px;
-min-height: 357px;
-border-radius: 20px;
-background: var(--dark-color); 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 335px;
+  min-height: 357px;
+  border-radius: 20px;
+  background: var(--dark-color);
+  padding: 14px;
 }
 
 .modal-title {
-  color: rgba(244, 244, 244, 0.40);
+  color: rgba(244, 244, 244, 0.4);
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
@@ -23,8 +24,6 @@ background: var(--dark-color);
   align-items: center;
 }
 
-
-
 .modal-input,
 .modal-textarea {
   display: block;
@@ -36,8 +35,12 @@ background: var(--dark-color);
   margin-bottom: 20px;
   color: var(--accent-color); /* Добавьте цвет текста */
   font-size: 14px;
+  font-family: inherit;
 }
 
+.modal-textarea {
+  resize: none;
+}
 .modal-input::placeholder,
 .modal-textarea::placeholder {
   color: var(--accent-color);
@@ -56,10 +59,12 @@ background: var(--dark-color);
 }
 
 .modal-review__close-btn {
+  width: 28px;
+  height: 28px;
   background-color: transparent;
-  /* position: absolute; */
-  top: 0;
-  right: 0;
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }
 
 .close-icon {
