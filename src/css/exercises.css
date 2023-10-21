@@ -1,0 +1,111 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(4, 4, 4, 0.4);
+  transition: opacity var(--transition), visibility var(--transition);
+}
+.exercises {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+.exercises__block {
+}
+.container {
+}
+.exercises__title {
+  color: var(--dark-color);
+  font-size: 28px;
+  line-height: 1.36;
+  letter-spacing: -0.56px;
+  margin-bottom: 20px;
+}
+
+.exercises__filter-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.exercises__filter-item {
+}
+.exercises__filter-btn {
+  position: relative;
+  color: rgba(36, 36, 36, 0.6);
+  line-height: 1.43;
+  background-color: transparent;
+}
+
+.exercises__filter-btn_active {
+  color: var(--dark-color);
+}
+
+.exercises__filter-btn_active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: var(--dark-color);
+  border-radius: 2px;
+  width: 65px;
+  height: 4px;
+  margin-top: 4px;
+  transition: width var(--transition);
+}
+
+.exercises__filter-cards-list {
+}
+.exercises__filter-card {
+  margin-bottom: 20px;
+}
+
+.exercises__filter-img-container {
+  width: 100%;
+  border-radius: 20px;
+  height: 225px;
+  cursor: pointer;
+}
+
+.exercises__filter-text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 92.5px;
+}
+
+.exercises__filter-category {
+  color: #f4f4f4;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.exercises__filter-name {
+  color: rgba(244, 244, 244, 0.4);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.exercises__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.exercises__pagination-item {
+  color: #d4d4d4;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+}
+.exercises__pagination-item_active {
+  color: var(--dark-color);
+  border-radius: 50%;
+  border: 1px solid var(--dark-color);
+  padding: 6px 10px;
+}
