@@ -1,3 +1,41 @@
+.skeleton-loader {
+  width: 215px;
+  height: 215px;
+  display: block;
+  margin: auto;
+  position: relative;
+  background: #fff;
+  box-sizing: border-box;
+}
+.skeleton-loader::after {
+  content: '';
+  width: calc(100% - 30px);
+  height: calc(100% - 15px);
+  top: 15px;
+  left: 15px;
+  position: absolute;
+  background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 100%
+    ),
+    linear-gradient(#ddd 100px, transparent 0),
+    linear-gradient(#ddd 16px, transparent 0),
+    linear-gradient(#ddd 50px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 75px 175px, 100% 100px, 100% 16px, 100% 30px;
+  background-position: -185px 0, center 0, center 115px, center 142px;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+}
+
+@keyframes animloader {
+  to {
+    background-position: 185px 0, center 0, center 115px, center 142px;
+  }
+}
+
 .exercises {
   padding-top: 40px;
   padding-bottom: 80px;
@@ -174,9 +212,10 @@
   }
 
   .exercises__heading-wrap {
+    max-width: 1406px;
     position: absolute;
     top: 0;
-    left: 40px;
-    right: 40px;
+    left: calc((100% - 100vw) / 1406px);
+    right: calc((100% - 100vw) / 1406px);
   }
 }

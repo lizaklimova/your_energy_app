@@ -1,4 +1,5 @@
 import { capitalizeFirstLetter } from '../fn-helpers';
+import { filterListRef } from '../refs';
 
 // ! Створення картки по фільтрам
 export function createFilterString(arr) {
@@ -22,4 +23,13 @@ background-repeat: no-repeat;
     .join('');
 
   return filterCardString;
+}
+
+export function createFiltersCardsSkeleton(amount) {
+  let skeleton = '';
+  for (let i = 0; i < amount; i++) {
+    skeleton +=
+      '<li class="exercises__skeleton-loader"> <span class="skeleton-loader"></span></li>';
+  }
+  return skeleton;
 }
