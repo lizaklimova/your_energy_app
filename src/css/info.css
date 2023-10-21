@@ -125,31 +125,14 @@
 }
 
 @media (min-width: 1440px) {
-  .info__section {
-  }
   .container {
     display: flex;
     flex-direction: column;
     gap: 32px;
   }
-  .info {
-  }
-
   .info__block {
     width: 444px;
     margin: 0;
-  }
-  .info__block-icon {
-  }
-  .info__wrapper {
-  }
-  .info__wrapper-title {
-  }
-  .info__wrapper-quote {
-  }
-  .info__wrapper-author {
-  }
-  .info__block-icon-commas {
   }
   .info__image-block {
     margin: 0;
@@ -159,15 +142,5 @@
   }
   .info__trhd-block {
     width: 444px;
-  }
-  .info__trhd-icon-equipment {
-  }
-  .info__trhd-block-list {
-  }
-  .info__trhd-title {
-  }
-  .info__trhd-text {
-  }
-  .info__trhd-recommendation {
   }
 }
