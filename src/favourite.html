@@ -20,59 +20,57 @@
           <!--  для цитати -->
           <div class="favorite__quote-block quote-block"></div>
 
-          <!-- бокс для інфо з хвилинами для спорту -->
-          <div class="favorite__info-block">
-            <svg class="favorite__info-icon" width="20" height="20">
-              <use href="./img/icons.svg#icon-barbell"></use>
-              >
-            </svg>
-            <p class="favorite__info-subtitle">110 min</p>
-            <p class="favorite__info-text">Daily norm of sports</p>
+          <div class="favorite__botton-block">
+            <!-- бокс для інфо з хвилинами для спорту -->
+            <div class="favorite__info-block">
+              <svg class="favorite__info-icon" width="20" height="20">
+                <use href="./img/icons.svg#icon-barbell"></use>
+                >
+              </svg>
+              <p class="favorite__info-subtitle">110 min</p>
+              <p class="favorite__info-text">Daily norm of sports</p>
+            </div>
+
+            <!-- картинка -->
+
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  ./img/favourites/women-sportswear-working-desk.webp   1x,
+                  ./img/favourites/women-sportswear-working-desk2x.webp 2x
+                "
+              />
+
+              <source
+                media="(min-width: 768px)"
+                type="image/webp"
+                srcset="
+                  ./img/favourites/women-sportswear-working-tablet.webp   1x,
+                  ./img/favourites/women-sportswear-working-tablet2x.webp 2x
+                "
+              />
+
+              <source
+                media="(max-width: 767px)"
+                type="image/webp"
+                srcset="
+                  ./img/favourites/women-sportswear-working-mob.webp   1x,
+                  ./img/favourites/women-sportswear-working-mob2x.webp 2x
+                "
+              />
+
+              <img
+                src="./img/favourites/women-sportswear-working-mob.jpg"
+                srcset="
+                  ./img/favourites/women-sportswear-working-mob.jpg   1x,
+                  ./img/favourites/women-sportswear-working-mob2x.jpg 2x
+                "
+                alt="women working out"
+                loading="lazy"
+              />
+            </picture>
           </div>
-
-          <!-- картинка -->
-
-          <picture>
-            <source
-              media="(min-width: 1440px)"
-              srcset="
-                ./img/favourites/women-working-out-desktop.webp   1x,
-                ./img/favourites/women-working-out-desktop2x.webp 2x
-              "
-            />
-
-            <source
-              media="(min-width: 768px)"
-              srcset="
-                ./img/favourites/women-working-out-tablet.webp   1x,
-                ./img/favourites/women-working-out-tablet2x.webp 2x
-              "
-            />
-
-            <source
-              media="(max-width: 767px)"
-              srcset="
-                ./img/favourites/women-working-out-mob.webp   1x,
-                ./img/favourites/women-working-out-mob2x.webp 2x
-              "
-            />
-
-            <img
-              src="./img/favourites/women-working-out-mob.webp"
-              alt="women working out"
-              width="335"
-              height="119"
-              loading="lazy"
-            />
-          </picture>
-        </div>
-
-        <div class="favourite__exercise-block">
-          <p class="favourite__text-block">
-            It appears that you haven't added any exercises to your favorites
-            yet. To get started, you can add exercises that you like to your
-            favorites for easier access in the future.
-          </p>
         </div>
       </div>
     </div>
