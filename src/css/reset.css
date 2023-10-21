@@ -1,10 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Neue Montreal', sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.29;
   color: #141414;
-  background-color: #ffffff;
+  background-color: #f4f4f4;
+  margin: 0;
 }
 
 h1,
