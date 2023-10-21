@@ -110,20 +110,19 @@
   }
 
   /* height: 258px; */
-}
 
-.info__trhd-block {
-  width: 400px;
-  padding: 40px;
-}
+  .info__trhd-block {
+    width: 400px;
+    padding: 40px;
+  }
 
-.info__trhd-title {
-  font-size: 24px;
-  margin-bottom: 6px;
-  font-weight: 500;
-  line-height: 1.33;
+  .info__trhd-title {
+    font-size: 24px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    line-height: 1.33;
+  }
 }
-
 @media (min-width: 1440px) {
   .container {
     display: flex;
