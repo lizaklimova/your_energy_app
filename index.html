@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YourEnergy</title>
     
-    <script type="module" crossorigin src="/your_energy_app/assets/index-eba57168.js"></script>
-    <link rel="stylesheet" href="/your_energy_app/assets/styles-e52ead66.css">
+    <script type="module" crossorigin src="/your_energy_app/assets/index-9abfb5f4.js"></script>
+    <link rel="stylesheet" href="/your_energy_app/assets/styles-8ba93a6f.css">
   </head>
   <body>
     <!-- Svitlana -->
@@ -85,9 +85,10 @@
     <!-- Dmytro -->
     
     <!-- Ruslan + Svitlana -->
-    <section class="exercises">
+    <main class="main">
+      <section class="exercises">
   <div class="exercises__block container">
-    <div class="exercises__heading-wrap">
+    <div class="exercises__heading-wrap exercises__nav">
       <h2 class="exercises__title">Exercises</h2>
 
       <ul class="exercises__filter-list">
@@ -123,65 +124,8 @@
   </div>
 </section>
 
-    <!-- Maria -->
-    <!--Modal window -->
 
-<div class="backdrop is-hidden js-backdrop">
-  <div class="exercise-modal">
-    <button
-      class="exercise-modal__close-btn close-btn"
-      type="button"
-      data-exmod-close
-    >
-      <svg class="exercise-modal__close-icon close-icon">
-        <use href="../img/icons.svg#modalclose" width="24" height="24"></use>
-      </svg>
-    </button>
-
-    <div class="exercise-modal__content"></div>
-  </div>
-</div>
-
-    <!-- Oleksandr -->
-    <div class="backdrop" data-review-modal>
-  <div class="modal-review container">
-    <button class="" type="button" data-review-close>
-      <svg class="exercise-modal__close-icon close-icon">
-        <use href="../img/icons.svg#modalclose" width="24" height="24"></use>
-      </svg>
-    </button>
-
-    <p class="modal-title">Rating</p>
-
-    <form class="modal-form">
-      <label class="modal-form__label" for="user-email">Email</label>
-
-      <div class="modal-form__type">
-        <input
-          class="modal-input"
-          type="email"
-          id="user-email"
-          name="user-email"
-        />
-
-        <div class=""></div>
-      </div>
-      <div class="modal-form__textarea">
-        <label class="modal-form__label" for="user-comment">Your comment</label>
-        <textarea
-          placeholder="Text input"
-          id="user-comment"
-          name="user-comment"
-          class="modal-textarea"
-        ></textarea>
-      </div>
-      <button class="modal-form__send" type="submit">Send</button>
-    </form>
-  </div>
-</div>
-
-    <!-- Sergii -->
-    <section class="info__section">
+      <section class="info__section">
   <div class="container info">
     <div class="info__block">
       <div class="info__block-icon">
@@ -245,72 +189,42 @@
   </div>
 </section>
 
-    <!-- Anastasia -->
-    <footer class="footer">
-  <div class="footer__container container">
-    <div class="footer__soc-form-wrapper">
-      <div class="footer__logo-soc">
-        <a>
-          <svg class="footer__logo">
-            <use href="../img/icons.svg#icon-logo"></use>
-          </svg>
-        </a>
-        <ul class="footer__soc-list">
-          <li class="footer__soc-item">
-            <a href=""
-              ><svg class="footer__soc-icon" width="24" height="24">
-                <use href="../img/icons.svg#icon-facebook"></use></svg
-            ></a>
-          </li>
-          <li class="footer__soc-item">
-            <a href=""
-              ><svg class="footer__soc-icon" width="24" height="24">
-                <use href="../img/icons.svg#icon-instagram"></use></svg
-            ></a>
-          </li>
-          <li class="footer__soc-item">
-            <a href=""
-              ><svg class="footer__soc-icon" width="24" height="24">
-                <use href="../img/icons.svg#icon-youtube"></use></svg
-            ></a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__form-block">
-        <h3 class="footer__form-title">
-          Transforming your <span class="footer__title-span">body</span> shape
-          with us
-        </h3>
-        <div class="footer__sub-form-wrapper">
-          <p class="footer__form-subtitle">
-            Subscribe and learn about new exercises!
-          </p>
-          <form class="footer__form" action="submit">
-            <input
-              class="footer__input"
-              name="Email"
-              type="email"
-              placeholder="Email"
-            />
-            <button class="footer__btn" type="submit">Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="footer__policy-block">
-      <p class="footer__reserved">Your Energy. All rights reserved</p>
-      <div class="footer__privacy-wrap">
-        <p class="footer__privacy">
-          Privacy Policy <span class="footer__reserved-span">/</span>Terms of
-          Service
-        </p>
-        <p class="footer__year">©2023</p>
-      </div>
-    </div>
-  </div>
-</footer>
+    </main>
+    <!-- Maria -->
+    <!--Modal window -->
 
-    <div class="backdrop" data-review-modal>
+<div class="backdrop is-hidden js-backdrop">
+  <div class="exercise-modal">
+    <button
+      class="exercise-modal__close-btn close-btn"
+      type="button"
+      data-exmod-close
+    >
+      <svg class="exercise-modal__close-icon close-icon">
+        <use href="../img/icons.svg#modalclose" width="24" height="24"></use>
+      </svg>
+    </button>
+
+    <div class="exercise-modal__content"></div>
+  </div>
+</div>
+
+<button
+  type="button"
+  data-exmod-close
+  style="
+    background-color: blue;
+    color: var(--accent-color);
+    border-radius: 2px;
+    width: 300px;
+    height: 300px;
+  "
+>
+  Start
+</button>
+
+    <!-- Oleksandr -->
+    <div class="backdrop is-hidden" data-review-modal>
   <div class="modal-review container">
     <button class="" type="button" data-review-close>
       <svg class="exercise-modal__close-icon close-icon">
@@ -346,6 +260,125 @@
     </form>
   </div>
 </div>
+
+    <!-- Sergii -->
+    <!-- Anastasia -->
+    <footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__soc-form-wrapper">
+      <div class="footer__logo-soc">
+        <a>
+          <svg class="footer__logo">
+            <use href="../img/icons.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <ul class="footer__soc-list">
+          <li class="footer__soc-item">
+            <a
+              class="footer__soc-link"
+              href="https://www.facebook.com/goITclub/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg class="footer__soc-icon" width="24" height="24">
+                <use href="../img/icons.svg#icon-facebook"></use></svg
+            ></a>
+          </li>
+          <li class="footer__soc-item">
+            <a
+              class="footer__soc-link"
+              href="https://www.instagram.com/goitclub/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="footer__soc-icon" width="24" height="24">
+                <use href="../img/icons.svg#icon-instagram"></use></svg
+            ></a>
+          </li>
+          <li class="footer__soc-item">
+            <a
+              class="footer__soc-link"
+              href="https://www.youtube.com/c/GoIT"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg class="footer__soc-icon" width="24" height="24">
+                <use href="../img/icons.svg#icon-youtube"></use></svg
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__form-block">
+        <h3 class="footer__form-title">
+          Transforming your <span class="footer__title-span">body</span> shape
+          with us
+        </h3>
+        <div class="footer__sub-form-wrapper">
+          <p class="footer__form-subtitle">
+            Subscribe and learn about new exercises!
+          </p>
+          <form class="footer__form" action="submit">
+            <input
+              class="footer__input"
+              name="email"
+              type="email"
+              placeholder="Email"
+              pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
+              required
+            />
+            <button class="footer__btn" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer__policy-block">
+      <p class="footer__reserved">Your Energy. All rights reserved</p>
+      <div class="footer__privacy-wrap">
+        <p class="footer__privacy">
+          Privacy Policy <span class="footer__reserved-span">/</span>Terms of
+          Service
+        </p>
+        <p class="footer__year">©2023</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <div class="backdrop is-hidden" data-review-modal>
+  <div class="modal-review container">
+    <button class="" type="button" data-review-close>
+      <svg class="exercise-modal__close-icon close-icon">
+        <use href="../img/icons.svg#modalclose" width="24" height="24"></use>
+      </svg>
+    </button>
+
+    <p class="modal-title">Rating</p>
+
+    <form class="modal-form">
+      <label class="modal-form__label" for="user-email">Email</label>
+
+      <div class="modal-form__type">
+        <input
+          class="modal-input"
+          type="email"
+          id="user-email"
+          name="user-email"
+        />
+
+        <div class=""></div>
+      </div>
+      <div class="modal-form__textarea">
+        <label class="modal-form__label" for="user-comment">Your comment</label>
+        <textarea
+          placeholder="Text input"
+          id="user-comment"
+          name="user-comment"
+          class="modal-textarea"
+        ></textarea>
+      </div>
+      <button class="modal-form__send" type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
 
     
   </body>
