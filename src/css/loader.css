@@ -4,6 +4,11 @@
   display: inline-block;
   position: relative;
 }
+
+.loader.is-hidden {
+  display: none;
+}
+
 .loader::after,
 .loader::before {
   content: '';
