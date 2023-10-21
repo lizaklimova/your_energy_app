@@ -13,7 +13,7 @@
 //     "popularity": 4
 //   }
 
-function renderExerciseModal({
+export function renderExerciseModal({
   bodyPart,
   equipment,
   gifUrl,
