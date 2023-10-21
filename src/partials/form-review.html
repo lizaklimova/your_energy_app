@@ -1,30 +1,25 @@
 <div class="backdrop" data-review-modal>
-  <div class="modal-review container">
-    <button class="" type="button" data-review-close>
+  <div class="modal-review ">
+    <button class="modal-review__close-btn" type="button" data-review-close>
       <svg class="exercise-modal__close-icon close-icon">
         <use href="../img/icons.svg#modalclose" width="24" height="24"></use>
       </svg>
     </button>
-
     <p class="modal-title">Rating</p>
-
     <form class="modal-form">
-      <label class="modal-form__label" for="user-email">Email</label>
-
       <div class="modal-form__type">
         <input
           class="modal-input"
           type="email"
           id="user-email"
           name="user-email"
+          placeholder="Email"
         />
-
         <div class=""></div>
       </div>
       <div class="modal-form__textarea">
-        <label class="modal-form__label" for="user-comment">Your comment</label>
         <textarea
-          placeholder="Text input"
+          placeholder="Your comment"
           id="user-comment"
           name="user-comment"
           class="modal-textarea"
