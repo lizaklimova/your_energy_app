@@ -26,11 +26,29 @@
   position: relative;
 }
 
-.quote-block {
+.info__block-icon-commas {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-.favorite__botton-block {
+/* .info__wrapper-title {
+  color: var(--accent-color);
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  line-height: 1;
 }
+
+.info__wrapper-quote {
+  color: var(--accent-color);
+  opacity: 0.6;
+  text-align: justify;
+}
+
+.info__wrapper-author {
+  color: var(--accent-color);
+} */
 
 .favorite__info-block {
   padding: 20px;
@@ -92,6 +110,13 @@
   .favorite__quote-block {
     padding: 40px;
     margin-bottom: 16px;
+  }
+
+  .info__block-icon-commas {
+    top: 40px;
+    right: 40px;
+    width: 24px;
+    height: 24px;
   }
 
   .favorite__botton-block {
