@@ -68,3 +68,39 @@
   height: 28px;
   stroke: var(--accent-color);
 }
+
+@media screen and (min-width: 375px) {
+  
+}
+
+@media screen and (min-width: 768px) {
+  .modal-review {
+  width: 430px;
+  min-height: 412px;
+  }
+
+  .modal-input{
+    margin-top: 50px;
+    margin-bottom: 16px;
+    
+  }
+
+  .modal-textarea {
+    height: 106px;
+    margin-bottom: 32px;
+  }
+
+.modal-form {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.modal-title {
+  padding-left: 30px;
+}
+
+}
+
+@media screen and (min-width: 1440px) {
+  
+}
