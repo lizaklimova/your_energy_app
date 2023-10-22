@@ -67,7 +67,7 @@ export function renderExerciseModal({
                 Add to favorites
                 <span>
                   <svg class="modal-exercise-heart-icon">
-                      <use href="../img/icons.svg#icon-heart" width="18" height="18"></use>
+                      <use href="./img/icons.svg#icon-heart" width="18" height="18"></use>
                   </svg>
                 </span>
               </button>
