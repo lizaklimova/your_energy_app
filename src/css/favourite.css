@@ -19,6 +19,7 @@
   display: flex;
   gap: 18px;
   width: 100%;
+
   background-color: var(--dark-color);
   border-radius: 20px;
   margin-bottom: 20px;
@@ -50,6 +51,16 @@
   color: var(--accent-color);
 } */
 
+/* .favorite__quote-block {
+  position: relative;
+}
+
+.favorite__loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-180%, -70%);
+} */
 .favorite__info-block {
   padding: 20px;
   border-radius: 20px;

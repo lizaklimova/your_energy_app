@@ -1,6 +1,7 @@
 import { fetchQuote } from './api';
 import { quoteContainer } from './refs';
 
+const LOCAL_STORAGE_KEY = 'quote';
 getQuote();
 
 async function getQuote() {
@@ -8,8 +9,8 @@ async function getQuote() {
     const data = await fetchQuote();
     createQuote(data);
     saveToLocalStorage(data);
-  } catch {
-    e => console.log(e);
+  } catch (e) {
+    console.log(e.message);
   }
 }
 
@@ -27,34 +28,35 @@ function createQuote({ author, quote }) {
   });
 }
 
-const LOCAL_STORAGE_KEY = 'quote';
-const date = new Date().getDate();
-
 function saveToLocalStorage({ author, quote }) {
   const quoteInfo = {
     author,
     quote,
-    date,
+    date: new Date().getDate(),
   };
   try {
     const quoteInfoJson = JSON.stringify(quoteInfo);
 
     localStorage.setItem(LOCAL_STORAGE_KEY, quoteInfoJson);
-  } catch {
-    error => console.log(error.message);
+  } catch (e) {
+    console.log(e.message);
   }
 }
 
 function checkQuoteInLocalStorage() {
   try {
     const savedQuote = localStorage.getItem(LOCAL_STORAGE_KEY);
-    const parsedData = JSON.parse(savedQuote);
 
-    if (parsedData.data !== date) {
-      getQuote();
+    if (savedQuote) {
+      let parsedData = JSON.parse(savedQuote);
+      let currentDate = new Date().getDate();
+
+      if (parsedData.date !== currentDate) {
+        getQuote();
+      }
     }
-  } catch {
-    error => console.log(error.message);
+  } catch (e) {
+    console.log(e.message);
   }
 }
 checkQuoteInLocalStorage();

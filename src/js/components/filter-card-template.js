@@ -23,3 +23,12 @@ background-repeat: no-repeat;
 
   return filterCardString;
 }
+
+export function createFiltersCardsSkeleton(amount) {
+  let skeleton = '';
+  for (let i = 0; i < amount; i++) {
+    skeleton +=
+      '<li class="exercises__skeleton-loader"> <span class="skeleton-loader"></span></li>';
+  }
+  return skeleton;
+}
