@@ -84,7 +84,8 @@
   font-size: 14px;
   margin-bottom: 100px;
 }
-.footer__btn:hover {
+.footer__btn:hover,
+.footer__btn:focus {
   box-shadow: 3px 0px 17px 2px #c6cdd1;
   transition: var(--transition);
 }
