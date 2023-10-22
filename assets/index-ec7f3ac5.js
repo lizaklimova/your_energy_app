@@ -1,4 +1,4 @@
-import{a as ae,p as st,b as Tt,c as ne,d as rt,e as Bt,g as Xt,s as oe,h as re,i as se}from"./quote-8bdb770d.js";const xt=(x,n)=>{x.classList.add(n)},le=(x,n)=>{x.classList.remove(n)};function Y(x){return x.slice(0,1).toUpperCase()+x.slice(1)}function ut(x,n,a){x.forEach(s=>{le(s,a)}),xt(n,a)}function ce(x){return x.map(({imgURL:a,filter:s,name:r})=>`<li class="exercises__filter-card">
+import{a as ae,p as st,b as Tt,c as ne,d as rt,e as Bt,g as Xt,s as oe,h as re,i as se}from"./quote-24952daa.js";const xt=(x,n)=>{x.classList.add(n)},le=(x,n)=>{x.classList.remove(n)};function Y(x){return x.slice(0,1).toUpperCase()+x.slice(1)}function ut(x,n,a){x.forEach(s=>{le(s,a)}),xt(n,a)}function ce(x){return x.map(({imgURL:a,filter:s,name:r})=>`<li class="exercises__filter-card">
 
    <div class="exercises__filter-img-container" style=" background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), 
               url('${a}') ;
@@ -28,6 +28,8 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
             <div class="exercise-modal-tumb_card">
               <h2 class="exercise-modal__title">${Y(s)}</h2>
               <p class="exercise-modal-rating__number">${p}</p>
+
+              <div class='exercise-modal-tumb_list'>
               <ul class="exercise-modal-list">
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Target</h3>
@@ -50,16 +52,18 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
                   <p class="exercise-modal-list__text">${et}/${U}min</p>
                 </li>
               </ul>
+              </div>
               <p class="exercise-modal__description">
                ${Y(l)}
               </p>
             </div>
           </div>
+
           <ul class="exercise-modal-button">
             <li class="exercise-modal_item">
               <button
                 type="button"
-                class="exercise-modal-favorite__button">
+                class="exercise-modal-button__favorite">
                 Add to favorites
                 <span>
                   <svg class="modal-exercise-heart-icon">
