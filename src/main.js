@@ -6,3 +6,4 @@ import './js/quote';
 import './js/fn-helpers';
 import './js/exercise-modal';
 import './js/exercuse-modal-template';
+import './js/notiflix';

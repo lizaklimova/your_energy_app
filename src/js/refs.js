@@ -17,3 +17,5 @@ export const paginationList = document.querySelectorAll(
 );
 
 export const activePagination = document.querySelector('.active-pagination');
+
+export const favouriteTexte = document.querySelector('.favourite__text');
