@@ -28,6 +28,18 @@
   font-family: inherit;
 }
 
+.modal-input:focus::placeholder,
+.modal-textarea:focus::placeholder {
+  font-size: 12px;
+  transition: font-size var(--transition);
+}
+
+.modal-input:focus,
+.modal-textarea:focus {
+  outline: 1px solid var(--accent-color);
+  box-shadow: 1px 1px 4px 3px rgba(244, 244, 244, 0.843);
+}
+
 .modal-input {
   border-radius: 30px;
   margin-top: 20px;
@@ -61,13 +73,21 @@
   transition: var(--transition);
 }
 
+.modal-form__send:focus {
+  outline: 0.5px solid var(--dark-color);
+}
 .modal-review__close-btn {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   background-color: transparent;
   position: absolute;
   top: 14px;
   right: 14px;
+}
+
+.modal-review__close-btn:hover .exercise-modal__close-icon,
+.modal-review__close-btn:focus .exercise-modal__close-icon {
+  filter: drop-shadow(-1px 1px 5px rgba(254, 254, 254, 0.835));
 }
 
 .close-icon {
@@ -102,6 +122,11 @@
 
   .modal-title {
     padding-left: 30px;
+  }
+
+  .modal-review__close-btn {
+    width: 28px;
+    height: 28px;
   }
 }
 
