@@ -11,3 +11,11 @@ export function setActiveItem(arr, elem, cls) {
 
   addClass(elem, cls);
 }
+
+export const insertHtml = (element, position, html) => {
+  element.insertAdjacentHTML(position, html);
+}
+
+export const apendMarkup = (element, html) => {
+  element.innerHTML = html;
+}
