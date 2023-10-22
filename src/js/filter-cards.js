@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { fetchFilter } from './api';
 import {
   createFilterString,
