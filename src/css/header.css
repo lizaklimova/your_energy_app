@@ -1,3 +1,6 @@
+.header {
+  padding-bottom: 80px;
+}
 .header__logo {
   display: flex;
   align-items: center;
@@ -9,7 +12,7 @@
 }
 
 @media screen and (min-width: 375px) {
-.header__nav {
+  .header__nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,7 +29,7 @@
 }
 
 @media screen and (min-width: 768px) {
-.header__nav {
+  .header__nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,99 +40,98 @@
     display: none;
   }
 
-    .header__menu {
-      width: 233px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      border-radius: 60px;
-      background: var(--dark-color);
-    }
-  
-    .header__home {
-      min-width: 66px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 30px;
-      background: none;
-      color: var(--accent-color);
-      transition: color var(--transition), background-color var(--transition);
-    }
-  
-    .header__home:hover,
-    .header__home:focus {
-      color: var(--dark-color);
-      background: var(--accent-color);
-    }
-  
-    .header__favorites {
-      min-width: 87px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 30px;
-      background: none;
-      color: var(--accent-color);
-      transition: color var(--transition), background-color var(--transition);
-    }
-  
-    .header__favorites:hover,
-    .header__favorites:focus {
-      color: var(--dark-color);
-      background: var(--accent-color);
-    }
-  
-    .header__menu-link {
-      cursor: pointer;
-      font-size: 16px;
-      line-height: 1.5;
-    }
+  .header__menu {
+    width: 233px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    border-radius: 60px;
+    background: var(--dark-color);
+  }
 
-        .header__soc {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-    
-        .header__soc-link {
-          width: 44px;
-          height: 44px;
-          border-radius: 10px;
-          border: 1px solid rgba(36, 36, 36, 0.10);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--dark-color);
-          opacity: 0.8;
-          transition: color var(--transition), background-color var(--transition);
-        }
-    
-        .header__soc-link:hover,
-        .header__soc-link:focus {
-          border-radius: 10px;
-          background-color: rgba(36, 36, 36, 1);
-          color: var(--accent-color);
-          opacity: 0.8;
-        }
-    
-        .header__soc-icon {
-          fill: currentColor;
-        }
+  .header__home {
+    min-width: 66px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background: none;
+    color: var(--accent-color);
+    transition: color var(--transition), background-color var(--transition);
+  }
+
+  .header__home:hover,
+  .header__home:focus {
+    color: var(--dark-color);
+    background: var(--accent-color);
+  }
+
+  .header__favorites {
+    min-width: 87px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background: none;
+    color: var(--accent-color);
+    transition: color var(--transition), background-color var(--transition);
+  }
+
+  .header__favorites:hover,
+  .header__favorites:focus {
+    color: var(--dark-color);
+    background: var(--accent-color);
+  }
+
+  .header__menu-link {
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .header__soc {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header__soc-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(36, 36, 36, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-color);
+    opacity: 0.8;
+    transition: color var(--transition), background-color var(--transition);
+  }
+
+  .header__soc-link:hover,
+  .header__soc-link:focus {
+    border-radius: 10px;
+    background-color: rgba(36, 36, 36, 1);
+    color: var(--accent-color);
+    opacity: 0.8;
+  }
+
+  .header__soc-icon {
+    fill: currentColor;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .header__nav {
-      padding-top: 28px;
-    }
+    padding-top: 28px;
+  }
   .header__menu {
-      width: 265px;
-    }
-
+    width: 265px;
+  }
 }
 
 .header__logo {
