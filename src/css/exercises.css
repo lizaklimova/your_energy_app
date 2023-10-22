@@ -1,20 +1,18 @@
 .skeleton-loader {
+  display: block;
+  position: relative;
+  margin: auto;
+  border-radius: 20px;
+  background: #fff;
   width: 100%;
   height: 225px;
-  border-radius: 20px;
-  display: block;
-  margin-bottom: 20px;
-  position: relative;
-  background: #fff;
 }
-
 .skeleton-loader::after {
-  content: '';
-  width: calc(100% - 30px);
-  height: calc(100% - 15px);
+  position: absolute;
   top: 15px;
   left: 15px;
-  position: absolute;
+  animation: animloader 1s linear infinite;
+  box-sizing: border-box;
   background-image: linear-gradient(
       90deg,
       transparent,
@@ -24,11 +22,12 @@
     linear-gradient(rgba(4, 4, 4, 0.4) 100px, transparent 0),
     linear-gradient(rgba(4, 4, 4, 0.4) 16px, transparent 0),
     linear-gradient(rgba(4, 4, 4, 0.4) 50px, transparent 0);
-  background-repeat: no-repeat;
-  background-size: 75px 175px, 100% 100px, 100% 16px, 100% 30px;
   background-position: -185px 0, center 0, center 115px, center 142px;
-  box-sizing: border-box;
-  animation: animloader1 1s linear infinite;
+  background-size: 75px 175px, 100% 100px, 100% 16px, 100% 30px;
+  background-repeat: no-repeat;
+  width: calc(100% - 30px);
+  height: calc(100% - 15px);
+  content: '';
 }
 
 .exercises {
@@ -38,17 +37,17 @@
 
 .exercises__loader {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .exercises__title {
+  margin-bottom: 20px;
   color: var(--dark-color);
-  font-size: 28px;
   font-weight: 400;
+  font-size: 28px;
   line-height: 1.36;
   letter-spacing: -0.56px;
-  margin-bottom: 20px;
 }
 
 .exercises__filter-list {
@@ -60,10 +59,10 @@
 
 .exercises__filter-btn {
   position: relative;
-  color: rgba(36, 36, 36, 0.6);
-  line-height: 1.43;
   background-color: transparent;
   padding: 0;
+  color: rgba(36, 36, 36, 0.6);
+  line-height: 1.43;
 }
 
 .exercises__filter-btn_active {
@@ -71,35 +70,34 @@
 }
 
 .exercises__filter-btn_active::after {
-  content: '';
   display: block;
   position: absolute;
-  background-color: var(--dark-color);
+  transition: width var(--transition);
+  margin-top: 4px;
   border-radius: 2px;
+  background-color: var(--dark-color);
   width: 100%;
   height: 4px;
-  margin-top: 4px;
-  transition: width var(--transition);
+  content: '';
 }
 
-.exercises__filter-card:not(:last-child) {
+.exercises__filter-card {
   margin-bottom: 20px;
 }
 
 .exercises__filter-img-container {
-  width: 100%;
-  border-radius: 20px;
-  height: 225px;
   cursor: pointer;
+  border-radius: 20px;
+  width: 100%;
+  height: 225px;
 }
 
 .exercises__filter-text-wrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding-top: 92.5px;
-  text-align: center;
 }
 
 .exercises__filter-category {
@@ -119,22 +117,128 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 20px;
 }
 
 .exercises__pagination-item {
+  cursor: pointer;
   color: #d4d4d4;
   font-size: 20px;
   line-height: 1;
   letter-spacing: 0.8px;
-  cursor: pointer;
+}
+.exercises__pagination-item_active {
+  border: 1px solid var(--dark-color);
+  border-radius: 50%;
+  padding: 6px 10px;
+  color: var(--dark-color);
 }
 
-.exercises__pagination-item_active {
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  background: var(--white-color);
+  padding: 16px;
+  height: 140px;
   color: var(--dark-color);
-  border-radius: 50%;
+  font-weight: 400;
+  font-size: 12px;
+  width: 100%;
+}
+.card__top,
+.card__middle,
+.card__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card__top {
+  justify-content: space-between;
+  gap: var(--gap);
+  padding-bottom: 27px;
+}
+.card__middle {
+  gap: var(--gap);
+  padding-bottom: 8px;
+}
+.card__bottom {
+  gap: 10px;
+  /* font-size: 9px; */
+}
+
+.card_tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid var(--dark-color);
-  padding: 6px 10px;
+  border-radius: 15px;
+  padding: 5px 7.5px;
+  width: 75px;
+  height: 24px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.card_rating {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  gap: 2px;
+}
+.card__text,
+.card_rating span,
+.card__btn {
+  line-height: 1.5;
+}
+.card_rating svg {
+  fill: var(--orange-color);
+  width: 18px;
+  height: 18px;
+}
+
+.card__btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: calc(var(--gap) / 2);
+  background-color: transparent;
+  padding: 0;
+  width: 58px;
+  height: 24px;
+  font-size: var(--font-size);
+}
+
+.card__btn-arrow {
+  stroke: #242424;
+}
+
+.card__title {
+  font-weight: 400;
+  font-size: calc(var(--font-size) * 1.5);
+  line-height: 1.33;
+}
+
+.card__title-svg {
+  /* stroke: var(--dark-color); */
+  fill: var(--accent-color);
+  background-color: var(--dark-color);
+  border-radius: 50%;
+}
+
+.card__text span {
+  opacity: 0.4;
+}
+.exercises__cards-list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--gap);
+  row-gap: calc(var(--gap) * 2);
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.exercises__item-card {
+  width: calc((100% - 16px) / 2);
 }
 
 @media screen and (min-width: 375px) {
@@ -142,13 +246,7 @@
 @media screen and (min-width: 768px) {
   .exercises__skeleton-loader {
     width: calc((100% - 30px) / 3);
-    height: 225px;
   }
-
-  .exercises__filter-card:not(:last-child) {
-    margin-bottom: 0;
-  }
-
   .exercises {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -174,13 +272,12 @@
 
   .exercises__filter-cards-list {
     display: flex;
-    flex-wrap: wrap;
-    row-gap: 32px;
     column-gap: 15px;
+    row-gap: 32px;
+    flex-wrap: wrap;
   }
 
   .exercises__filter-card {
-    margin-bottom: 0;
     width: calc((100% - 30px) / 3);
   }
 
@@ -200,39 +297,37 @@
     width: 900px;
   }
 
-  .exercises__skeleton-loader {
-    height: 242px;
-  }
-
   .exercises__nav {
     display: flex;
-    gap: 300px;
     justify-content: space-between;
+    gap: 300px;
   }
 
   .main {
     display: flex;
+    position: relative;
     flex-direction: row-reverse;
     justify-content: center;
-    position: relative;
   }
 
   .exercises__heading-wrap {
-    padding-left: 150px;
-    padding-right: 150px;
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
-  }
+    left: 0;
+    padding-right: 150px;
+    /* max-width: 1406px; */
 
-  .exercises__filter-img-container {
-    height: 242px;
+    padding-left: 150px;
   }
 }
 
-@keyframes animloader1 {
+@keyframes animloader {
   to {
     background-position: 185px 0, center 0, center 115px, center 142px;
   }
 }
+
+
+
+

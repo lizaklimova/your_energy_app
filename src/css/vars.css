@@ -1,5 +1,9 @@
 :root {
   --accent-color: #f4f4f4;
   --dark-color: #242424;
+  --white-color: #ffffff;
+  --orange-color: #eea10c;
+  --font-size: 16px;
+  --gap: 16px;
   --transition: 300ms linear;
 }
