@@ -6,79 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YourEnergy</title>
     
-    <script type="module" crossorigin src="/your_energy_app/assets/index-1f27378e.js"></script>
-    <link rel="modulepreload" crossorigin href="/your_energy_app/assets/quote-c6611aca.js">
-    <link rel="stylesheet" href="/your_energy_app/assets/quote-a389a503.css">
+    <script type="module" crossorigin src="/your_energy_app/assets/index-92c5a6f8.js"></script>
+    <link rel="modulepreload" crossorigin href="/your_energy_app/assets/quote-551872a4.js">
+    <link rel="stylesheet" href="/your_energy_app/assets/quote-39ff88ab.css">
   </head>
   <body>
     <!-- Svitlana -->
     <header class="header">
   <div class="header__container container">
-    <!-- logo -->
-    <a href="./index.html" class="header__logo">
-      <svg width="132" height="24">
-        <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-logo"></use>
-      </svg>
-    </a>
+    <nav class="header__nav">
+      <a href="./index.html" class="header__logo">
+        <svg width="132" height="24">
+          <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-logo"></use>
+        </svg>
+      </a>
 
-    <!-- <div class="is-hidden"> -->
+      <button type="button" class="header__button-open" mobile-menu-open>
+        <svg width="32" height="32">
+          <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-menu-01"></use>
+        </svg>
+      </button>
 
-    <!-- menu -->
-    <nav>
       <ul class="header__menu">
         <li class="header__home">
-          <a href="./index.html" class="header__menu-link">Home</a>
+          <a href="../index.html" class="header__menu-link">Home</a>
         </li>
         <li class="header__favorites">
           <a href="./favourite.html" class="header__menu-link">Favorites</a>
         </li>
       </ul>
-    </nav>
 
-    <!-- social links -->
-    <ul class="header__soc">
-      <li>
-        <a
-          class="header__soc-link"
-          href="https://www.facebook.com/goITclub/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg class="header__soc-icon" width="28" height="28">
-            <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-facebook"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          class="header__soc-link"
-          href="https://www.instagram.com/goitclub/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg class="header__soc-icon" width="28" height="28">
-            <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-instagram"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          class="header__soc-link"
-          href="https://www.youtube.com/c/GoIT"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg class="header__soc-icon" width="28" height="28">
-            <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-youtube"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-    <!-- </div> -->
+      <ul class="header__soc">
+        <li>
+          <a
+            class="header__soc-link"
+            href="https://www.facebook.com/goITclub/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="header__soc-icon" width="28" height="28">
+              <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="header__soc-link"
+            href="https://www.instagram.com/goitclub/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="header__soc-icon" width="28" height="28">
+              <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="header__soc-link"
+            href="https://www.youtube.com/c/GoIT"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="header__soc-icon" width="28" height="28">
+              <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-    
+    <div class="mobile__backdrop is-hidden mob-menu" mobile-menu>
+  <button type="button" class="header__button_close" mob-menu-close>
+    <svg width="32" height="32">
+      <use href="/your_energy_app/assets/icons-7e5aaf81.svg#modalclose"></use>
+    </svg>
+  </button>
+  <nav class="mobile__menu-nav">
+    <ul class="mobile__menu-list">
+      <li class="mobile__menu-item">
+        <a class="mobile__menu-link" href="./index.html">Home</a>
+      </li>
+      <li class="mobile__menu-item">
+        <a class="mobile__menu-link" href="./favourite.html">Favorites</a>
+      </li>
+    </ul>
+  </nav>
+  <ul class="mobile__soc-list">
+    <li class="mobile__soc-item">
+      <a
+        class="mobile__soc-link"
+        href="https://www.facebook.com/goITclub/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="mobile__soc-icon" width="28" height="28">
+          <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-facebook"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="mobile__soc-item">
+      <a
+        class="mobile__soc-link"
+        href="https://www.instagram.com/goitclub/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="mobile__soc-icon" width="28" height="28">
+          <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-instagram"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="mobile__soc-item">
+      <a
+        class="mobile__soc-link"
+        href="https://www.youtube.com/c/GoIT"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="mobile__soc-icon" width="28" height="28">
+          <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-youtube"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+
     <!-- Dmytro -->
     
     <!-- Ruslan + Svitlana -->
@@ -125,7 +182,7 @@
     <div class="info__block">
       <div class="info__block-icon">
         <svg class="info__block-icon" width="34" height="32">
-          <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-run-men"></use>
+          <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-run-men"></use>
         </svg>
       </div>
       <div class="info__wrapper favorire__load-wrap">
@@ -140,7 +197,7 @@
         <p class="info__wrapper-author">Author</p> -->
       </div>
       <svg class="info__block-icon-commas" width="20" height="20">
-        <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-inverted-commas"></use>
+        <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-inverted-commas"></use>
       </svg>
     </div>
     <div class="info__image-block">
@@ -172,7 +229,7 @@
     <div class="info__trhd-block">
       <div class="info__trhd-icon-equipment">
         <svg class="info__trhd-icon-equipment" width="32" height="32">
-          <use href="/your_energy_app/assets/icons-473dbe7f.svg#icon-equipment"></use>
+          <use href="/your_energy_app/assets/icons-7e5aaf81.svg#icon-equipment"></use>
         </svg>
       </div>
       <div class="info__trhd-block-list">
