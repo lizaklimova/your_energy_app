@@ -12,6 +12,11 @@
   overflow: auto;
 }
 
+.exercise-modal__close-btn:hover .exercise-modal__close-icon,
+.exercise-modal__close-btn:focus .exercise-modal__close-icon {
+  filter: drop-shadow(-1px 1px 5px rgba(254, 254, 254, 0.835));
+}
+
 @media screen and (min-width: 375px) {
   .exercise-modal {
     width: 335px;
@@ -67,6 +72,7 @@
   .exercise-modal__close-btn {
     width: 28px;
     height: 28px;
+    transition: filter var(--transition);
   }
 }
 
@@ -74,11 +80,6 @@
   width: 28px;
   height: 28px;
   fill: var(--accent-color);
-}
-
-.modal-review__close-btn:hover .exercise-modal__close-icon,
-.modal-review__close-btn:focus .exercise-modal__close-icon {
-  filter: drop-shadow(-1px 1px 5px rgba(254, 254, 254, 0.835));
 }
 
 .exercise-modal-tumb {
@@ -119,7 +120,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
-  font-feature-settings: 'clig' off, 'liga' off;
+  /* font-feature-settings: 'clig' off, 'liga' off; */
   color: var(--accent-color);
 }
 
@@ -129,7 +130,7 @@
     font-size: 24px;
     font-weight: 500;
     line-height: 1.33;
-    font-feature-settings: 'clig' off, 'liga' off;
+    /* font-feature-settings: 'clig' off, 'liga' off; */
   }
 }
 
@@ -222,6 +223,7 @@
   .exercise-modal-button__favorite,
   .exercise-modal-button__rating {
     font-size: 16px;
+    transition: all var(--transition);
   }
 }
 
@@ -232,10 +234,17 @@
   border: 1px solid var(--accent-color);
 }
 
+.exercise-modal-button__favorite:hover .modal-exercise-heart-icon,
+.exercise-modal-button__favorite:focus .modal-exercise-heart-icon {
+  fill: transparent;
+  stroke: var(--accent-color);
+}
+
 .exercise-modal-button__rating {
   background-color: transparent;
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
+  transition: all var(--transition);
 }
 
 .exercise-modal-button__rating:hover,
@@ -250,10 +259,4 @@
   height: 18px;
   stroke: var(--dark-color);
   fill: transparent;
-}
-
-.modal-exercise-heart-icon:hover,
-.modal-exercise-heart-icon:focus {
-  fill: transparent;
-  stroke: var(--accent-color);
 }
