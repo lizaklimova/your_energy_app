@@ -1,4 +1,4 @@
-import{a as ae,p as st,b as Tt,c as ne,d as rt,e as Bt,g as Xt,s as oe,h as re,i as se}from"./quote-24952daa.js";const xt=(x,n)=>{x.classList.add(n)},le=(x,n)=>{x.classList.remove(n)};function Y(x){return x.slice(0,1).toUpperCase()+x.slice(1)}function ut(x,n,a){x.forEach(s=>{le(s,a)}),xt(n,a)}function ce(x){return x.map(({imgURL:a,filter:s,name:r})=>`<li class="exercises__filter-card">
+import{a as ae,p as st,b as Tt,c as ne,d as rt,e as Bt,g as Xt,s as oe,h as re,i as se}from"./quote-26494f31.js";const xt=(x,n)=>{x.classList.add(n)},le=(x,n)=>{x.classList.remove(n)};function Y(x){return x.slice(0,1).toUpperCase()+x.slice(1)}function ut(x,n,a){x.forEach(s=>{le(s,a)}),xt(n,a)}function ce(x){return x.map(({imgURL:a,filter:s,name:r})=>`<li class="exercises__filter-card">
 
    <div class="exercises__filter-img-container" style=" background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), 
               url('${a}') ;
