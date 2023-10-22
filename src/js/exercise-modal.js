@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import { fetchExercise } from './api';
 import { renderExerciseModal } from './exercuse-modal-template';
 

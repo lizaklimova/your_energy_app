@@ -3,33 +3,48 @@
   position: relative;
   margin: auto;
   border-radius: 20px;
-  background: #fff;
   width: 100%;
   height: 225px;
-}
-.skeleton-loader::after {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  animation: animloader 1s linear infinite;
-  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.548);
   background-image: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.5) 50%,
+      #ddd 50%,
       transparent 100%
     ),
-    linear-gradient(rgba(4, 4, 4, 0.4) 100px, transparent 0),
-    linear-gradient(rgba(4, 4, 4, 0.4) 16px, transparent 0),
-    linear-gradient(rgba(4, 4, 4, 0.4) 50px, transparent 0);
-  background-position: -185px 0, center 0, center 115px, center 142px;
-  background-size: 75px 175px, 100% 100px, 100% 16px, 100% 30px;
+    linear-gradient(90deg, transparent, #ddd 50%, transparent 100%);
   background-repeat: no-repeat;
-  width: calc(100% - 30px);
-  height: calc(100% - 15px);
-  content: '';
+  background-size: 75px 175px, 80% 45px;
+  background-position: -185px 0, center center;
+  box-sizing: border-box;
 }
 
+.skeleton-loader::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  );
+  animation: animloader linear 1s infinite;
+}
+
+.exercises__image-skeleton {
+  fill: #ddd;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+}
 .exercises {
   padding-top: 40px;
   padding-bottom: 80px;
@@ -103,7 +118,9 @@
 .exercises__filter-category {
   color: var(--accent-color);
   font-size: 20px;
+  margin-bottom: 3px;
   line-height: 1;
+  text-align: center;
 }
 
 .exercises__filter-name {
@@ -119,14 +136,17 @@
   gap: 8px;
 }
 
-.exercises__pagination-item {
+.exercises__pagination-btn {
+  background-color: transparent;
+  padding: 0;
   cursor: pointer;
   color: #d4d4d4;
   font-size: 20px;
   line-height: 1;
   letter-spacing: 0.8px;
 }
-.exercises__pagination-item_active {
+
+.exercises__pagination-btn_active {
   border: 1px solid var(--dark-color);
   border-radius: 50%;
   padding: 6px 10px;
@@ -299,10 +319,13 @@
   .exercises__title {
     display: none;
   }
+
+  .exercises__pagination {
+    margin-top: -55px;
+  }
   .exercises__nav {
     display: flex;
     gap: 300px;
-    /* justify-content: space-between; */
     justify-content: end;
   }
 
@@ -313,15 +336,6 @@
     justify-content: center;
   }
 
-  /* .exercises__heading-wrap {
-    padding-left: 150px;
-    padding-right: 150px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  } */
-
   .exercises__filter-img-container {
     height: 242px;
   }
@@ -329,6 +343,6 @@
 
 @keyframes animloader {
   to {
-    background-position: 185px 0, center 0, center 115px, center 142px;
+    background-position: 315px 0;
   }
 }

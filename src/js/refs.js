@@ -16,9 +16,11 @@ export const activeFilter = document.querySelector('.active-filter');
 export const quoteContainer = document.querySelectorAll('.info__wrapper');
 
 export const paginationList = document.querySelectorAll(
-  '.exercises__pagination-item'
+  '.exercises__pagination-btn'
 );
 
-export const activePagination = document.querySelector('.active-pagination');
+export const activePagination = document.querySelector(
+  '.exercises__pagination-btn_active'
+);
 
 export const favouriteTexte = document.querySelector('.favourite__text');

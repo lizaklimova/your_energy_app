@@ -22,19 +22,7 @@
   animation-delay: 1s;
 }
 
-/* .info__wrapper {
-  position: relative;
-}
-
-.info__loader-wrap {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(180%, -70%);
-} */
-
 .info__section {
-  padding-top: 80px;
   padding-bottom: 80px;
 }
 
@@ -107,7 +95,6 @@
 
 @media (min-width: 768px) {
   .info__section {
-    padding-top: 64px;
     margin: 0;
     padding-bottom: 100px;
   }
@@ -171,6 +158,7 @@
     margin-bottom: 12px;
   }
   .info__section {
+    padding-top: 64px;
   }
   .info__heading-wrap {
     display: flex;
