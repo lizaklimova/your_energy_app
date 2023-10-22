@@ -296,11 +296,14 @@
     padding-bottom: 132px;
     width: 900px;
   }
-
+  .exercises__title {
+    display: none;
+  }
   .exercises__nav {
     display: flex;
-    justify-content: space-between;
     gap: 300px;
+    /* justify-content: space-between; */
+    justify-content: end;
   }
 
   .main {
@@ -310,15 +313,17 @@
     justify-content: center;
   }
 
-  .exercises__heading-wrap {
+  /* .exercises__heading-wrap {
+    padding-left: 150px;
+    padding-right: 150px;
     position: absolute;
     top: 0;
-    right: 0;
     left: 0;
-    padding-right: 150px;
-    /* max-width: 1406px; */
+    right: 0;
+  } */
 
-    padding-left: 150px;
+  .exercises__filter-img-container {
+    height: 242px;
   }
 }
 
@@ -327,7 +332,3 @@
     background-position: 185px 0, center 0, center 115px, center 142px;
   }
 }
-
-
-
-

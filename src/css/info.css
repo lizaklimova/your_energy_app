@@ -99,6 +99,10 @@
   opacity: 0.6;
   margin-bottom: 16px;
 }
+
+.info__exercise {
+  display: none;
+}
 /************ 768 ************/
 
 @media (min-width: 768px) {
@@ -158,6 +162,23 @@
   }
 }
 @media (min-width: 1440px) {
+  .info__exercise {
+    display: block;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.09;
+    letter-spacing: -0.88px;
+    margin-bottom: 12px;
+  }
+  .info__section {
+  }
+  .info__heading-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .info__nav {
+  }
   .container {
     display: flex;
     flex-direction: column;
