@@ -99,6 +99,10 @@
   opacity: 0.6;
   margin-bottom: 16px;
 }
+
+.info__exercise {
+  display: none;
+}
 /************ 768 ************/
 
 @media (min-width: 768px) {
