@@ -1,29 +1,17 @@
-import { addClass, removeClass } from '../js/components/classFunctions';
+import { addClass, removeClass } from './components/classFunctions';
+import { favouriteTexte } from './refs'
 
-Notiflix.Notify.init({
-  timeout: 5000,
-  clickToClose: true,
-  cssAnimationStyle: 'from-bottom',
-  width: '400px',
-  fontSize: '14px',
-  fontAwesomeIconStyle: 'shadow',
-  info: {
-    notiflixIconColor: '#f4f4f4',
-    background: '#242424',
-    textColor: '#f4f4f4',
-  },
-});
 
 let exerciseState = {};
 let allEx = [];
 const loadFavourite = () => {
   const keys = Object.keys(localStorage);
-  if (!keys.length) {
-    // removeClass();
-    // addClass();
+  if (!(keys.length>=1 && localStorage.getItem("quote"))) {
+    addClass(favouriteTexte, 'favourite__text');
     return;
   } else {
-    for (let key of keys) {
+    const arrKeys = keys.filter(key => { return key !== "quote" })
+    for (let key of arrKeys) {
       try {
         const savedExercises = localStorage.getItem(key);
         exerciseState = JSON.parse(savedExercises);
@@ -31,9 +19,10 @@ const loadFavourite = () => {
         error;
       }
       allEx.push(exerciseState);
+      addClass(favouriteTexte, 'is-hidden');
     }
-  }
-  //   markup(allEx); murkup function
-  // removeClass();
-  // addClass();
+//   markup(allEx); murkup function
+
 };
+  }
+window.addEventListener('load', loadFavourite)

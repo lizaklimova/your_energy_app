@@ -26,6 +26,8 @@ export function renderExerciseModal({
                 name
               )}</h2>
               <p class="exercise-modal-rating__number">${rating}</p>
+
+              <div class='exercise-modal-tumb_list'>
               <ul class="exercise-modal-list">
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Target</h3>
@@ -54,20 +56,22 @@ export function renderExerciseModal({
                   <p class="exercise-modal-list__text">${burnedCalories}/${time}min</p>
                 </li>
               </ul>
+              </div>
               <p class="exercise-modal__description">
                ${capitalizeFirstLetter(description)}
               </p>
             </div>
           </div>
+
           <ul class="exercise-modal-button">
             <li class="exercise-modal_item">
               <button
                 type="button"
-                class="exercise-modal-favorite__button">
+                class="exercise-modal-button__favorite">
                 Add to favorites
                 <span>
                   <svg class="modal-exercise-heart-icon">
-                      <use href="../img/icons.svg#icon-heart" width="18" height="18"></use>
+                      <use href="./img/icons.svg#icon-heart" width="18" height="18"></use>
                   </svg>
                 </span>
               </button>

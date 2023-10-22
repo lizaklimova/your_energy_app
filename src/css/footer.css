@@ -98,8 +98,11 @@
   margin-bottom: 100px;
   transition: box-shadow var(--transition);
 }
-.footer__btn:hover {
-  box-shadow: 2px 0px 5px 2px rgba(244, 244, 244, 0.843);
+
+.footer__btn:hover,
+.footer__btn:focus {
+  box-shadow: 3px 0px 17px 2px #c6cdd1;
+  transition: var(--transition);
 }
 .footer__policy-block {
   color: #c6cdd1;
