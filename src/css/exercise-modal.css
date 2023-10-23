@@ -199,17 +199,15 @@
 }
 
 .exercise-modal-button {
-  display: inline-flex;
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
   gap: 8px;
 }
 
 .exercise-modal-button__favorite,
-.exercise-modal-button__rating {
-  display: inline-flex;
-  /* justify-content: center; */
+.exercise-modal-button__rating,
+.exercise-modal-button__remove {
   margin-left: auto;
-
   margin-right: auto;
   gap: 8px;
   padding: 12px 24px;
@@ -221,14 +219,22 @@
 
 @media screen and (min-width: 768px) {
   .exercise-modal-button__favorite,
-  .exercise-modal-button__rating {
+  .exercise-modal-button__rating,
+  .exercise-modal-button__remove {
     font-size: 16px;
     transition: all var(--transition);
   }
 }
 
+.exercise-modal-button__remove {
+  width: 228px;
+  height: 48px;
+}
+
 .exercise-modal-button__favorite:hover,
-.exercise-modal-button__favorite:focus {
+.exercise-modal-button__favorite:focus,
+.exercise-modal-button__remove:hover,
+.exercise-modal-button__remove:focus {
   background-color: var(--dark-color);
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
