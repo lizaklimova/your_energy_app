@@ -8,21 +8,19 @@
   background: transparent;
 }
 
-@media screen and (min-width: 375px) {
-  .header__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 20px;
-  }
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
 
-  .header__menu {
-    display: none;
-  }
+.header__menu {
+  display: none;
+}
 
-  .header__soc {
-    display: none;
-  }
+.header__soc {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
