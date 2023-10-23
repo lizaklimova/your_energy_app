@@ -10,8 +10,6 @@ import {
   activeFilter,
   paginationList,
   activePagination,
-  breadCrumbsList,
-  breadCrumbsSlash,
 } from './refs';
 import { addClass, removeClass } from './components/classFunctions';
 import { setActiveItem, apendMarkup, insertHtml } from './fn-helpers';
@@ -46,12 +44,6 @@ function getFilterNameAndMakeActive(e) {
   if (e.target.tagName.toUpperCase() !== 'BUTTON') return;
   filterName = e.target.textContent.trim();
 
-  // insertHtml(
-  //   breadCrumbsList,
-  //   'beforeend',
-  //   createBreadCrumbs(e.target.textContent)
-  // );
-
   getFilters(filterName);
   createSmoothScrollBottom();
   paginationList.forEach(item => {
@@ -60,10 +52,6 @@ function getFilterNameAndMakeActive(e) {
 
   setActiveItem(filterBtnsRefs, e.target, 'exercises__filter-btn_active');
 }
-
-// function createBreadCrumbs(filter) {
-//   return `<li class='exersises__breadcrumb-item'>${filter}</li>`;
-// }
 
 //~ Запит на бек
 async function getFilters(filter, page = 1) {
@@ -81,11 +69,6 @@ async function getFilters(filter, page = 1) {
       totalPages = data.totalPages;
       dataLength = data.results.length;
 
-      // Перевірка яка сторінка
-      // if (page >= totalPages && page === 1) {
-      //   window.addEventListener('scroll', notifyTheEnd);
-      // }
-
       if (page >= totalPages) {
         makePaginationItemsDisabled();
       }
@@ -101,12 +84,7 @@ async function getFilters(filter, page = 1) {
       });
 
       dataLength = data.results.length;
-
       totalPages = data.totalPages;
-
-      // if (page >= totalPages && page === 1) {
-      //   window.addEventListener('scroll', notifyTheEnd);
-      // }
 
       if (page >= totalPages) {
         makePaginationItemsDisabled();
