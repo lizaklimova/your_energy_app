@@ -10,6 +10,7 @@
 @import url('./exercise-modal.css');
 @import url('./form-review.css');
 @import url('./favourite.css');
+@import url('./scroll-up.css');
 
 .container {
   width: 100%;

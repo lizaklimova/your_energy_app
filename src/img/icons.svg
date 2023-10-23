@@ -94,6 +94,16 @@
 <path fill="#242424" stroke="#242424" style="stroke: #242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M4 16h24M4 8h24M4 24h24"></path>
 </symbol>
 
+<!-- scroll-up -->
+
+<symbol id="icon-arrow-top" viewBox="0 0 31 32">
+<path fill="#f4f4f4" style="fill: var(--color1, #f4f4f4)" d="M16.413 7.652v17.019h-1.811v-17.019l-8.509 8.509-1.28-1.28 10.693-10.696 10.696 10.695-1.28 1.28-8.51-8.509z"></path>
+</symbol>
+
+<symbol id="icon-Ellipse" viewBox="0 0 32 32">
+<path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+</symbol>
+
 
 <symbol id="icon-header-menu" viewBox="0 0 32 32">
     <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2"
@@ -117,5 +127,6 @@
     </defs>
 
 </svg>
+
 
 

@@ -1,0 +1,79 @@
+@media screen and (min-width: 375px) {
+    .button-top {
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        position: fixed;
+        right: 30px;
+        bottom: 20px;
+        z-index: 99;
+        cursor: pointer;
+        display: none;
+
+    }
+
+    .button-top:hover {
+        filter: drop-shadow(-1px 1px 5px rgb(4, 66, 10));
+    }
+
+    .button-top_position {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: -5%;
+        transform: translateY(-50%);
+        opacity: 0.8;
+    }
+
+    .button-top-arrow_position {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .button-top {
+        width: 80px;
+        height: 80px;
+
+    }
+
+    .button-top_position {
+        width: 80px;
+        height: 80px;
+        left: 0;
+     }
+    
+    
+    .button-top-arrow_position {
+        width: 48px;
+        height: 48px;
+        left: 15px;    
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .button-top {
+        width: 100px;
+        height: 100px;
+    
+    }
+    
+    .button-top_position {
+        width: 100px;
+        height: 100px;
+        left: 0;
+    }
+    
+    .button-top-arrow_position {
+        width: 60px;
+        height: 60px;
+        left: 20px;
+
+    }
+}
