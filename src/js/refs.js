@@ -4,10 +4,10 @@ export const filterCardsListRef = document.querySelector(
   '.exercises__filter-cards-list'
 );
 
-export const cardsListRef = document.querySelector('.exercises__cards-list');
+// export const cardsListRef = document.querySelector('.exercises__cards-list');
 
 export const filterListRef = document.querySelector('.exercises__filter-list ');
-export const filterFilterBtnsRefs = document.querySelectorAll(
+export const filterBtnsRefs = document.querySelectorAll(
   '.exercises__filter-list button'
 );
 

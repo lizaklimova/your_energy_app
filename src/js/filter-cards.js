@@ -6,7 +6,7 @@ import {
 import {
   filterCardsListRef,
   filterListRef,
-  filterFilterBtnsRefs,
+  filterBtnsRefs,
   activeFilter,
   paginationList,
   activePagination,
@@ -17,6 +17,7 @@ import Notiflix from 'notiflix';
 // ******************************************************************
 let filterName = '';
 let totalPages = null;
+let hasBeenCalled = false;
 
 window.addEventListener('load', makeFilterActive);
 filterListRef.addEventListener('click', getFilterNameAndMakeActive);
@@ -24,12 +25,15 @@ paginationList.forEach(el => {
   el.addEventListener('click', getCurrentPage);
 });
 
+// Підкреслення активного фільтру
 function makeFilterActive() {
+  // getCurrentPage();
   getFilters(activeFilter.textContent.trim());
   addClass(activeFilter, 'exercises__filter-btn_active');
   addClass(activePagination, 'exercises__pagination-btn_active');
 }
 
+// Витягування текст контент кнопки фільтру
 function getFilterNameAndMakeActive(e) {
   setActiveItem(
     paginationList,
@@ -46,47 +50,96 @@ function getFilterNameAndMakeActive(e) {
     item.addEventListener('click', getCurrentPage);
   });
 
-  setActiveItem(filterFilterBtnsRefs, e.target, 'exercises__filter-btn_active');
+  setActiveItem(filterBtnsRefs, e.target, 'exercises__filter-btn_active');
 }
-console.log(activePagination.nextElementSibling);
-async function getFilters(filter, page = 1) {
-  apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
 
-  if (screen.width > 767) {
-    filterCardsListRef(filterCardsListRef, createFiltersCardsSkeleton(12));
-  }
+// Запит на бек
+async function getFilters(filter, page = 1) {
+  let data;
+  let dataLength;
+
+  filterBtnsRefs.forEach(btn => (btn.disabled = true));
+  paginationList.forEach(btn => (btn.disabled = false));
 
   try {
-    let data = await fetchFilter(page, 9, filter);
-
-    totalPages = data.totalPages;
-
     if (screen.width > 767) {
+      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(12));
+
       data = await fetchFilter(page, 12, filter);
       totalPages = data.totalPages;
-    }
+      // dataLength = data.results.length;
 
-    data.results.forEach(result => {
-      if (result.filter !== filter) {
-        // Notiflix.Notify.info('Ooops, this is the end😓');
-        // setActiveItem();
-        return;
+      // Перевірка яка сторінка
+      if (page >= totalPages && page === 1) {
+        document.addEventListener('scroll', notifyTheEnd);
       }
-      apendMarkup(filterCardsListRef, createFilterString(data.results));
-    });
+
+      if (page >= totalPages) {
+        // if (page === 1) return;
+        makePaginationItemsDisabled();
+      }
+      // document.removeEventListener('scroll', notifyTheEnd);
+    } else {
+      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
+      data = await fetchFilter(page, 9, filter);
+      // dataLength = data.results.length;
+
+      totalPages = data.totalPages;
+
+      if (page >= totalPages && page === 1) {
+        document.addEventListener('scroll', notifyTheEnd);
+      }
+
+      if (page >= totalPages) {
+        // if (page === 1) return;
+        makePaginationItemsDisabled();
+      }
+    }
+    apendMarkup(filterCardsListRef, createFilterString(data.results));
   } catch (err) {
-    filterCardsListRef.innerHTML = createFiltersCardsSkeleton(9);
+    apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
     console.log(err.message);
+  } finally {
+    filterBtnsRefs.forEach(btn => (btn.disabled = false));
   }
 }
 
+// Отримання поточної сторінки
 function getCurrentPage(e) {
   const page = e.target.textContent;
   getFilters(filterName, page);
   setActiveItem(paginationList, e.target, 'exercises__pagination-btn_active');
+}
 
-  if (page > totalPages) {
-    Notiflix.Notify.info('Sorry,this i');
-    return;
+function makePaginationItemsDisabled() {
+  // setTimeout(() => {
+  Notiflix.Notify.info('Sorry,this is the end 😭');
+  // }, 2000);
+  paginationList.forEach(btn => {
+    if (btn.classList.contains('exercises__pagination-btn_active')) return;
+
+    for (
+      let i = findActivePaginationIndex() + 1;
+      i < paginationList.length;
+      i++
+    ) {
+      paginationList[i].setAttribute('disabled', true);
+    }
+  });
+}
+
+function notifyTheEnd() {
+  if (!hasBeenCalled && document.documentElement.scrollTop > 900) {
+    makePaginationItemsDisabled();
+    hasBeenCalled = true;
   }
+}
+
+function findActivePaginationIndex() {
+  const arr = [...paginationList];
+  const activePageIndex = arr.findIndex(btn =>
+    btn.classList.contains('exercises__pagination-btn_active')
+  );
+
+  return activePageIndex;
 }

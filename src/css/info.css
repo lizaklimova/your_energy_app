@@ -35,6 +35,7 @@
   margin-bottom: 20px;
   padding: 20px;
   position: relative;
+  min-height: 150px;
 }
 
 .info__wrapper-title {
@@ -63,6 +64,7 @@
   margin-bottom: 20px;
 }
 .info__image {
+  min-height: 242px;
   border-radius: 12px;
 }
 .info__trhd-block {
@@ -112,6 +114,7 @@
 
   .info__image {
     width: 288px;
+    min-height: 249px;
   }
   .info__wrapper-title {
     font-size: 24px;
@@ -165,8 +168,6 @@
     justify-content: space-between;
   }
 
-  .info__nav {
-  }
   .container {
     display: flex;
     flex-direction: column;
@@ -180,6 +181,7 @@
     margin: 0;
   }
   .info__image {
+    min-height: 242px;
     width: 444px;
   }
   .info__trhd-block {
