@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 
-import { subscribe } from '../api.js';
-import { subscribeForm } from '../refs.js';
+import { subscribe } from './api.js';
+import { subscribeForm } from './components/refs.js';
 
 subscribeForm.addEventListener('submit', onSubmit);
 

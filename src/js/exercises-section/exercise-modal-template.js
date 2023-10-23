@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from './fn-helpers';
+import { capitalizeFirstLetter } from '../components/fn-helpers';
 
 export function renderExerciseModal({
   bodyPart,

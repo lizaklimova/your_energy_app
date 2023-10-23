@@ -1,4 +1,4 @@
-import { addClass, removeClass } from './components/classFunctions';
+import { addClass, removeClass } from './classFunctions';
 
 export function capitalizeFirstLetter(str) {
   return str.slice(0, 1).toUpperCase() + str.slice(1);
@@ -14,16 +14,16 @@ export function setActiveItem(arr, elem, cls) {
 
 export const insertHtml = (element, position, html) => {
   element.insertAdjacentHTML(position, html);
-}
+};
 
 export const apendMarkup = (element, html) => {
   element.innerHTML = html;
-}
+};
 
 export function replaceSpace(text) {
-  const words = text.trim().split(" ");
+  const words = text.trim().split(' ');
   if (words.length === 2) {
-    return words.join("%20");
+    return words.join('%20');
   } else {
     return text;
   }
