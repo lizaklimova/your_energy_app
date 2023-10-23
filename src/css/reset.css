@@ -12,6 +12,7 @@ body {
   color: #141414;
   background-color: #f4f4f4;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 h1,

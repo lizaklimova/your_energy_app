@@ -107,7 +107,7 @@
 }
 
 .exercises__filter-cards-list {
-  min-height: auto;
+  min-height: 50vh;
 }
 
 .exercises__filter-img-container {
@@ -352,9 +352,9 @@
     height: 242px;
   }
 
-  .exercises__filter-cards-list {
-    /* min-height: 1064px; */
-  }
+  /* .exercises__filter-cards-list {
+    min-height: 1064px;
+  } */
 }
 
 @keyframes animloader {

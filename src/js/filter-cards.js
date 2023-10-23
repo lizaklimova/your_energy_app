@@ -18,6 +18,7 @@ import Notiflix from 'notiflix';
 let filterName = '';
 let totalPages = null;
 let hasBeenCalled = false;
+let dataLength;
 
 window.addEventListener('load', makeFilterActive);
 filterListRef.addEventListener('click', getFilterNameAndMakeActive);
@@ -55,52 +56,63 @@ function getFilterNameAndMakeActive(e) {
 
 // Запит на бек
 async function getFilters(filter, page = 1) {
+  window.removeEventListener('scroll', notifyTheEnd);
   let data;
-  let dataLength;
 
   filterBtnsRefs.forEach(btn => (btn.disabled = true));
   paginationList.forEach(btn => (btn.disabled = false));
 
   try {
     if (screen.width > 767) {
-      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(12));
+      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(10));
 
       data = await fetchFilter(page, 12, filter);
       totalPages = data.totalPages;
-      // dataLength = data.results.length;
+      dataLength = data.results.length;
 
       // Перевірка яка сторінка
       if (page >= totalPages && page === 1) {
-        document.addEventListener('scroll', notifyTheEnd);
+        window.addEventListener('scroll', notifyTheEnd);
       }
 
       if (page >= totalPages) {
-        // if (page === 1) return;
         makePaginationItemsDisabled();
       }
-      // document.removeEventListener('scroll', notifyTheEnd);
     } else {
       apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
       data = await fetchFilter(page, 9, filter);
-      // dataLength = data.results.length;
+      data.results.forEach(result => {
+        if (result.filter !== filter) {
+          notifyTheEnd();
+          return;
+        }
+        return;
+      });
+
+      dataLength = data.results.length;
 
       totalPages = data.totalPages;
 
       if (page >= totalPages && page === 1) {
-        document.addEventListener('scroll', notifyTheEnd);
+        window.addEventListener('scroll', notifyTheEnd);
       }
 
       if (page >= totalPages) {
-        // if (page === 1) return;
         makePaginationItemsDisabled();
       }
     }
     apendMarkup(filterCardsListRef, createFilterString(data.results));
   } catch (err) {
+    if (screen.width > 767) {
+      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(12));
+    }
     apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
+
     console.log(err.message);
   } finally {
     filterBtnsRefs.forEach(btn => (btn.disabled = false));
+    if (filter === 'Body parts' && page === 1) return;
+    createSmoothScrollBottom();
   }
 }
 
@@ -112,9 +124,12 @@ function getCurrentPage(e) {
 }
 
 function makePaginationItemsDisabled() {
-  // setTimeout(() => {
-  Notiflix.Notify.info('Sorry,this is the end 😭');
-  // }, 2000);
+  let wasInfoShown = false;
+  if (document.documentElement.scrollTop > 1300 && !wasInfoShown) {
+    Notiflix.Notify.info('Sorry,this is the end 😭');
+    wasInfoShown = true;
+  }
+
   paginationList.forEach(btn => {
     if (btn.classList.contains('exercises__pagination-btn_active')) return;
 
@@ -129,7 +144,7 @@ function makePaginationItemsDisabled() {
 }
 
 function notifyTheEnd() {
-  if (!hasBeenCalled && document.documentElement.scrollTop > 900) {
+  if (!hasBeenCalled && document.documentElement.scrollTop > 1300) {
     makePaginationItemsDisabled();
     hasBeenCalled = true;
   }
@@ -142,4 +157,13 @@ function findActivePaginationIndex() {
   );
 
   return activePageIndex;
+}
+
+function createSmoothScrollBottom() {
+  const { height: cardHeight } =
+    filterCardsListRef.firstElementChild.getBoundingClientRect();
+  window.scrollBy({
+    top: cardHeight * 2.5,
+    behavior: 'smooth',
+  });
 }
