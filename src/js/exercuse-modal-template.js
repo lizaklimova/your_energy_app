@@ -82,5 +82,18 @@ export function renderExerciseModal({
               Give a rating
             </button>
             </li>
+
+              <li class="exercise-modal_item">
+              <button
+                type="button"
+                class="exercise-modal-button__remove">
+                Remove from favorites
+                <span>
+                  <svg class="exercise-modal-button__remove-icon">
+                      <use href="./img/icons.svg#icon-trash" width="20" height="20"></use>
+                  </svg>
+                </span>
+              </button>
+            </li>
           </ul>`;
 }
