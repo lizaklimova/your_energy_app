@@ -24,3 +24,19 @@ function smoothScrollToTop() {
     window.scrollTo(0, currentScroll - currentScroll / 30);
   }
 }
+
+export function createSmoothScrollBottom(elementWidth, direction) {
+  const { height: cardHeight } = elementWidth;
+  const scrollAmount = cardHeight * direction;
+  window.scrollBy({
+    top: scrollAmount,
+    behavior: 'smooth',
+  });
+}
+
+export function createSmoothScrollUp(elementToScrollTo) {
+  elementToScrollTo.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+}
