@@ -8,4 +8,4 @@
    ${t}
   </p>
   <p class="info__wrapper-author">${e}</p>
-</div>`;nn.forEach(r=>{r.innerHTML=n})}function sn({author:e,quote:t}){const n={author:e,quote:t,date:new Date().getDate()};try{const r=JSON.stringify(n);localStorage.setItem(qe,r)}catch(r){console.log(r.message)}}function on(){try{const e=localStorage.getItem(qe);if(e){let t=JSON.parse(e),n=new Date().getDate();t.date!==n&&ke()}}catch(e){console.log(e.message)}}on();const wn=(e,t)=>{e.classList.add(t)},En=(e,t)=>{e.classList.remove(t)};export{wn as a,dn as b,hn as c,pn as d,fn as e,bn as f,an as g,yn as h,un as i,cn as j,mn as p,En as r,ln as s};
+</div>`;nn.forEach(r=>{r.innerHTML=n})}function sn({author:e,quote:t}){const n={author:e,quote:t,date:new Date().getDate()};try{const r=JSON.stringify(n);localStorage.setItem(qe,r)}catch(r){console.log(r.message)}}function on(){try{const e=localStorage.getItem(qe);if(e){let t=JSON.parse(e),n=new Date().getDate();t.date!==n&&ke()}}catch(e){console.log(e.message)}}on();const wn=(e,t)=>{e.classList.add(t)},En=(e,t)=>{e.classList.remove(t)};export{wn as a,dn as b,hn as c,fn as d,pn as e,bn as f,an as g,yn as h,un as i,cn as j,mn as p,En as r,ln as s};
