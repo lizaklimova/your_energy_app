@@ -2,7 +2,7 @@ import { fetchFilter } from './api';
 import {
   createFilterString,
   createFiltersCardsSkeleton,
-} from './components/filter-card-template';
+} from './filter-card-template';
 import {
   filterCardsListRef,
   filterListRef,
@@ -152,7 +152,7 @@ function createSmoothScrollBottom() {
   const { height: cardHeight } =
     filterCardsListRef.firstElementChild.getBoundingClientRect();
   window.scrollBy({
-    top: cardHeight * 2.5,
+    top: cardHeight,
     behavior: 'smooth',
   });
 }
