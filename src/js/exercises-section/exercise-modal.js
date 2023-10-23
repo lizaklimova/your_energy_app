@@ -1,4 +1,4 @@
-import { fetchExercise } from './api';
+import { fetchExercise } from '../api';
 import { renderExerciseModal } from './exercise-modal-template';
 
 const refs = {

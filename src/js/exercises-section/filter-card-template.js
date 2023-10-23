@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from '../fn-helpers';
+import { capitalizeFirstLetter } from '../components/fn-helpers';
 
 // ! Створення картки по фільтрам
 export function createFilterString(arr) {
@@ -28,7 +28,7 @@ export function createFiltersCardsSkeleton(amount) {
   let skeleton = '';
   for (let i = 0; i < amount; i++) {
     skeleton +=
-      '<li class="exercises__skeleton-loader"><span class="skeleton-loader"><svg class="exercises__image-skeleton" width="30" height="30"><use href="./img/icons.svg#img-skeleton"></use></svg><span></span></span></li > ';
+      '<li class="exercises__skeleton-loader"><span class="skeleton-loader"><svg class="exercises__image-skeleton"><use href="./img/icons.svg#img"></use></svg><span></span></span></li>';
   }
   return skeleton;
 }
