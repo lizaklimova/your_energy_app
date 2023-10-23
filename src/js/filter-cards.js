@@ -26,15 +26,14 @@ paginationList.forEach(el => {
   el.addEventListener('click', getCurrentPage);
 });
 
-// Підкреслення активного фільтру
+//~ Підкреслення активного фільтру
 function makeFilterActive() {
-  // getCurrentPage();
   getFilters(activeFilter.textContent.trim());
   addClass(activeFilter, 'exercises__filter-btn_active');
   addClass(activePagination, 'exercises__pagination-btn_active');
 }
 
-// Витягування текст контент кнопки фільтру
+//~ Витягування текст контент кнопки фільтру
 function getFilterNameAndMakeActive(e) {
   setActiveItem(
     paginationList,
@@ -46,7 +45,7 @@ function getFilterNameAndMakeActive(e) {
   filterName = e.target.textContent.trim();
 
   getFilters(filterName);
-
+  createSmoothScrollBottom();
   paginationList.forEach(item => {
     item.addEventListener('click', getCurrentPage);
   });
@@ -71,9 +70,9 @@ async function getFilters(filter, page = 1) {
       dataLength = data.results.length;
 
       // Перевірка яка сторінка
-      if (page >= totalPages && page === 1) {
-        window.addEventListener('scroll', notifyTheEnd);
-      }
+      // if (page >= totalPages && page === 1) {
+      //   window.addEventListener('scroll', notifyTheEnd);
+      // }
 
       if (page >= totalPages) {
         makePaginationItemsDisabled();
@@ -93,9 +92,9 @@ async function getFilters(filter, page = 1) {
 
       totalPages = data.totalPages;
 
-      if (page >= totalPages && page === 1) {
-        window.addEventListener('scroll', notifyTheEnd);
-      }
+      // if (page >= totalPages && page === 1) {
+      //   window.addEventListener('scroll', notifyTheEnd);
+      // }
 
       if (page >= totalPages) {
         makePaginationItemsDisabled();
@@ -112,7 +111,6 @@ async function getFilters(filter, page = 1) {
   } finally {
     filterBtnsRefs.forEach(btn => (btn.disabled = false));
     if (filter === 'Body parts' && page === 1) return;
-    createSmoothScrollBottom();
   }
 }
 
@@ -144,6 +142,7 @@ function makePaginationItemsDisabled() {
 }
 
 function notifyTheEnd() {
+  let hasBeenCalled = false;
   if (!hasBeenCalled && document.documentElement.scrollTop > 1300) {
     makePaginationItemsDisabled();
     hasBeenCalled = true;
