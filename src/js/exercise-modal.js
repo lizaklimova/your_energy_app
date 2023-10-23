@@ -1,5 +1,5 @@
 import { fetchExercise } from './api';
-import { renderExerciseModal } from './exercuse-modal-template';
+import { renderExerciseModal } from './exercise-modal-template';
 
 const refs = {
   openModalBtn: document.querySelector('[data-exmod-open]'),

@@ -210,7 +210,7 @@
 
 .exercise-modal-button {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 8px;
   letter-spacing: -0.02em;
 }
@@ -236,20 +236,28 @@
 @media screen and (min-width: 375px) {
   .exercise-modal-button__favorite {
     width: 167px;
+    width: 157px;
     gap: 6px;
   }
+}
+
+.exercise-modal-button__rating {
+  width: 100px;
 }
 
 @media screen and (min-width: 768px) {
   .exercise-modal-button__favorite,
   .exercise-modal-button__rating {
+    width: 167px;
     font-size: 16px;
     transition: all var(--transition);
   }
 }
 
-.exercise-modal-button__rating {
-  width: 110px;
+@media screen and (min-width: 768px) {
+  .exercise-modal-button__rating {
+    width: 122px;
+  }
 }
 
 .exercise-modal-button__favorite:hover,
@@ -268,7 +276,7 @@
 }
 
 .exercise-modal-button__rating {
-  width: 122px;
+  width: 133px;
   background-color: transparent;
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
@@ -290,6 +298,7 @@
 }
 
 .exercise-modal-button__remove {
+  max-height: 42px;
   border-radius: 30px;
   border: 1px solid transparent;
   letter-spacing: -0.02em;
@@ -302,16 +311,15 @@
   height: 48px;
   margin-left: 30px;
 }
-
-.exercise-modal-button__remove:hover .exercise-modal-button__remove-icon,
-.exercise-modal-button__remove:focus .exercise-modal-button__remove-icon {
-  fill: transparent;
-  stroke: var(--accent-color);
-}
-
 .exercise-modal-button__remove-icon {
   width: 18px;
   height: 18px;
   stroke: var(--dark-color);
   fill: transparent;
+}
+
+.exercise-modal-button__remove:hover .exercise-modal-button__remove-icon,
+.exercise-modal-button__remove:focus .exercise-modal-button__remove-icon {
+  fill: transparent;
+  stroke: var(--accent-color);
 }
