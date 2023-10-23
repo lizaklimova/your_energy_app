@@ -86,7 +86,7 @@ export function renderExerciseModal({
               <li class="exercise-modal_item">
               <button
                 type="button"
-                class="exercise-modal-button__remove is-hidden">
+                class="exercise-modal-button__remove">
                 Remove from favorites
                 <span>
                   <svg class="exercise-modal-button__remove-icon">
