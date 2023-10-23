@@ -94,15 +94,8 @@
                     </path>
                 </symbol>
 
-
-
-
-
             </defs>
         </svg>
-
-
-
 
         <symbol id="icon-header-menu" viewBox="0 0 32 32">
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2"
@@ -126,3 +119,44 @@
     </defs>
 
 </svg>
+
+<!-- header-menu -->
+
+<symbol id="icon-menu-01" viewBox="0 0 32 32">
+<path fill="#242424" stroke="#242424" style="stroke: #242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M4 16h24M4 8h24M4 24h24"></path>
+</symbol>
+
+<!-- scroll-up -->
+
+<symbol id="icon-arrow-top" viewBox="0 0 31 32">
+<path fill="#f4f4f4" style="fill: var(--color1, #f4f4f4)" d="M16.413 7.652v17.019h-1.811v-17.019l-8.509 8.509-1.28-1.28 10.693-10.696 10.696 10.695-1.28 1.28-8.51-8.509z"></path>
+</symbol>
+
+<symbol id="icon-Ellipse" viewBox="0 0 32 32">
+<path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+</symbol>
+
+
+<symbol id="icon-header-menu" viewBox="0 0 32 32">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2"
+        d="M28 13.333h-24M28 8h-24M28 18.667h-24M28 24h-24"></path>
+</symbol>
+
+<!-- heart -->
+<symbol id="icon-heart" viewBox="0 0 32 32">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4"
+        d="M27.787 6.147c-0.681-0.681-1.49-1.222-2.38-1.591s-1.844-0.559-2.807-0.559c-0.963 0-1.917 0.19-2.807 0.559s-1.699 0.909-2.38 1.591l-1.413 1.413-1.413-1.413c-1.376-1.376-3.241-2.148-5.187-2.148s-3.811 0.773-5.187 2.148c-1.376 1.376-2.148 3.241-2.148 5.187s0.773 3.811 2.148 5.187l11.787 11.787 11.787-11.787c0.681-0.681 1.222-1.49 1.591-2.38s0.559-1.844 0.559-2.807c0-0.963-0.19-1.917-0.559-2.807s-0.909-1.699-1.591-2.38z">
+    </path>
+</symbol>
+
+
+<symbol id="img-skeleton" viewBox="0 0 32 32">
+<path d="M29.996 4c0.001 0.001 0.003 0.002 0.004 0.004v23.993c-0.001 0.001-0.002 0.003-0.004 0.004h-27.993c-0.001-0.001-0.003-0.002-0.004-0.004v-23.993c0.001-0.001 0.002-0.003 0.004-0.004h27.993zM30 2h-28c-1.1 0-2 0.9-2 2v24c0 1.1 0.9 2 2 2h28c1.1 0 2-0.9 2-2v-24c0-1.1-0.9-2-2-2v0z"></path>
+<path d="M26 9c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"></path>
+<path d="M28 26h-24v-4l7-12 8 10h2l7-6z"></path>
+</symbol>
+
+    </defs>
+</svg>
+
+

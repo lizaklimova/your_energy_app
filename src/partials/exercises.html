@@ -21,18 +21,27 @@
     </div>
 
     <div class="backdrop is-hidden exercises__loader">
-      <span class="loader is-hidden"></span>
+      <span class="loader"> </span>
     </div>
 
     <ul class="exercises__filter-cards-list"></ul>
     <ul class="exercises__cards-list"></ul>
 
     <ul class="exercises__pagination">
-      <li class="exercises__pagination-item exercises__pagination-item_active">
-        1
+      <li class="exercises__pagination-item">
+        <button
+          type="button"
+          class="exercises__pagination-btn exercises__pagination-btn_active"
+        >
+          1
+        </button>
       </li>
-      <li class="exercises__pagination-item">2</li>
-      <li class="exercises__pagination-item">3</li>
+      <li class="exercises__pagination-item">
+        <button type="button" class="exercises__pagination-btn">2</button>
+      </li>
+      <li class="exercises__pagination-item">
+        <button type="button" class="exercises__pagination-btn">3</button>
+      </li>
     </ul>
   </div>
 </section>
