@@ -17,7 +17,6 @@
   background-repeat: no-repeat;
   background-size: 75px 175px, 80% 45px;
   background-position: -185px 0, center center;
-  box-sizing: border-box;
 }
 
 .skeleton-loader::before {
@@ -38,7 +37,7 @@
 }
 
 .exercises__image-skeleton {
-  fill: #ddd;
+  fill: #d4d4d4;
   position: absolute;
   top: 15px;
   left: 15px;
@@ -57,6 +56,24 @@
   align-items: center;
 }
 
+.exercises__breadcrumbs-wrap {
+  display: flex;
+}
+
+.exersises__breadcrumb-item {
+  color: rgba(36, 36, 36, 0.5);
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.4px;
+}
+
+.exercises__breadcrumbs-slash {
+  color: var(--dark-color);
+
+  font-size: 28px;
+  line-height: 1.36;
+  letter-spacing: -0.56px;
+}
 .exercises__title {
   margin-bottom: 20px;
   color: var(--dark-color);

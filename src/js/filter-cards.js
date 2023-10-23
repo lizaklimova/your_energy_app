@@ -10,9 +10,11 @@ import {
   activeFilter,
   paginationList,
   activePagination,
+  breadCrumbsList,
+  breadCrumbsSlash,
 } from './refs';
 import { addClass, removeClass } from './components/classFunctions';
-import { setActiveItem, apendMarkup } from './fn-helpers';
+import { setActiveItem, apendMarkup, insertHtml } from './fn-helpers';
 import Notiflix from 'notiflix';
 // ******************************************************************
 let filterName = '';
@@ -44,6 +46,12 @@ function getFilterNameAndMakeActive(e) {
   if (e.target.tagName.toUpperCase() !== 'BUTTON') return;
   filterName = e.target.textContent.trim();
 
+  // insertHtml(
+  //   breadCrumbsList,
+  //   'beforeend',
+  //   createBreadCrumbs(e.target.textContent)
+  // );
+
   getFilters(filterName);
   createSmoothScrollBottom();
   paginationList.forEach(item => {
@@ -53,7 +61,11 @@ function getFilterNameAndMakeActive(e) {
   setActiveItem(filterBtnsRefs, e.target, 'exercises__filter-btn_active');
 }
 
-// Запит на бек
+// function createBreadCrumbs(filter) {
+//   return `<li class='exersises__breadcrumb-item'>${filter}</li>`;
+// }
+
+//~ Запит на бек
 async function getFilters(filter, page = 1) {
   window.removeEventListener('scroll', notifyTheEnd);
   let data;
@@ -114,7 +126,7 @@ async function getFilters(filter, page = 1) {
   }
 }
 
-// Отримання поточної сторінки
+//~ Отримання поточної сторінки
 function getCurrentPage(e) {
   const page = e.target.textContent;
   getFilters(filterName, page);
