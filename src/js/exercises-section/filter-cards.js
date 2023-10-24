@@ -17,8 +17,10 @@ import {
   activeFilter,
   paginationList,
   activePagination,
+  breadCrumbsList,
+  breadCrumbsSlash,
 } from '../components/refs';
-import { createSmoothScrollBottom, createSmoothScrollUp } from '../scrolls';
+import {searchRefs} from '../exercises-cards'
 
 // ******************************************************************
 let filterName = '';
@@ -59,7 +61,11 @@ function getFilterNameAndMakeActive(e) {
   setActiveItem(filterBtnsRefs, e.target, 'exercises__filter-btn_active');
 }
 
-//~ Запит на бек
+// function createBreadCrumbs(filter) {
+//   return `<li class='exersises__breadcrumb-item'>${filter}</li>`;
+// }
+
+// ~ Запит на бек
 async function getFilters(filter, page = 1) {
   let data;
 
@@ -117,6 +123,7 @@ async function getFilters(filter, page = 1) {
 
     console.log(err.message);
   } finally {
+    searchRefs();
     filterBtnsRefs.forEach(btn => (btn.disabled = false));
     if (filter === 'Body parts' && page === 1) return;
   }
@@ -164,3 +171,13 @@ function findActivePaginationIndex() {
 
   return activePageIndex;
 }
+
+function createSmoothScrollBottom() {
+  const { height: cardHeight } =
+    filterCardsListRef.firstElementChild.getBoundingClientRect();
+  window.scrollBy({
+    top: cardHeight * 2.5,
+    behavior: 'smooth',
+  });
+}
+

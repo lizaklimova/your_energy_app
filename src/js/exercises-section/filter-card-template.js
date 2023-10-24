@@ -4,9 +4,9 @@ import { capitalizeFirstLetter } from '../components/fn-helpers';
 export function createFilterString(arr) {
   const filterCardString = arr
     .map(({ imgURL, filter, name }) => {
-      return `<li class="exercises__filter-card">
+      return `<li class="exercises__filter-card" data-filter="${filter}" data-name="${name}">
 
-   <div class="exercises__filter-img-container" style=" background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), 
+   <div class="exercises__filter-img-container"  style=" background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), 
               url('${imgURL}') ;
                background-size: cover;
 background-position:center;
@@ -32,3 +32,4 @@ export function createFiltersCardsSkeleton(amount) {
   }
   return skeleton;
 }
+
