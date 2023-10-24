@@ -8,7 +8,7 @@ import {
 } from './filter-card-template';
 import { filterCardsListRef, activeFilter } from '../components/refs';
 
-// ******************************************************************
+// ************************************************************
 
 window.addEventListener('load', () => {
   addClass(activeFilter, 'exercises__filter-btn_active');
