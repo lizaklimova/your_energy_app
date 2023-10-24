@@ -95,7 +95,7 @@
 }
 /************ 768 ************/
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .info__section {
     margin: 0;
     padding-bottom: 100px;
@@ -151,7 +151,7 @@
     line-height: 1.33;
   }
 }
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .info__exercise {
     display: block;
     font-size: 44px;

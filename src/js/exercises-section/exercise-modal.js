@@ -61,14 +61,12 @@ function renderCard(data) {
 
   addToFavoritesButton.addEventListener('click', function () {
     addToFavoritesButton.classList.add('is-hidden');
-    giveARatingButton.classList.add('is-hidden');
     removeFromFavoritesButton.classList.remove('is-hidden');
   });
 
   removeFromFavoritesButton.addEventListener('click', function () {
-    addToFavoritesButton.classList.remove('is-hidden');
-    giveARatingButton.classList.remove('is-hidden');
     removeFromFavoritesButton.classList.add('is-hidden');
+    addToFavoritesButton.classList.remove('is-hidden');
   });
 
   refs.modal.classList.remove('is-hidden');
