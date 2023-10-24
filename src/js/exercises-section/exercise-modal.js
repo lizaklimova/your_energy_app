@@ -60,7 +60,7 @@ function renderCard(data) {
   removeFromFavoritesButton.classList.add('is-hidden');
 
   addToFavoritesButton.addEventListener('click', function () {
-    addToFavoritesButton.classList.add('is-hidden');
+    addToFavoritesButton.style.display = 'none';
     removeFromFavoritesButton.classList.remove('is-hidden');
   });
 
