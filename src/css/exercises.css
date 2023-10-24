@@ -56,24 +56,6 @@
   align-items: center;
 }
 
-.exercises__breadcrumbs-wrap {
-  display: flex;
-}
-
-.exersises__breadcrumb-item {
-  color: rgba(36, 36, 36, 0.5);
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: -0.4px;
-}
-
-.exercises__breadcrumbs-slash {
-  color: var(--dark-color);
-
-  font-size: 28px;
-  line-height: 1.36;
-  letter-spacing: -0.56px;
-}
 .exercises__title {
   margin-bottom: 20px;
   color: var(--dark-color);
@@ -124,7 +106,7 @@
 }
 
 .exercises__filter-cards-list {
-  min-height: 50vh;
+  min-height: 500px;
 }
 
 .exercises__filter-img-container {
@@ -326,7 +308,6 @@
     column-gap: 15px;
     row-gap: 32px;
     flex-wrap: wrap;
-    /* min-height: 1028px; */
   }
 
   .exercises__filter-card {

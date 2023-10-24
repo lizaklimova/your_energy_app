@@ -1,8 +1,15 @@
-import { fetchFilter } from './api';
+import Notiflix from 'notiflix';
+import { fetchFilter } from '../api';
+import { addClass, removeClass } from '../components/classFunctions';
+import {
+  setActiveItem,
+  apendMarkup,
+  insertHtml,
+} from '../components/fn-helpers';
 import {
   createFilterString,
   createFiltersCardsSkeleton,
-} from './components/filter-card-template';
+} from './filter-card-template';
 import {
   filterCardsListRef,
   filterListRef,
@@ -12,16 +19,18 @@ import {
   activePagination,
   breadCrumbsList,
   breadCrumbsSlash,
-} from './refs';
+} from '../components/refs';
 import { addClass, removeClass } from './components/classFunctions';
 import { setActiveItem, apendMarkup, insertHtml } from './fn-helpers';
 import Notiflix from 'notiflix';
 import {searchRefs} from './exercises-cards'
+
+import { createSmoothScrollBottom, createSmoothScrollUp } from '../scrolls';
 // ******************************************************************
 let filterName = '';
 let totalPages = null;
-let hasBeenCalled = false;
 let dataLength;
+let firstElementOfCards;
 
 window.addEventListener('load', makeFilterActive);
 filterListRef.addEventListener('click', getFilterNameAndMakeActive);
@@ -47,17 +56,11 @@ function getFilterNameAndMakeActive(e) {
   if (e.target.tagName.toUpperCase() !== 'BUTTON') return;
   filterName = e.target.textContent.trim();
 
-  // insertHtml(
-  //   breadCrumbsList,
-  //   'beforeend',
-  //   createBreadCrumbs(e.target.textContent)
-  // );
-
   getFilters(filterName);
-  createSmoothScrollBottom();
-  paginationList.forEach(item => {
-    item.addEventListener('click', getCurrentPage);
-  });
+  createSmoothScrollBottom(
+    filterCardsListRef.firstElementChild.getBoundingClientRect(),
+    1
+  );
 
   setActiveItem(filterBtnsRefs, e.target, 'exercises__filter-btn_active');
 }
@@ -68,7 +71,6 @@ function getFilterNameAndMakeActive(e) {
 
 // ~ Запит на бек
 async function getFilters(filter, page = 1) {
-  window.removeEventListener('scroll', notifyTheEnd);
   let data;
 
   filterBtnsRefs.forEach(btn => (btn.disabled = true));
@@ -82,38 +84,41 @@ async function getFilters(filter, page = 1) {
       totalPages = data.totalPages;
       dataLength = data.results.length;
 
-      // Перевірка яка сторінка
-      // if (page >= totalPages && page === 1) {
-      //   window.addEventListener('scroll', notifyTheEnd);
-      // }
-
       if (page >= totalPages) {
         makePaginationItemsDisabled();
       }
-    } else {
-      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
-      data = await fetchFilter(page, 9, filter);
+
       data.results.forEach(result => {
-        if (result.filter !== filter) {
-          notifyTheEnd();
+        //!!!!!!!!!!!!!!!!!!!
+        if (result.filter === filter) {
+          apendMarkup(filterCardsListRef, createFilterString(data.results));
+        } else {
+          makePaginationItemsDisabled();
           return;
         }
-        return;
       });
+    } else {
+      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
 
+      data = await fetchFilter(page, 9, filter);
       dataLength = data.results.length;
-
       totalPages = data.totalPages;
-
-      // if (page >= totalPages && page === 1) {
-      //   window.addEventListener('scroll', notifyTheEnd);
-      // }
 
       if (page >= totalPages) {
         makePaginationItemsDisabled();
+        return;
       }
+
+      data.results.forEach(result => {
+        //!!!!!!!!!!!!!!!!!!!
+        if (result.filter === filter) {
+          apendMarkup(filterCardsListRef, createFilterString(data.results));
+        } else {
+          makePaginationItemsDisabled();
+          return;
+        }
+      });
     }
-    apendMarkup(filterCardsListRef, createFilterString(data.results));
   } catch (err) {
     if (screen.width > 767) {
       apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(12));
@@ -132,15 +137,14 @@ async function getFilters(filter, page = 1) {
 function getCurrentPage(e) {
   const page = e.target.textContent;
   getFilters(filterName, page);
+
+  createSmoothScrollUp(filterListRef);
+
   setActiveItem(paginationList, e.target, 'exercises__pagination-btn_active');
 }
 
 function makePaginationItemsDisabled() {
-  let wasInfoShown = false;
-  if (document.documentElement.scrollTop > 1300 && !wasInfoShown) {
-    Notiflix.Notify.info('Sorry,this is the end 😭');
-    wasInfoShown = true;
-  }
+  notifyTheEnd();
 
   paginationList.forEach(btn => {
     if (btn.classList.contains('exercises__pagination-btn_active')) return;
@@ -157,8 +161,8 @@ function makePaginationItemsDisabled() {
 
 function notifyTheEnd() {
   let hasBeenCalled = false;
-  if (!hasBeenCalled && document.documentElement.scrollTop > 1300) {
-    makePaginationItemsDisabled();
+  if (!hasBeenCalled && document.documentElement.scrollTop > 1000) {
+    Notiflix.Notify.info('Sorry,this is the end 😭');
     hasBeenCalled = true;
   }
 }
