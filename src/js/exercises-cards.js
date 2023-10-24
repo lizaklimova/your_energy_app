@@ -28,18 +28,15 @@ function minimiseFirstLetter(str) {
 
 export const searchRefs = () => {
     const imgClick = document.querySelectorAll('.exercises__filter-card');
-console.log(imgClick);
 imgClick.forEach(needBtn => {
     needBtn.addEventListener('click', exercisesCard);
-    console.log(needBtn);
+
 })
 }
  const exerciseCardListRef = document.querySelector('.exercises__cards-list');
 
  const exercisesCard = (e) => {
      const name = e.currentTarget.dataset;
-     console.log(replaceSpace(name.name));
-     console.log(minimiseFirstLetter(name.filter));
      let page = 1;
      let perPage = 10;
      fetchCards(page, perPage, minimiseFirstLetter(name.filter), replaceSpace(name.name)).then(data => {
@@ -47,12 +44,7 @@ imgClick.forEach(needBtn => {
          removeClass(filterCardsListRef, 'exercises__filter-cards-list');
          apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
           exerciseCardListRef.innerHTML= createCardsString(data.results)
-       
-
-         console.log(data);
      }).catch(er => er);
-
-     console.log('asdx');
 }
 
 
