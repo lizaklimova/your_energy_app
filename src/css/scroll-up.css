@@ -1,0 +1,68 @@
+.button-top {
+  width: 40px;
+  height: 40px;
+  background: var(--dark-color);
+  opacity: 0.9;
+  border-radius: 50%;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 99;
+  cursor: pointer;
+  display: none;
+  border: 1px solid var(--white-color);
+  transform: perspective(1px) translateZ(0);
+}
+
+.button-top:hover,
+.button-top:focus,
+.button-top:active {
+  animation-name: hvr-pulse;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(-1px 1px 5px rgb(4, 66, 10));
+}
+
+.button-top-arrow_position {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .button-top {
+    width: 80px;
+    height: 80px;
+  }
+
+  .button-top-arrow_position {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .button-top {
+    width: 100px;
+    height: 100px;
+  }
+
+  .button-top-arrow_position {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@keyframes hvr-pulse {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+}

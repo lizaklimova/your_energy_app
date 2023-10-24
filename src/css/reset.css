@@ -12,6 +12,7 @@ body {
   color: #141414;
   background-color: #f4f4f4;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -28,7 +29,7 @@ ul,
 ol {
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
 }
 
 a {

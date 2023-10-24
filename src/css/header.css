@@ -4,25 +4,32 @@
   justify-content: space-between;
 }
 
+.header__logo:hover {
+  animation-name: hvr-pulse;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: drop-shadow(-1px 1px 5px rgb(9, 129, 21));
+}
+
 .header__button-open {
   background: transparent;
 }
 
-@media screen and (min-width: 375px) {
-  .header__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 20px;
-  }
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
 
-  .header__menu {
-    display: none;
-  }
+.header__menu {
+  display: none;
+}
 
-  .header__soc {
-    display: none;
-  }
+.header__soc {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {

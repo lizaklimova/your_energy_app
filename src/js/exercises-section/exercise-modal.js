@@ -1,7 +1,5 @@
-import axios from 'axios';
-
-import { fetchExercise } from './api';
-import { renderExerciseModal } from './exercuse-modal-template';
+import { fetchExercise } from '../api';
+import { renderExerciseModal } from './exercise-modal-template';
 
 const refs = {
   openModalBtn: document.querySelector('[data-exmod-open]'),
@@ -9,6 +7,7 @@ const refs = {
   modal: document.querySelector('[data-exmodal]'),
   modalContentContainer: document.querySelector('.exercise-modal__content'),
 };
+
 const scrollController = {
   scrollPosition: 0,
   disabledScroll() {
@@ -30,6 +29,7 @@ const scrollController = {
     document.documentElement.style.scrollBehavior = '';
   },
 };
+
 refs.openModalBtn.addEventListener('click', handleModalOpen);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
@@ -39,13 +39,36 @@ async function handleModalOpen() {
     renderCard(data);
     scrollController.disabledScroll();
   } catch (error) {
-    console.error('error.message');
+    console.error(error.message);
   }
 }
 
 function renderCard(data) {
   const markup = renderExerciseModal(data);
   refs.modalContentContainer.innerHTML = markup;
+
+  const addToFavoritesButton = document.querySelector(
+    '.exercise-modal-button__favorite'
+  );
+  const giveARatingButton = document.querySelector(
+    '.exercise-modal-button__rating'
+  );
+  const removeFromFavoritesButton = document.querySelector(
+    '.exercise-modal-button__remove'
+  );
+
+  removeFromFavoritesButton.classList.add('is-hidden');
+
+  addToFavoritesButton.addEventListener('click', function () {
+    addToFavoritesButton.classList.add('is-hidden');
+    removeFromFavoritesButton.classList.remove('is-hidden');
+  });
+
+  removeFromFavoritesButton.addEventListener('click', function () {
+    removeFromFavoritesButton.classList.add('is-hidden');
+    addToFavoritesButton.classList.remove('is-hidden');
+  });
+
   refs.modal.classList.remove('is-hidden');
   document.addEventListener('keydown', closeModalOnEsc);
 }

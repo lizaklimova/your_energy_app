@@ -1,5 +1,5 @@
 import { fetchQuote } from './api';
-import { quoteContainer } from './refs';
+import { quoteContainer } from './components/refs';
 
 const LOCAL_STORAGE_KEY = 'quote';
 getQuote();
