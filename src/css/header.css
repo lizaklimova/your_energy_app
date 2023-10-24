@@ -3,7 +3,12 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.darkmode .header__logo {
+  fill: #fff;
+}
+.darkmode .header__button-open {
+  background: #fff;
+}
 .header__button-open {
   background: transparent;
 }
@@ -47,7 +52,12 @@
     border-radius: 60px;
     background: var(--dark-color);
   }
-
+  .darkmode .header__menu {
+    background-color: var(--accent-color);
+  }
+  .darkmode .header__home {
+    color: var(--dark-color);
+  }
   .header__home {
     min-width: 66px;
     height: 36px;

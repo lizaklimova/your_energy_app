@@ -79,6 +79,9 @@ body.darkmode {
 .hero__header-helper {
   padding-left: 40px;
 }
+.darkmode .hero__text {
+  color: var(--ligth-color);
+}
 
 .hero__text {
   color: var(--dark-color);
@@ -96,12 +99,15 @@ body.darkmode {
   display: flex;
   margin-top: 20px;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .hero__block-item:not(:last-child) {
   margin-right: 6px;
 }
-
+.darkmode .hero__block-div {
+  border-color: 1px solid var(--ligth-color);
+}
 .hero__block-div {
   padding: 4px 16px;
   border-radius: 30px;
