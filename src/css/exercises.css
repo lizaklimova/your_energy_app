@@ -378,18 +378,12 @@
   transition: 0.8s;
 }
 
-.exercises__filter-search-input:hover, 
-.exercises__filter-search-input:focus {
-  border: 1px solid black;
-  transform:scale(1.02);
-  transition: .5s;
-}
-
+.exercises__filter-search-input:hover,
 .exercises__filter-search-input:focus {
   outline: 1.5px solid var(--dark-color);
 }
 
-.exercises__form-submit-icon {
+.exercises__form-submit-btn {
   position: absolute;
   background: transparent;
   border: none;
@@ -397,23 +391,14 @@
   transform: translateY(-50%);
   right: 15px;
   padding: 0;
+}
+.exercises__form-submit-icon {
   stroke: var(--dark-color);
   fill: transparent;
   width: 18px;
   height: 18px;
-  background-image: url('./img/icons.svg#modal-close');
 }
 
-.exercises__form-submit-btn-icon {
-}
-#search-input::-webkit-search-cancel-button {
-  /* Приховати стандартний хрестик для WebKit (Chrome, Safari) */
-  display: none;
-}
-
-#search-input::-webkit-search-clear-button {
-  display: none; /* Приховати стандартний хрестик для WebKit (Chrome, Safari) */
-}
 .exercises__form-reset-btn {
   position: absolute;
   background: transparent;
@@ -426,6 +411,7 @@
 
 .exercises__form-reset-btn-icon {
   stroke: var(--dark-color);
+  fill: transparent;
 }
 
 @media (min-width: 768px) {
