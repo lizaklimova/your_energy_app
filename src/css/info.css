@@ -3,6 +3,7 @@
   height: 48px;
   display: inline-block;
   position: relative;
+  display: none;
 }
 .loader::after,
 .loader::before {
@@ -106,6 +107,12 @@
 /************ 768 ************/
 
 @media (min-width: 768px) {
+  .js {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 268px;
+  }
   .info__section {
     padding-top: 64px;
     margin: 0;
