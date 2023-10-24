@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const buttonDown = document.querySelector('.info__button-down');
   const mobileMediaQuery = window.matchMedia('(max-width: 767px)');
   const deskMediaQuery = window.matchMedia('(max-width: 1439px)');
+
   let isTextExpanded = false;
   let originalText = additionalText.textContent;
   let maxLengthMobile = 210; // Максимальная длина текста на мобильных устройствах
