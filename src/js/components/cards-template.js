@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from '../fn-helpers';
+import { capitalizeFirstLetter } from '../components/fn-helpers';
 
 function returnMarkup() {
   return `<li class="exercises__item-card">

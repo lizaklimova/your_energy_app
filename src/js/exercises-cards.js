@@ -1,5 +1,5 @@
-import {filterCardsListRef} from './refs'
-import { apendMarkup, insertHtml } from './fn-helpers'
+import {filterCardsListRef} from './components/refs'
+import { apendMarkup, insertHtml } from './components/fn-helpers'
 import { fetchCards } from './api'
 import { addClass, removeClass } from './components/classFunctions'
 import {createCardsSkeleton, createCardsString} from './components/cards-template'

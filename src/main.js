@@ -7,7 +7,7 @@ import './js/components/fn-helpers';
 import './js/exercises-section/exercise-modal';
 import './js/exercises-section/exercise-modal-template';
 import './js/notiflix';
-import './js/scroll-up';
+// import './js/scroll-up';
 import './js/exercises-cards';
 import './js/scrolls';
 import './js/info';

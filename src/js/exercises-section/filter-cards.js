@@ -20,12 +20,8 @@ import {
   breadCrumbsList,
   breadCrumbsSlash,
 } from '../components/refs';
-import { addClass, removeClass } from './components/classFunctions';
-import { setActiveItem, apendMarkup, insertHtml } from './fn-helpers';
-import Notiflix from 'notiflix';
-import {searchRefs} from './exercises-cards'
+import {searchRefs} from '../exercises-cards'
 
-import { createSmoothScrollBottom, createSmoothScrollUp } from '../scrolls';
 // ******************************************************************
 let filterName = '';
 let totalPages = null;
