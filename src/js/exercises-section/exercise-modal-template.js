@@ -62,37 +62,5 @@ export function renderExerciseModal({
               </p>
             </div>
           </div>
-
-          <ul class="exercise-modal-button">
-            <li class="exercise-modal_item">
-              <button
-                type="button"
-                class="exercise-modal-button__favorite">
-                Add to favorites
-                <span>
-                  <svg class="modal-exercise-heart-icon">
-                      <use href="./img/icons.svg#icon-heart" width="18" height="18"></use>
-                  </svg>
-                </span>
-              </button>
-            </li>
-
-            <li class="exercise-modal_item">
-<button type="button" class="exercise-modal-button__rating">
-              Give a rating
-            </button>
-            </li></ul>
-            <div class="exercise-modal-button-card_remove"> <button
-                type="button"
-                class="exercise-modal-button__remove">
-                Remove from favorites
-                <span>
-                  <svg class="exercise-modal-button__remove-icon">
-                      <use href="./img/icons.svg#icon-trash" width="20" height="20"></use>
-                  </svg>
-                </span>
-              </button>
-              </div>
-
           <div>`;
 }
