@@ -7,7 +7,7 @@ import {
   createFiltersCardsSkeleton,
 } from './filter-card-template';
 import { filterCardsListRef, activeFilter } from '../components/refs';
-
+import {searchRefs} from './exercises-cards'
 // ************************************************************
 
 window.addEventListener('load', () => {
@@ -33,6 +33,7 @@ function getFilters() {
       apendMarkup(filterCardsListRef, createFilterString(data.results));
       underlineActiveFilter();
       displayPagination(data.totalPages);
+      searchRefs()
     } catch (error) {
       console.log(error);
     }

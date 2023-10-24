@@ -40,7 +40,7 @@ function returnMarkup() {
 // ! Створення картки по фільтрам
 export function createCardsString(arr) {
   const cardsString = arr
-    .map(({ bodyPart, name, target, rating, burnedCalories, time }) => {
+    .map(({ bodyPart, name, target, rating, burnedCalories, time, _id }) => {
       return `<li class="exercises__item-card">
         <div class="card">
           <div class="card__top">
@@ -51,7 +51,7 @@ export function createCardsString(arr) {
                 <use href="./img/icons.svg#icon-star-yellow"></use>
               </svg>
             </span>
-            <button class="card__btn">
+            <button data-id="${_id}" class="card__btn">
               Start
               <svg class="card__btn-arrow" width="32" height="32">
                 <use href="./img/icons.svg#icon-right-arrow"></use>
@@ -65,7 +65,7 @@ export function createCardsString(arr) {
             <h3 class="card__title">${capitalizeFirstLetter(name)}</h3>
           </div>
           <div class="card__bottom">
-            <p class="card__text"><span>Burned calories:</span> ${burnedCalories} / 3 ${time}</p>
+            <p class="card__text"><span>Burned calories:</span> ${burnedCalories} / ${time} min</p>
             <p class="card__text"><span>Body part:</span> ${capitalizeFirstLetter(
               bodyPart
             )}</p>
@@ -77,7 +77,6 @@ export function createCardsString(arr) {
       </li>`;
     })
     .join('');
-  console.log(cardsString);
   return cardsString;
 }
 
