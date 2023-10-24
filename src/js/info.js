@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const buttonUp = document.querySelector('.info__button-up');
   const buttonDown = document.querySelector('.info__button-down');
   const mobileMediaQuery = window.matchMedia('(max-width: 767px)');
-  const tabletMediaQuery = window.matchMedia('(max-width: 1439px)');
+  const deskMediaQuery = window.matchMedia('(max-width: 1439px)');
+
   let isTextExpanded = false;
   let originalText = additionalText.textContent;
   let maxLengthMobile = 210; // Максимальная длина текста на мобильных устройствах
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mobileMediaQuery.matches) {
       additionalText.textContent =
         originalText.slice(0, maxLengthMobile) + '...';
-    } else if (tabletMediaQuery.matches) {
+    } else if (deskMediaQuery.matches) {
       additionalText.textContent =
         originalText.slice(0, maxLengthTablet) + '...';
     }

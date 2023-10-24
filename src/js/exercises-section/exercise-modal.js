@@ -23,7 +23,7 @@ refs.closeModalBtn.addEventListener('click', closeModal);
 
 async function handleModalOpen() {
   try {
-    const data = await fetchExercise('64f389465ae26083f39b17a4');
+    const data = await fetchExercise('64f389465ae26083f39b17a6');
     renderCard(data);
     scrollController.disabledScroll();
   } catch (error) {
