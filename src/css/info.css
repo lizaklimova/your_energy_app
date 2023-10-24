@@ -90,10 +90,27 @@
   opacity: 0.6;
   margin-bottom: 16px;
 }
+.info__button {
+  position: relative;
+}
+.info__button-up,
+.info__button-down {
+  fill: #333;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
 
 .info__exercise {
   display: none;
 }
+
 /************ 768 ************/
 
 @media (min-width: 768px) {
@@ -158,6 +175,14 @@
     font-weight: 500;
     line-height: 1.33;
   }
+  .info__button {
+    position: relative;
+  }
+  .info__button-up,
+  .info__button-down {
+    bottom: -21px;
+    right: -17px;
+  }
 }
 @media screen and (min-width: 1440px) {
   .info__exercise {
@@ -194,6 +219,9 @@
   }
   .info__trhd-block {
     width: 444px;
+  }
+  .info__button {
+    display: none;
   }
 }
 
