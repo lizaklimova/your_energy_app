@@ -27,7 +27,7 @@ function setRating() {
     }
 
     function onRatingClick() {
-      ratingValue.innerHTML = index + 1;
+      ratingValue.innerHTML = index + 1 + '.0';
       setRatingActiveWidth();
     }
   });

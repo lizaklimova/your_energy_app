@@ -63,6 +63,7 @@
 .exercise-modal-rating__number {
   margin-bottom: 28px;
   font-size: 12px;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: var(--accent-color);
@@ -95,7 +96,7 @@
 
 .exercise-modal-list__title {
   letter-spacing: -0.02em;
-
+  font-weight: 400;
   color: var(--accent-color);
   opacity: 0.4;
   font-size: 12px;
@@ -119,7 +120,7 @@
 
 .exercise-modal-button {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 8px;
   letter-spacing: -0.02em;
@@ -250,9 +251,8 @@
     transition: filter var(--transition);
   }
 
-  .exercise-modal__content {
-    /* width: 708px; */
-    /* padding-right: 32px; */
+  .exercise-modal-button {
+    justify-content: start;
   }
 
   .exercise-modal-tumb {
