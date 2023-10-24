@@ -4,6 +4,15 @@
   justify-content: space-between;
 }
 
+.header__logo:hover {
+  animation-name: hvr-pulse;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: drop-shadow(-1px 1px 5px rgb(9, 129, 21));
+}
+
 .header__button-open {
   background: transparent;
 }
