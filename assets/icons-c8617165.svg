@@ -151,6 +151,15 @@
 			</path>
 		</symbol>
 
+        <!-- icon-input -->
+        <symbol id="icon-search" viewBox="0 0 32 32">
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667z"></path>
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M28 28l-5.8-5.8"></path>
+        </symbol>
+        <symbol id="icon-x" viewBox="0 0 32 32">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M22.667 9.333l-13.333 13.333M9.333 9.333l13.333 13.333"></path>
+        </symbol>
+
     </defs>
 
 </svg>
