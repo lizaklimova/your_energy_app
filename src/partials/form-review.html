@@ -7,7 +7,7 @@
     </button>
     <p class="modal-title">Rating</p>
     <div class="rating rating_set">
-      <div class="rating__value">3.6</div>
+      <div class="rating__value">0.0</div>
       <div class="rating__body">
         <div class="rating__active"></div>
         <div class="rating__items">
@@ -23,16 +23,20 @@
       <input
         class="modal-input"
         type="email"
-        id="user-email"
-        name="user-email"
+        autocomplete="off"
+        id="email"
+        name="email"
         placeholder="Email"
         pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
+        required
       />
 
       <textarea
         placeholder="Your comment"
-        id="user-comment"
-        name="user-comment"
+        id="comment"
+        autocomplete="off"
+        required
+        name="comment"
         class="modal-textarea"
       ></textarea>
 
