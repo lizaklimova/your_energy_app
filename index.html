@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YourEnergy</title>
     
-    <script type="module" crossorigin src="/your_energy_app/assets/index-46784aee.js"></script>
-    <link rel="modulepreload" crossorigin href="/your_energy_app/assets/classFunctions-ed236139.js">
-    <link rel="stylesheet" href="/your_energy_app/assets/classFunctions-4ace03e8.css">
+    <script type="module" crossorigin src="/your_energy_app/assets/index-8e864ddc.js"></script>
+    <link rel="modulepreload" crossorigin href="/your_energy_app/assets/classFunctions-40433609.js">
+    <link rel="stylesheet" href="/your_energy_app/assets/classFunctions-70d71b21.css">
   </head>
   <body>
     <!-- Svitlana -->
@@ -404,6 +404,7 @@
         id="user-email"
         name="user-email"
         placeholder="Email"
+        pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
       />
 
       <textarea
@@ -473,14 +474,22 @@
             Subscribe and learn about new exercises!
           </p>
           <form class="footer__form" action="submit">
-            <input
-              class="footer__input"
-              name="email"
-              type="email"
-              placeholder="Email"
-              pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
-              required
-            />
+            <div class="footer__input-group">
+              <input
+                class="footer__input"
+                autocomplete="off"
+                placeholder=" "
+                name="email"
+                type="email"
+                pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
+                required
+              />
+              <!-- <span class="placeholder">Email</span> -->
+              <label data-title="Email" for="email" class="placeholder"
+                >Email</label
+              >
+            </div>
+
             <button class="footer__btn" type="submit">Send</button>
           </form>
         </div>
@@ -515,6 +524,7 @@
         id="user-email"
         name="user-email"
         placeholder="Email"
+        pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
       />
 
       <textarea
