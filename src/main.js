@@ -8,3 +8,4 @@ import './js/exercises-section/exercise-modal';
 import './js/exercises-section/exercise-modal-template';
 import './js/notiflix';
 import './js/scrolls';
+import './js/info';
