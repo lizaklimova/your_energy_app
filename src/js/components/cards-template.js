@@ -1,6 +1,6 @@
 import { capitalizeFirstLetter } from '../components/fn-helpers';
 
-function returnMarkup() {
+export function returnMarkup() {
   return `<li class="exercises__item-card">
         <div class="card">
           <div class="card__top">
@@ -11,7 +11,6 @@ function returnMarkup() {
                 <use href="./img/icons.svg#icon-star-yellow"></use>
               </svg>
             </span>
-            <button class="card__btn">
               Start
               <svg class="card__btn-arrow" width="32" height="32">
                 <use href="./img/icons.svg#icon-right-arrow"></use>
@@ -41,7 +40,7 @@ function returnMarkup() {
 export function createCardsString(arr) {
   const cardsString = arr
     .map(({ bodyPart, name, target, rating, burnedCalories, time }) => {
-      return  `<li class="exercises__item-card">
+      return `<li class="exercises__item-card">
         <div class="card">
           <div class="card__top">
             <span class="card_tag">Workout</span>
@@ -75,8 +74,9 @@ export function createCardsString(arr) {
           </div>
         </div>
       </li>`;
-    }).join('')
-console.log(cardsString);
+    })
+    .join('');
+  console.log(cardsString);
   return cardsString;
 }
 

@@ -50,9 +50,7 @@ function renderCard(data) {
   const addToFavoritesButton = document.querySelector(
     '.exercise-modal-button__favorite'
   );
-  const giveARatingButton = document.querySelector(
-    '.exercise-modal-button__rating'
-  );
+
   const removeFromFavoritesButton = document.querySelector(
     '.exercise-modal-button__remove'
   );
