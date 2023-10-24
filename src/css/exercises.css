@@ -376,6 +376,14 @@
   outline: none;
   padding-right: 30px;
   margin-bottom: 20px;
+  transition: 0.8s;
+}
+
+.exercises__filter-search-input:hover, 
+.exercises__filter-search-input:focus {
+  border: 1px solid black;
+  transform:scale(1.02);
+  transition: .5s;
 }
 
 
