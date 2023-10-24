@@ -193,7 +193,10 @@
   border-radius: 30px;
   border: 1px solid transparent;
   letter-spacing: -0.02em;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
   background-color: var(--accent-color);
   color: var(--dark-color);
   transition: all var(--transition);
@@ -201,12 +204,19 @@
   height: 48px;
 }
 
+.exercise-modal-button__favorite.is-hidden,
+.exercise-modal-button__rating.is-hidden,
+.exercise-modal-button__remove.is-hidden {
+  display: none;
+}
+
 .exercise-modal-button__remove-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   stroke: var(--dark-color);
-  /* fill: transparent; */
+  fill: transparent;
   transition: fill var(--transition), stroke var(--transition);
+  /* padding-top: 5px; */
 }
 
 .exercise-modal-button__remove:hover .exercise-modal-button__remove-icon,

@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
 import { fetchFilter } from '../api';
-import { addClass, removeClass } from '../components/classFunctions';
+import { addClass, removeClass } from '../components/fn-helpers';
 import {
   setActiveItem,
   apendMarkup,

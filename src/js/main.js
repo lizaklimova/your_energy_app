@@ -4,6 +4,7 @@ import './exercises-section/filter-cards';
 import './subscribe';
 import './quote';
 import './components/fn-helpers';
+import './review';
 import './rating';
 import './exercises-section/exercise-modal';
 import './exercises-section/exercise-modal-template';

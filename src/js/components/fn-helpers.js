@@ -1,4 +1,9 @@
-import { addClass, removeClass } from './classFunctions';
+export const addClass = (obj, className) => {
+  obj.classList.add(className);
+};
+export const removeClass = (obj, className) => {
+  obj.classList.remove(className);
+};
 
 export function capitalizeFirstLetter(str) {
   return str.slice(0, 1).toUpperCase() + str.slice(1);
