@@ -7,4 +7,5 @@ import './js/fn-helpers';
 import './js/exercise-modal';
 import './js/exercuse-modal-template';
 import './js/notiflix';
+import './js/components/mode';
 // import 'theme-toggle';
