@@ -2,10 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const additionalText = document.querySelector('.text-content');
   const buttonUp = document.querySelector('.info__button-up');
   const buttonDown = document.querySelector('.info__button-down');
-  const mobileMediaQuery = window.matchMedia('(max-width: 375px)');
-  const tabletMediaQuery = window.matchMedia(
-    '(min-width: 768px) and (max-width: 1439px)'
-  );
+  const mobileMediaQuery = window.matchMedia('(min-width: 768px)');
+  const tabletMediaQuery = window.matchMedia('(max-width: 1439px)');
   let isTextExpanded = false;
   let originalText = additionalText.textContent;
   let maxLengthMobile = 210; // Максимальная длина текста на мобильных устройствах
