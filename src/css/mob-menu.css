@@ -3,16 +3,17 @@
   width: 100vw;
   height: 100vh;
   top: 0;
-  right: -100%;
+  right: 0;
   background-color: var(--dark-color);
   z-index: 899999;
-  opacity: 0;
+  opacity: 1;
   transition: right 500ms ease-out, opacity 500ms ease-out;
 }
 
 .mobile__backdrop.is-hidden {
   right: -100%;
   opacity: 0;
+  display: block;
 }
 
 .mobile__backdrop.is-visible {
@@ -22,9 +23,9 @@
 
 /* .mobile__backdrop.is-closing {
   transition: all 1s ease-out;
-}
+} */
 
-.mobile__backdrop.is-closing.is-hidden {
+/* .mobile__backdrop.is-hidden {
   right: -100%;
   opacity: 0;
 } */
@@ -34,9 +35,7 @@
 
 .header__button_close {
   position: absolute;
-  top: 20px;
   right: 20px;
-  margin-bottom: 228px;
   padding-top: 20px;
 
   background: transparent;

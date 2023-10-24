@@ -10,4 +10,5 @@ import './js/notiflix';
 // import './js/scroll-up';
 import './js/exercises-cards';
 import './js/scrolls';
+import './js/mobile-menu.js';
 import './js/info';
