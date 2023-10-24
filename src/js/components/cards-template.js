@@ -2,12 +2,11 @@ import { capitalizeFirstLetter } from '../fn-helpers';
 
 function returnMarkup() {
   return `<li class="exercises__item-card">
-      <h1>Hello</h1>
         <div class="card">
           <div class="card__top">
             <span class="card_tag">Workout</span>
             <span class="card_rating">
-              <span>4.0</span>
+              <span>${rating}</span>
               <svg width="34" height="32">
                 <use href="./img/icons.svg#icon-star-yellow"></use>
               </svg>
@@ -23,12 +22,16 @@ function returnMarkup() {
             <svg class="card__title-svg" width="32" height="32">
               <use href="./img/icons.svg#icon-run-men2"></use>
             </svg>
-            <h3 class="card__title">Air bike</h3>
+            <h3 class="card__title">${capitalizeFirstLetter(name)}</h3>
           </div>
           <div class="card__bottom">
-            <p class="card__text"><span>Burned calories:</span> 312 / 3 min</p>
-            <p class="card__text"><span>Body part:</span> Waist</p>
-            <p class="card__text"><span>Target:</span> Abs</p>
+            <p class="card__text"><span>Burned calories:</span> ${burnedCalories} / 3 min</p>
+            <p class="card__text"><span>Body part:</span> ${capitalizeFirstLetter(
+              bodyPart
+            )}</p>
+            <p class="card__text"><span>Target:</span> ${capitalizeFirstLetter(
+              target
+            )}</p>
           </div>
         </div>
       </li>`;
@@ -37,11 +40,43 @@ function returnMarkup() {
 // ! Створення картки по фільтрам
 export function createCardsString(arr) {
   const cardsString = arr
-    .map(({ imgURL, filter, name }) => {
-      return returnMarkup();
-    })
-    .join('');
-
+    .map(({ bodyPart, name, target, rating, burnedCalories, time }) => {
+      return  `<li class="exercises__item-card">
+        <div class="card">
+          <div class="card__top">
+            <span class="card_tag">Workout</span>
+            <span class="card_rating">
+              <span>${rating}</span>
+              <svg width="34" height="32">
+                <use href="./img/icons.svg#icon-star-yellow"></use>
+              </svg>
+            </span>
+            <button class="card__btn">
+              Start
+              <svg class="card__btn-arrow" width="32" height="32">
+                <use href="./img/icons.svg#icon-right-arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="card__middle">
+            <svg class="card__title-svg" width="32" height="32">
+              <use href="./img/icons.svg#icon-run-men2"></use>
+            </svg>
+            <h3 class="card__title">${capitalizeFirstLetter(name)}</h3>
+          </div>
+          <div class="card__bottom">
+            <p class="card__text"><span>Burned calories:</span> ${burnedCalories} / 3 ${time}</p>
+            <p class="card__text"><span>Body part:</span> ${capitalizeFirstLetter(
+              bodyPart
+            )}</p>
+            <p class="card__text"><span>Target:</span> ${capitalizeFirstLetter(
+              target
+            )}</p>
+          </div>
+        </div>
+      </li>`;
+    }).join('')
+console.log(cardsString);
   return cardsString;
 }
 

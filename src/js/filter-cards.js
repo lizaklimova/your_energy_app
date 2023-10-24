@@ -16,6 +16,7 @@ import {
 import { addClass, removeClass } from './components/classFunctions';
 import { setActiveItem, apendMarkup, insertHtml } from './fn-helpers';
 import Notiflix from 'notiflix';
+import {searchRefs} from './exercises-cards'
 // ******************************************************************
 let filterName = '';
 let totalPages = null;
@@ -65,7 +66,7 @@ function getFilterNameAndMakeActive(e) {
 //   return `<li class='exersises__breadcrumb-item'>${filter}</li>`;
 // }
 
-//~ Запит на бек
+// ~ Запит на бек
 async function getFilters(filter, page = 1) {
   window.removeEventListener('scroll', notifyTheEnd);
   let data;
@@ -121,6 +122,7 @@ async function getFilters(filter, page = 1) {
 
     console.log(err.message);
   } finally {
+    searchRefs();
     filterBtnsRefs.forEach(btn => (btn.disabled = false));
     if (filter === 'Body parts' && page === 1) return;
   }
@@ -178,3 +180,4 @@ function createSmoothScrollBottom() {
     behavior: 'smooth',
   });
 }
+
