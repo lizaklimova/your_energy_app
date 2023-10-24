@@ -9,6 +9,7 @@
   color: var(--accent-color);
   background-color: var(--dark-color);
   overflow: auto;
+  padding: 40px 20px;
 }
 
 .exercise-modal__close-btn:hover .exercise-modal__close-icon,
@@ -34,9 +35,9 @@
   fill: var(--accent-color);
 }
 
-.exercise-modal__content {
+/* .exercise-modal__content {
   padding: 40px 20px;
-}
+} */
 
 .exercise-modal-tumb {
   padding-bottom: 40px;
@@ -119,6 +120,7 @@
 .exercise-modal-button {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   gap: 8px;
   letter-spacing: -0.02em;
 }
@@ -129,14 +131,16 @@
 
 .exercise-modal-button__favorite,
 .exercise-modal-button__rating {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 145px;
   height: 42px;
 
   border-radius: 30px;
   border: 1px solid transparent;
   letter-spacing: -0.02em;
-
+  transition: all var(--transition);
   background-color: var(--accent-color);
   color: var(--dark-color);
 }
@@ -180,6 +184,8 @@
   height: 18px;
   stroke: var(--dark-color);
   fill: transparent;
+  transition: stroke var(--transition);
+  align-self: flex-end;
 }
 
 .exercise-modal-button__remove {
@@ -193,14 +199,14 @@
   transition: all var(--transition);
   width: 235px;
   height: 48px;
-  margin-left: 30px;
 }
 
 .exercise-modal-button__remove-icon {
   width: 18px;
   height: 18px;
   stroke: var(--dark-color);
-  fill: transparent;
+  /* fill: transparent; */
+  transition: fill var(--transition), stroke var(--transition);
 }
 
 .exercise-modal-button__remove:hover .exercise-modal-button__remove-icon,
@@ -223,6 +229,7 @@
 @media screen and (min-width: 768px) {
   .exercise-modal {
     width: 704px;
+    padding: 32px;
   }
 
   .exercise-modal__close-btn {
@@ -234,8 +241,8 @@
   }
 
   .exercise-modal__content {
-    width: 708px;
-    padding: 32px;
+    /* width: 708px; */
+    /* padding-right: 32px; */
   }
 
   .exercise-modal-tumb {
@@ -268,6 +275,12 @@
 
   .exercise-modal-list {
     gap: 16px;
+  }
+
+  .modal-exercise-heart-icon {
+    width: 20px;
+    height: 20px;
+    padding-top: 3px;
   }
   .exercise-modal-button__favorite,
   .exercise-modal-button__rating {

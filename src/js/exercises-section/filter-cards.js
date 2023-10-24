@@ -20,7 +20,7 @@ import {
   breadCrumbsList,
   breadCrumbsSlash,
 } from '../components/refs';
-import {searchRefs} from '../exercises-cards'
+import { searchRefs } from './exercises-cards';
 
 // ******************************************************************
 let filterName = '';
@@ -180,4 +180,3 @@ function createSmoothScrollBottom() {
     behavior: 'smooth',
   });
 }
-
