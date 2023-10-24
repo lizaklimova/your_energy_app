@@ -77,12 +77,9 @@ export function renderExerciseModal({
               </button>
             </li>
 
-            <li class="exercise-modal_item">
-<button type="button" class="exercise-modal-button__rating">
-              Give a rating
-            </button>
-            </li></ul>
-            <div class="exercise-modal-button-card_remove"> <button
+
+             <li class="exercise-modal_item">
+              <button
                 type="button"
                 class="exercise-modal-button__remove">
                 Remove from favorites
@@ -92,7 +89,12 @@ export function renderExerciseModal({
                   </svg>
                 </span>
               </button>
-              </div>
+            </li>
 
+            <li class="exercise-modal_item">
+<button type="button" class="exercise-modal-button__rating">
+              Give a rating
+            </button>
+            </li></ul>
           <div>`;
 }
