@@ -375,6 +375,14 @@
   background-color: transparent;
   outline: none;
   margin-bottom: 20px;
+  transition: 0.8s;
+}
+
+.exercises__filter-search-input:hover, 
+.exercises__filter-search-input:focus {
+  border: 1px solid black;
+  transform:scale(1.02);
+  transition: .5s;
 }
 
 .exercises__filter-search-input:focus {
