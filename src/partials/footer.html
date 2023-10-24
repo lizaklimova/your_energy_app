@@ -51,14 +51,22 @@
             Subscribe and learn about new exercises!
           </p>
           <form class="footer__form" action="submit">
-            <input
-              class="footer__input"
-              name="email"
-              type="email"
-              placeholder="Email"
-              pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
-              required
-            />
+            <div class="footer__input-group">
+              <input
+                class="footer__input"
+                autocomplete="off"
+                placeholder=" "
+                name="email"
+                type="email"
+                pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
+                required
+              />
+              <!-- <span class="placeholder">Email</span> -->
+              <label data-title="Email" for="email" class="placeholder"
+                >Email</label
+              >
+            </div>
+
             <button class="footer__btn" type="submit">Send</button>
           </form>
         </div>
