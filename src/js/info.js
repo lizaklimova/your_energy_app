@@ -1,46 +1,40 @@
 document.addEventListener('DOMContentLoaded', function () {
   const additionalText = document.querySelector('.text-content');
-  const mobileMediaQuery = window.matchMedia('(max-width: 375px)');
-  const tabletMediaQuery = window.matchMedia(
-    '(min-width: 768px) and (max-width: 1439px)'
-  );
+  const buttonUp = document.querySelector('.info__button-up');
+  const buttonDown = document.querySelector('.info__button-down');
+  const mobileMediaQuery = window.matchMedia('(max-width: 767px)');
+  const tabletMediaQuery = window.matchMedia('(max-width: 1439px)');
   let isTextExpanded = false;
   let originalText = additionalText.textContent;
+  let maxLengthMobile = 210; // Максимальная длина текста на мобильных устройствах
+  let maxLengthTablet = 252; // Максимальная длина текста на планшетных устройствах
 
-  additionalText.addEventListener('click', toggleText);
+  function setButtonVisibility(upVisible, downVisible) {
+    buttonUp.style.display = upVisible ? 'block' : 'none';
+    buttonDown.style.display = downVisible ? 'block' : 'none';
+  }
 
-  function toggleText() {
+  function limitText() {
     if (mobileMediaQuery.matches) {
-      if (isTextExpanded) {
-        // Если текст был развернут, восстанавливаем оригинальный текст
-        additionalText.textContent = originalText;
-        isTextExpanded = false;
-      } else {
-        // Если текст был сокращен, показываем полную длину текста
-        additionalText.textContent = originalText;
-        isTextExpanded = true;
-      }
+      additionalText.textContent =
+        originalText.slice(0, maxLengthMobile) + '...';
+    } else if (tabletMediaQuery.matches) {
+      additionalText.textContent =
+        originalText.slice(0, maxLengthTablet) + '...';
     }
-    if (tabletMediaQuery.matches) {
-      additionalText.textContent = originalText;
-      isTextExpanded = false;
-    } else {
-      additionalText.textContent = originalText;
-      isTextExpanded = true;
-    }
+    isTextExpanded = false;
+    setButtonVisibility(false, true);
   }
 
-  if (mobileMediaQuery.matches) {
-    // Если на мобильной версии, ограничиваем текст до 220 символов
-    const maxLength = 210;
-    if (originalText.length > maxLength) {
-      additionalText.textContent = originalText.slice(0, maxLength) + '...';
-    }
+  function expandText() {
+    additionalText.textContent = originalText;
+    isTextExpanded = true;
+    setButtonVisibility(true, false);
   }
-  if (tabletMediaQuery.matches) {
-    const maxLength = 252;
-    if (originalText.length > maxLength) {
-      additionalText.textContent = originalText.slice(0, maxLength) + '...';
-    }
-  }
+
+  // Ограничиваем текст по умолчанию
+  limitText();
+
+  buttonDown.addEventListener('click', expandText);
+  buttonUp.addEventListener('click', limitText);
 });
