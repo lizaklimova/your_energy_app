@@ -119,9 +119,9 @@
 
 .exercise-modal-button {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   letter-spacing: -0.02em;
 }
 
@@ -134,9 +134,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 145px;
+  width: 167px;
   height: 42px;
-
+  gap: 6px;
   border-radius: 30px;
   border: 1px solid transparent;
   letter-spacing: -0.02em;
@@ -145,9 +145,9 @@
   color: var(--dark-color);
 }
 
-.exercise-modal-button__rating {
-  width: 100px;
-}
+/* .exercise-modal-button__rating {
+  width: 90px;
+} */
 
 .exercise-modal-button__favorite:hover,
 .exercise-modal-button__favorite:focus,
@@ -165,7 +165,7 @@
 }
 
 .exercise-modal-button__rating {
-  width: 133px;
+  width: 122px;
   background-color: transparent;
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
@@ -189,7 +189,6 @@
 }
 
 .exercise-modal-button__remove {
-  max-height: 42px;
   border-radius: 30px;
   border: 1px solid transparent;
   letter-spacing: -0.02em;
@@ -200,8 +199,8 @@
   background-color: var(--accent-color);
   color: var(--dark-color);
   transition: all var(--transition);
-  width: 235px;
-  height: 48px;
+  width: 167px;
+  height: 42px;
 }
 
 .exercise-modal-button__favorite.is-hidden,
@@ -229,11 +228,6 @@
   .exercise-modal {
     width: 335px;
   }
-
-  .exercise-modal-button__favorite {
-    width: 157px;
-    gap: 6px;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -251,8 +245,9 @@
   }
 
   .exercise-modal__content {
-    /* width: 708px; */
-    /* padding-right: 32px; */
+    width: 644px;
+    display: flex;
+    flex-direction: row;
   }
 
   .exercise-modal-tumb {
@@ -292,8 +287,14 @@
     height: 20px;
     padding-top: 3px;
   }
+
+  .exercise-modal-button {
+    justify-content: flex-start;
+  }
+
   .exercise-modal-button__favorite,
   .exercise-modal-button__rating {
+    width: 183px;
     font-size: 16px;
   }
 
@@ -303,6 +304,7 @@
 
   .exercise-modal-button__remove {
     font-size: 16px;
+    width: 228px;
   }
 }
 

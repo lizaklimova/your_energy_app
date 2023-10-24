@@ -61,6 +61,5 @@ export function renderExerciseModal({
                ${capitalizeFirstLetter(description)}
               </p>
             </div>
-          </div>
-          <div>`;
+          </div>`;
 }
