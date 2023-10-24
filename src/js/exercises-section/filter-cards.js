@@ -23,7 +23,7 @@ import {
 import { searchRefs } from './exercises-cards';
 
 // ******************************************************************
-// let filterName = '';
+
 let totalPages = null;
 let dataLength;
 // let firstElementOfCards;
@@ -49,8 +49,10 @@ window.addEventListener('load', () => {
 // }
 getFilters();
 function getFilters() {
+  let filterName = '';
   let data;
-  let currentPage;
+  let currentPage = 1;
+
   fetchDataFromFilter();
   async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
     try {
@@ -62,13 +64,13 @@ function getFilters() {
         data = await fetchFilter(page, 9, filter);
       }
       apendMarkup(filterCardsListRef, createFilterString(data.results));
-
+      underlineActiveFilter();
       displayPagination(data.totalPages);
     } catch (error) {
       console.log(error);
     }
   }
-  underlineActiveFilter();
+
   //~ Підкреслення активного фільтру
   function underlineActiveFilter() {
     const exerFiltersList = document.querySelector('.exercises__filter-list');
@@ -78,8 +80,7 @@ function getFilters() {
 
     filterBtns.forEach(button => {
       button.addEventListener('click', event => {
-        console.log(event.target);
-        const filterName = event.target.textContent;
+        filterName = event.target.textContent;
         fetchDataFromFilter(filterName.trim());
 
         setActiveItem(filterBtns, button, 'exercises__filter-btn_active');
@@ -106,17 +107,33 @@ function getFilters() {
     paginItem.innerHTML = page;
     addClass(paginItem, 'exercises__pagination-item');
 
+    if (currentPage === page) {
+      paginItem.classList.add('exercises__pagination-item_active');
+    }
+
     paginItem.addEventListener('click', () => {
       currentPage = page;
 
-      if (currentPage === page)
-        addClass(paginItem, 'exercises__pagination-item_active');
+      let activeFilter = document.querySelector(
+        '.exercises__filter-btn_active'
+      );
+      let activePaginItem = document.querySelector(
+        '.exercises__pagination-item_active'
+      );
+      console.log(activeFilter.textContent.trim());
+      fetchDataFromFilter(activeFilter.textContent.trim(), currentPage);
+
+      activePaginItem.classList.remove('exercises__pagination-item_active');
+
+      paginItem.classList.add('exercises__pagination-item_active');
     });
+
     return paginItem;
   }
 
-  // ~ Виділення активного елемента пагінації
-  function circleActivePaginItem() {}
+  // function circleActivePagination(el) {
+  //   addClass(el, 'exercises__pagination-btn_active');
+  // }
 }
 
 // // ~ Запит на бек
