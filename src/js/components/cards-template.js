@@ -1,6 +1,6 @@
 import { capitalizeFirstLetter } from '../components/fn-helpers';
 
-export function returnMarkup() {
+function returnMarkup() {
   return `<li class="exercises__item-card">
         <div class="card">
           <div class="card__top">
@@ -11,7 +11,7 @@ export function returnMarkup() {
                 <use href="./img/icons.svg#icon-star-yellow"></use>
               </svg>
             </span>
-            <button type="button" data-exmod-open class="card__btn">
+            <button class="card__btn">
               Start
               <svg class="card__btn-arrow" width="32" height="32">
                 <use href="./img/icons.svg#icon-right-arrow"></use>
