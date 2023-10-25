@@ -26,3 +26,4 @@ const loadFavourite = () => {
   }
 };
 window.addEventListener('load', loadFavourite);
+//!!!!!
