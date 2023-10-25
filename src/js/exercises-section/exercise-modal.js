@@ -2,7 +2,7 @@ import { fetchExercise } from '../api';
 import { renderExerciseModal } from './exercise-modal-template';
 import { addClass, removeClass } from '../components/fn-helpers';
 import { scrollController } from '../scrolls';
-import {findDivExercises} from '../favorite'
+
 
 const refs = {
   closeModalBtn: document.querySelector('[data-exmod-close]'),
@@ -95,7 +95,6 @@ const addToFavorite = (e) => {
 const removeFavorite = event => {
     const divExercises = document.querySelector('.exercise-modal-tumb');
   const id = divExercises.dataset;
-  console.log(id);
   localStorage.removeItem(id.id);
   addClass(removeFromFavoritesButton, 'is-hidden');
     removeClass(addToFavoritesButton, 'is-hidden');
