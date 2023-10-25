@@ -11,7 +11,6 @@ export function renderExerciseModal({
   burnedCalories,
   time,
   popularity,
-  _id,
 }) {
   return ` 
     <div class="exercise-modal-tumb" data-id="${_id}">

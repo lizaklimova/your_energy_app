@@ -173,6 +173,7 @@
   background-color: var(--accent-color);
   color: var(--dark-color);
 }
+
 .exercise-modal-button__favorite:hover,
 .exercise-modal-button__favorite:focus,
 .exercise-modal-button__remove:hover,
