@@ -6,96 +6,105 @@ import {
   createFilterString,
   createFiltersCardsSkeleton,
 } from './filter-card-template';
-import { filterCardsListRef, activeFilter } from '../components/refs';
-import {searchRefs} from './exercises-cards'
-// ************************************************************
+import {
+  filterCardsListRef,
+  activeFilter,
+  filterBtnsRefs,
+} from '../components/refs';
+import { createSmoothScrollUp, createSmoothScrollBottom } from '../scrolls';
+import { searchRefs } from './exercises-cards';
+
+// ********************************************************
 
 window.addEventListener('load', () => {
   addClass(activeFilter, 'exercises__filter-btn_active');
 });
 
-getFilters();
-function getFilters() {
-  let filterName = '';
-  let data;
-  let currentPage = 1;
+fetchDataFromFilter();
+let filterName = '';
+let data;
+let currentPage = 1;
 
-  fetchDataFromFilter();
-  async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
-    try {
-      if (screen.width > 767) {
-        apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(10));
-        data = await fetchFilter(page, 12, filter);
-      } else {
-        apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
-        data = await fetchFilter(page, 9, filter);
-      }
-      apendMarkup(filterCardsListRef, createFilterString(data.results));
-      underlineActiveFilter();
-      displayPagination(data.totalPages);
-      searchRefs()
-    } catch (error) {
-      console.log(error);
+async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
+  filterBtnsRefs.forEach(btn => (btn.disabled = true));
+  try {
+    if (screen.width > 767) {
+      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(10));
+      data = await fetchFilter(page, 12, filter);
+    } else {
+      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
+      data = await fetchFilter(page, 9, filter);
     }
+    apendMarkup(filterCardsListRef, createFilterString(data.results));
+    underlineActiveFilter();
+
+    displayPagination(data.totalPages);
+    searchRefs();
+  } catch (error) {
+    console.log(error);
+  } finally {
+    filterBtnsRefs.forEach(btn => (btn.disabled = false));
+  }
+}
+
+//~ Підкреслення активного фільтру
+function underlineActiveFilter() {
+  const exerFiltersList = document.querySelector('.exercises__filter-list');
+  const filterBtns = exerFiltersList.querySelectorAll(
+    '.exercises__filter-item button'
+  );
+
+  filterBtns.forEach(button => {
+    button.addEventListener('click', event => {
+      currentPage = 1;
+      filterName = event.target.textContent;
+      fetchDataFromFilter(filterName.trim());
+      createSmoothScrollBottom(
+        filterCardsListRef.firstElementChild.getBoundingClientRect(),
+        1
+      );
+      setActiveItem(filterBtns, button, 'exercises__filter-btn_active');
+    });
+  });
+}
+
+// ~ Створення кнопок для пагінації
+export function displayPagination(totalPages) {
+  const paginList = document.querySelector('.exercises__pagination');
+  paginList.innerHTML = '';
+
+  for (let i = 1; i <= totalPages; i++) {
+    const paginEl = displayPaginationBtn(i);
+
+    paginList.appendChild(paginEl);
+  }
+}
+
+// ~ Створення однієї кнопки пагінації
+export function displayPaginationBtn(page) {
+  const paginItem = document.createElement('li');
+  paginItem.innerHTML = page;
+  addClass(paginItem, 'exercises__pagination-item');
+
+  if (currentPage === page) {
+    addClass(paginItem, 'exercises__pagination-item_active');
   }
 
-  //~ Підкреслення активного фільтру
-  function underlineActiveFilter() {
-    const exerFiltersList = document.querySelector('.exercises__filter-list');
-    const filterBtns = exerFiltersList.querySelectorAll(
-      '.exercises__filter-item button'
+  paginItem.addEventListener('click', () => {
+    currentPage = page;
+
+    let activeFilter = document.querySelector('.exercises__filter-btn_active');
+    let activePaginItem = document.querySelector(
+      '.exercises__pagination-item_active'
     );
 
-    filterBtns.forEach(button => {
-      button.addEventListener('click', event => {
-        filterName = event.target.textContent;
-        fetchDataFromFilter(filterName.trim());
+    fetchDataFromFilter(activeFilter.textContent.trim(), currentPage);
+    createSmoothScrollUp(filterCardsListRef);
 
-        setActiveItem(filterBtns, button, 'exercises__filter-btn_active');
-        // event.target.disabled = true;
-      });
-    });
-  }
+    removeClass(activePaginItem, 'exercises__pagination-item_active');
 
-  // ~ Створення кнопок для пагінації
-  function displayPagination(totalPages) {
-    const paginList = document.querySelector('.exercises__pagination');
-    paginList.innerHTML = '';
+    addClass(paginItem, 'exercises__pagination-item_active');
+  });
 
-    for (let i = 1; i <= totalPages; i++) {
-      const paginEl = displayPaginationBtn(i);
-
-      paginList.appendChild(paginEl);
-    }
-  }
-
-  // ~ Створення однієї кнопки пагінації
-  function displayPaginationBtn(page) {
-    const paginItem = document.createElement('li');
-    paginItem.innerHTML = page;
-    addClass(paginItem, 'exercises__pagination-item');
-
-    if (currentPage === page) {
-      paginItem.classList.add('exercises__pagination-item_active');
-    }
-
-    paginItem.addEventListener('click', () => {
-      currentPage = page;
-
-      let activeFilter = document.querySelector(
-        '.exercises__filter-btn_active'
-      );
-      let activePaginItem = document.querySelector(
-        '.exercises__pagination-item_active'
-      );
-      console.log(activeFilter.textContent.trim());
-      fetchDataFromFilter(activeFilter.textContent.trim(), currentPage);
-
-      activePaginItem.classList.remove('exercises__pagination-item_active');
-
-      paginItem.classList.add('exercises__pagination-item_active');
-    });
-
-    return paginItem;
-  }
+  return paginItem;
 }

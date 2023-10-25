@@ -1,7 +1,7 @@
 import { filterCardsListRef } from '../components/refs';
 import { apendMarkup, insertHtml } from '../components/fn-helpers';
 import { fetchCards } from '../api';
-import { addClass, removeClass, cardBtnRef } from '../components/fn-helpers';
+import { addClass, removeClass } from '../components/fn-helpers';
 import {
   createCardsSkeleton,
   createCardsString,
@@ -58,7 +58,7 @@ const exercisesCard = e => {
         });
       });
 
-      cardBtnRef();
+      // cardBtnRef();
     })
     .catch(er => console.log(er));
 };
