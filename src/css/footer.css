@@ -9,6 +9,14 @@
   fill: var(--accent-color);
   margin-bottom: 20px;
 }
+.footer__logo:hover {
+    animation-name: hvr-pulse;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: drop-shadow(-1px 1px 5px rgba(244, 244, 244, 1));
+  }
 .footer__soc-list {
   display: flex;
   gap: 12px;
