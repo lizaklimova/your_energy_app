@@ -92,7 +92,7 @@
 
 
          <symbol id="icon-menu-01" viewBox="0 0 32 32">
-             <path fill="#242424" stroke="#242424" style="stroke: #242424" stroke-linejoin="round"
+             <path stroke-linejoin="round"
                         stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M4 16h24M4 8h24M4 24h24">
              </path>
         </symbol>
