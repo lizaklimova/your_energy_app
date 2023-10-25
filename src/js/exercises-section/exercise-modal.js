@@ -69,7 +69,7 @@ function renderCard(data) {
   document.addEventListener('keydown', closeModalOnEsc);
 }
 
-function closeModal() {
+export function closeModal() {
   refs.modal.classList.add('is-hidden');
   document.removeEventListener('keydown', closeModalOnEsc);
   scrollController.enabledScroll();
