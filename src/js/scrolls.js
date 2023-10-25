@@ -1,7 +1,6 @@
 let buttonTop = document.getElementById('buttonTop');
 let idAnimationScroll = null;
 
-
 window.addEventListener('scroll', function () {
   if (
     document.body.scrollTop > 700 ||
@@ -25,13 +24,13 @@ function smoothScrollToTop() {
     window.scrollTo(0, currentScroll - currentScroll / 30);
   }
 }
- window.addEventListener('wheel', function () {
-    cancelAnimationFrame(idAnimationScroll);
- });
-  
- window.addEventListener('keyup', function () {
-    cancelAnimationFrame(idAnimationScroll);
-  });
+window.addEventListener('wheel', function () {
+  cancelAnimationFrame(idAnimationScroll);
+});
+
+window.addEventListener('keyup', function () {
+  cancelAnimationFrame(idAnimationScroll);
+});
 
 export function createSmoothScrollBottom(elementWidth, direction) {
   const { height: cardHeight } = elementWidth;
@@ -53,14 +52,14 @@ export const scrollController = {
   scrollPosition: 0,
   disabledScroll() {
     scrollController.scrollPosition = window.scrollY;
-    document.body.style.cssText = `
-      overflow:hidden;
-      position:fixed;
-      top: -${scrollController.scrollPosition}px;
-      left:0;
-      height:100vh;
-      width:100vw;
-      padding-right: ${window.innerWidth - document.body.offsetWidth}
+    document.body.style.cssText = ` 
+      overflow:hidden; 
+      position:fixed; 
+      top: -${scrollController.scrollPosition}px; 
+      left:0; 
+      height:100vh; 
+      width:100vw; 
+      padding-right: ${window.innerWidth - document.body.offsetWidth} 
       `;
     document.documentElement.style.scrollBehavior = 'unset';
   },
