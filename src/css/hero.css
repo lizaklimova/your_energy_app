@@ -89,7 +89,9 @@ body.darkmode {
   letter-spacing: -0.28px;
   margin-bottom: 40px;
 }
-
+.darkmode .hero__text {
+  color: var(--light-color);
+}
 .hero__main-image {
   height: 450px;
   border-radius: 30px;
