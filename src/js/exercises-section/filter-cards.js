@@ -6,7 +6,11 @@ import {
   createFilterString,
   createFiltersCardsSkeleton,
 } from './filter-card-template';
-import { filterCardsListRef, activeFilter } from '../components/refs';
+import {
+  filterCardsListRef,
+  activeFilter,
+  filterBtnsRefs,
+} from '../components/refs';
 import { createSmoothScrollUp, createSmoothScrollBottom } from '../scrolls';
 import { searchRefs } from './exercises-cards';
 
@@ -24,6 +28,7 @@ function getFilters() {
 
   fetchDataFromFilter();
   async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
+    filterBtnsRefs.forEach(btn => (btn.disabled = true));
     try {
       if (screen.width > 767) {
         apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(10));
@@ -39,6 +44,8 @@ function getFilters() {
       searchRefs();
     } catch (error) {
       console.log(error);
+    } finally {
+      filterBtnsRefs.forEach(btn => (btn.disabled = false));
     }
   }
 
@@ -51,6 +58,7 @@ function getFilters() {
 
     filterBtns.forEach(button => {
       button.addEventListener('click', event => {
+        currentPage = 1;
         filterName = event.target.textContent;
         fetchDataFromFilter(filterName.trim());
         createSmoothScrollBottom(
@@ -58,7 +66,6 @@ function getFilters() {
           1
         );
         setActiveItem(filterBtns, button, 'exercises__filter-btn_active');
-        // event.target.disabled = true;
       });
     });
   }
@@ -82,7 +89,7 @@ function getFilters() {
     addClass(paginItem, 'exercises__pagination-item');
 
     if (currentPage === page) {
-      paginItem.classList.add('exercises__pagination-item_active');
+      addClass(paginItem, 'exercises__pagination-item_active');
     }
 
     paginItem.addEventListener('click', () => {
@@ -94,12 +101,13 @@ function getFilters() {
       let activePaginItem = document.querySelector(
         '.exercises__pagination-item_active'
       );
-      console.log(activeFilter.textContent.trim());
+
       fetchDataFromFilter(activeFilter.textContent.trim(), currentPage);
       createSmoothScrollUp(filterCardsListRef);
-      activePaginItem.classList.remove('exercises__pagination-item_active');
 
-      paginItem.classList.add('exercises__pagination-item_active');
+      removeClass(activePaginItem, 'exercises__pagination-item_active');
+
+      addClass(paginItem, 'exercises__pagination-item_active');
     });
 
     return paginItem;
