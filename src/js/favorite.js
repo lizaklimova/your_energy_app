@@ -1,12 +1,12 @@
 import { filterCardsListRef } from './components/refs';
-import { apendMarkup, insertHtml } from '../components/fn-helpers';
-import { fetchCards } from '../api';
-import { addClass, removeClass } from '../components/fn-helpers';
+import { apendMarkup, insertHtml } from './components/fn-helpers';
+import { fetchCards } from './api';
+import { addClass, removeClass } from './components/fn-helpers';
 import {
   createCardsSkeleton,
   createCardsString,
-} from '../components/cards-template';
-import { handleModalOpen } from '../exercises-section/exercise-modal';
+} from './components/cards-template';
+import { handleModalOpen } from './exercises-section/exercise-modal';
 
 function replaceSpace(text) {
   const words = text.trim().split(' ');
