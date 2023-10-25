@@ -4,8 +4,8 @@ import { addToFavoritesButton, removeFromFavoritesButton } from './exercises-sec
 import { fetchExercise } from './api';
 import { createCardsString } from './components/cards-template'
 
-// const favouriteTexte = document.querySelector('[data="favourite__text"]');
-// console.log(favouriteTexte);
+const favouriteTexte = document.querySelector('[data="favourite__text"]');
+console.log(favouriteTexte);
 export const findDivExercises = () => {
   const divExercises = document.querySelector('.exercise-modal-tumb');
   console.log(divExercises);
@@ -29,7 +29,7 @@ let allEx = [];
 const loadFavourite = () => {
   const keys = Object.keys(localStorage);
   if (!(keys.length >= 1 && localStorage.getItem('quote'))) {
-    // addClass(favouriteTexte, 'favourite__text');
+    addClass(favouriteTexte, 'favourite__text');
     return;
   } else {
     const arrKeys = keys.filter(key => {
@@ -43,9 +43,9 @@ const loadFavourite = () => {
         error;
       }
       allEx.push(exerciseState);
-      // addClass(favouriteTexte, 'is-hidden');
+      addClass(favouriteTexte, 'is-hidden');
     }
     createCardsString(allEx);
   }
 };
-// loadFavourite();
+loadFavourite();

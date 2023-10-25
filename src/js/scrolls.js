@@ -1,5 +1,6 @@
 let buttonTop = document.getElementById('buttonTop');
 
+
 window.addEventListener('scroll', function () {
   if (
     document.body.scrollTop > 700 ||
