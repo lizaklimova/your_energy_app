@@ -1,6 +1,15 @@
 import { addClass, removeClass } from './components/fn-helpers';
 import { favouriteTexte } from './components/refs';
 
+export const findDivExercises = () => {
+  const divExercises = document.querySelector('.exercise-modal-tumb');
+  console.log(divExercises);
+}
+
+export const addToFavorite = () => {
+  
+}
+
 let exerciseState = {};
 let allEx = [];
 const loadFavourite = () => {
