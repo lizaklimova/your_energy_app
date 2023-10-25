@@ -47,20 +47,6 @@ function closeModalOnEsc(event) {
 
 reviewForm.addEventListener('submit', onSubmit);
 
-Notiflix.Notify.init({
-  timeout: 5000,
-  clickToClose: true,
-  cssAnimationStyle: 'from-bottom',
-  width: '400px',
-  fontSize: '14px',
-  fontAwesomeIconStyle: 'shadow',
-  info: {
-    notiflixIconColor: '#f4f4f4',
-    background: '#242424',
-    textColor: '#f4f4f4',
-  },
-});
-
 async function onSubmit(e) {
   e.preventDefault();
 
@@ -68,14 +54,17 @@ async function onSubmit(e) {
   let textareaValue = e.target.elements.comment.value;
   let rating = Number(ratingValue.textContent);
 
+  const modal = document.querySelector('.exercise-modal-tumb');
+  const id = modal.dataset.id;
+
   try {
     const formReview = {
       rate: rating,
       email: inputValue,
       review: textareaValue,
     };
-    const form = await patchRating('64f389465ae26083f39b17a4', formReview);
-    console.log(form);
+    const form = await patchRating(id, formReview);
+
     closeReviewModal();
     Notiflix.Notify.info('Thanks for your review');
   } catch (error) {
