@@ -10,6 +10,13 @@ const refs = {
   modalContentContainer: document.querySelector('.exercise-modal__content'),
   modalBackdrop: document.querySelector('.js-backdrop'),
 };
+const addToFavoritesButton = document.querySelector(
+    '.exercise-modal-button__favorite'
+  );
+
+  const removeFromFavoritesButton = document.querySelector(
+    '.exercise-modal-button__remove'
+  );
 
 
 refs.modalBackdrop.addEventListener('click', e => {
@@ -26,9 +33,8 @@ export async function handleModalOpen(exId) {
     const data = await fetchExercise(exId);
     renderCard(data);
     scrollController.disabledScroll();
-
-    
-
+    removeFromFavoritesButton.addEventListener('click', removeFavorite);
+    addToFavoritesButton.addEventListener('click', addToFavorite);
   } catch (error) {
     console.error(error.message);
   }
@@ -38,25 +44,25 @@ function renderCard(data) {
   const markup = renderExerciseModal(data);
   refs.modalContentContainer.innerHTML = markup;
 
-  const addToFavoritesButton = document.querySelector(
-    '.exercise-modal-button__favorite'
-  );
+  // const addToFavoritesButton = document.querySelector(
+  //   '.exercise-modal-button__favorite'
+  // );
 
-  const removeFromFavoritesButton = document.querySelector(
-    '.exercise-modal-button__remove'
-  );
+  // const removeFromFavoritesButton = document.querySelector(
+  //   '.exercise-modal-button__remove'
+  // );
 
   addClass(removeFromFavoritesButton, 'is-hidden');
 
-  addToFavoritesButton.addEventListener('click', function () {
-    addClass(addToFavoritesButton, 'is-hidden');
-    removeClass(removeFromFavoritesButton, 'is-hidden');
-  });
+  // addToFavoritesButton.addEventListener('click', function () {
+  //   addClass(addToFavoritesButton, 'is-hidden');
+  //   removeClass(removeFromFavoritesButton, 'is-hidden');
+  // });
 
-  removeFromFavoritesButton.addEventListener('click', function () {
-    addClass(removeFromFavoritesButton, 'is-hidden');
-    removeClass(addToFavoritesButton, 'is-hidden');
-  });
+  // removeFromFavoritesButton.addEventListener('click', function () {
+  //   addClass(removeFromFavoritesButton, 'is-hidden');
+  //   removeClass(addToFavoritesButton, 'is-hidden');
+  // });
 
   refs.modal.classList.remove('is-hidden');
   document.addEventListener('keydown', closeModalOnEsc);
@@ -73,3 +79,24 @@ function closeModalOnEsc(event) {
     closeModal();
   }
 }
+
+const addToFavorite = (e) => {
+  const divExercises = document.querySelector('.exercise-modal-tumb');
+  const id = divExercises.dataset;
+  fetchExercise(id.id)
+  .then(data => {
+    localStorage.setItem(data._id, JSON.stringify(data));
+  })
+  .catch(error => console.log(error))
+    addClass(addToFavoritesButton, 'is-hidden');
+    removeClass(removeFromFavoritesButton, 'is-hidden');
+}
+
+const removeFavorite = event => {
+    const divExercises = document.querySelector('.exercise-modal-tumb');
+  const id = divExercises.dataset;
+  console.log(id);
+  localStorage.removeItem(id.id);
+  addClass(removeFromFavoritesButton, 'is-hidden');
+    removeClass(addToFavoritesButton, 'is-hidden');
+};
