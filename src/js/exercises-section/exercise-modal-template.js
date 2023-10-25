@@ -25,8 +25,9 @@ export function renderExerciseModal({
               <h2 class="exercise-modal__title">${capitalizeFirstLetter(
                 name
               )}</h2>
+            
               <p class="exercise-modal-rating__number">${rating}</p>
-
+             <div class="exercise-modal__rating_active"></div>
               <div class='exercise-modal-tumb_list'>
               <ul class="exercise-modal-list">
                 <li class="exercise-modal-list-item">

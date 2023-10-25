@@ -59,7 +59,8 @@
   color: var(--accent-color);
   letter-spacing: -0.02em;
 }
-
+.exercises-modal__rating-body {
+}
 .exercise-modal-rating__number {
   margin-bottom: 28px;
   font-size: 12px;
@@ -67,8 +68,34 @@
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: var(--accent-color);
+  position: relative;
 }
 
+.exercise-modal-rating__number::before {
+  content: '★★★★★';
+  display: block;
+  color: rgba(244, 244, 244, 0.2);
+  position: absolute;
+  left: 12px;
+}
+.exercise-modal__rating_active {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.exercise-modal__rating_active::before {
+  content: '★★★★★';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: #eea10c;
+}
 .exercise-modal-tumb_list {
   margin-bottom: 28px;
 }
