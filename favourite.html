@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites</title>
     
-    <script type="module" crossorigin src="/your_energy_app/assets/favourite-5008e202.js"></script>
-    <link rel="modulepreload" crossorigin href="/your_energy_app/assets/mobile-menu-8cd15455.js">
+    <script type="module" crossorigin src="/your_energy_app/assets/favourite-2e750a14.js"></script>
+    <link rel="modulepreload" crossorigin href="/your_energy_app/assets/mobile-menu-3a51af0c.js">
     <link rel="stylesheet" href="/your_energy_app/assets/mobile-menu-a6be707d.css">
   </head>
   <body>
@@ -225,6 +225,59 @@
       </div>
  </div>
     </div>
+    <div class="backdrop is-hidden js-backdrop" data-exmodal>
+  <div class="exercise-modal">
+    <button
+      class="exercise-modal__close-btn close-btn"
+      type="button"
+      data-exmod-close
+    >
+      <svg class="exercise-modal__close-icon close-icon">
+        <use href="/your_energy_app/assets/icons-df0d6227.svg#modalclose" width="24" height="24"></use>
+      </svg>
+    </button>
+
+    <div class="exercise-modal__content" data-name="modalfavourite"></div>
+
+    <ul class="exercise-modal-button">
+      <li class="exercise-modal_item">
+        <button type="button" class="exercise-modal-button__remove">
+          Remove from favorites
+          <span>
+            <svg
+              class="exercise-modal-button__remove-icon"
+              width="20"
+              height="20"
+            >
+              <use href="/your_energy_app/assets/icons-df0d6227.svg#icon-trash"></use>
+            </svg>
+          </span>
+        </button>
+      </li>
+
+      <li class="exercise-modal_item">
+        <button type="button" class="exercise-modal-button__favorite">
+          Add to favorites
+          <span>
+            <svg class="modal-exercise-heart-icon">
+              <use
+                href="/your_energy_app/assets/icons-df0d6227.svg#icon-heart"
+                width="18"
+                height="18"
+              ></use>
+            </svg>
+          </span>
+        </button>
+      </li>
+
+      <li class="exercise-modal_item">
+        <button type="button" class="exercise-modal-button__rating">
+          Give a rating
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
     
 
     <!-- <script type="module" src="main.js"></script> -->

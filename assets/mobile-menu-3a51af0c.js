@@ -13,8 +13,8 @@
           <div class="card__top">
             <span class="card_tag">Workout</span>
             <span class="card_rating">
-              <span>${o.toFixed(1)}</span>
-              <svg width="18" height="18">
+              <span class="span_rating">${o.toFixed(1)}</span>
+              <svg class="star" width="18" height="18">
                 <use href="${U}#icon-star-yellow"></use>
               </svg>
               <span class="is-hidden"><button data-id="${f}"><svg width="16" height="16">
