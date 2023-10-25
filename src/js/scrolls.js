@@ -1,4 +1,6 @@
 let buttonTop = document.getElementById('buttonTop');
+let idAnimationScroll = null;
+
 
 window.addEventListener('scroll', function () {
   if (
@@ -18,12 +20,18 @@ buttonTop.addEventListener('click', function () {
 function smoothScrollToTop() {
   const currentScroll =
     document.documentElement.scrollTop || document.body.scrollTop;
-
   if (currentScroll > 0) {
-    window.requestAnimationFrame(smoothScrollToTop);
+    idAnimationScroll = window.requestAnimationFrame(smoothScrollToTop);
     window.scrollTo(0, currentScroll - currentScroll / 30);
   }
 }
+ window.addEventListener('wheel', function () {
+    cancelAnimationFrame(idAnimationScroll);
+ });
+  
+ window.addEventListener('keyup', function () {
+    cancelAnimationFrame(idAnimationScroll);
+  });
 
 export function createSmoothScrollBottom(elementWidth, direction) {
   const { height: cardHeight } = elementWidth;

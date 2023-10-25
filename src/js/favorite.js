@@ -1,13 +1,27 @@
 import { addClass, removeClass } from './components/fn-helpers';
-import { favouriteTexte } from './components/refs';
+// import { favouriteTexte } from './components/refs';
+import { addToFavoritesButton, removeFromFavoritesButton } from './exercises-section/exercise-modal'
+import { fetchExercise } from './api';
+import { createCardsString } from './components/cards-template'
 
+const favouriteTexte = document.querySelector('[data="favourite__text"]');
+console.log(favouriteTexte);
 export const findDivExercises = () => {
   const divExercises = document.querySelector('.exercise-modal-tumb');
   console.log(divExercises);
+  return divExercises;
 }
 
-export const addToFavorite = () => {
-  
+export const addToFavorite = (e) => {
+  const divExercises = document.querySelector('.exercise-modal-tumb');
+  const id = divExercises.dataset;
+  fetchExercise(id.id)
+  .then(data => {
+    localStorage.setItem(data._id, JSON.stringify(data));
+  })
+  .catch(error => console.log(error))
+    addClass(addToFavoritesButton, 'is-hidden');
+    removeClass(removeFromFavoritesButton, 'is-hidden');
 }
 
 let exerciseState = {};
@@ -31,7 +45,7 @@ const loadFavourite = () => {
       allEx.push(exerciseState);
       addClass(favouriteTexte, 'is-hidden');
     }
-    //   markup(allEx); murkup function
+    createCardsString(allEx);
   }
 };
-window.addEventListener('load', loadFavourite);
+loadFavourite();
