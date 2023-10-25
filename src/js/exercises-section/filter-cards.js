@@ -7,7 +7,9 @@ import {
   createFiltersCardsSkeleton,
 } from './filter-card-template';
 import { filterCardsListRef, activeFilter } from '../components/refs';
-import {searchRefs} from './exercises-cards'
+import { createSmoothScrollUp, createSmoothScrollBottom } from '../scrolls';
+import { searchRefs } from './exercises-cards';
+
 // ************************************************************
 
 window.addEventListener('load', () => {
@@ -32,8 +34,9 @@ function getFilters() {
       }
       apendMarkup(filterCardsListRef, createFilterString(data.results));
       underlineActiveFilter();
+
       displayPagination(data.totalPages);
-      searchRefs()
+      searchRefs();
     } catch (error) {
       console.log(error);
     }
@@ -50,7 +53,10 @@ function getFilters() {
       button.addEventListener('click', event => {
         filterName = event.target.textContent;
         fetchDataFromFilter(filterName.trim());
-
+        createSmoothScrollBottom(
+          filterCardsListRef.firstElementChild.getBoundingClientRect(),
+          1
+        );
         setActiveItem(filterBtns, button, 'exercises__filter-btn_active');
         // event.target.disabled = true;
       });
@@ -90,7 +96,7 @@ function getFilters() {
       );
       console.log(activeFilter.textContent.trim());
       fetchDataFromFilter(activeFilter.textContent.trim(), currentPage);
-
+      createSmoothScrollUp(filterCardsListRef);
       activePaginItem.classList.remove('exercises__pagination-item_active');
 
       paginItem.classList.add('exercises__pagination-item_active');
