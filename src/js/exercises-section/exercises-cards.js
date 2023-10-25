@@ -48,7 +48,6 @@ const exercisesCard = e => {
       removeClass(filterCardsListRef, 'exercises__filter-cards-list');
       apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
       exerciseCardListRef.innerHTML = createCardsString(data.results);
-    
       cardBtnRef();
     })
     .catch(er => console.log(er));
