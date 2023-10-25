@@ -1,4 +1,5 @@
 import { capitalizeFirstLetter } from '../components/fn-helpers';
+import icons from '../../img/icons.svg';
 
 function returnMarkup() {
   return `<li class="exercises__item-card">
@@ -8,19 +9,19 @@ function returnMarkup() {
             <span class="card_rating">
               <span>${rating}</span>
               <svg width="34" height="32">
-                <use href="./img/icons.svg#icon-star-yellow"></use>
+                <use href="${icons}#icon-star-yellow"></use>
               </svg>
             </span>
             <button class="card__btn" data-exmod-open>
               Start
               <svg class="card__btn-arrow" width="32" height="32">
-                <use href="./img/icons.svg#icon-right-arrow"></use>
+                <use href="${icons}#icon-right-arrow"></use>
               </svg>
             </button>
           </div>
           <div class="card__middle">
             <svg class="card__title-svg" width="32" height="32">
-              <use href="./img/icons.svg#icon-run-men2"></use>
+              <use href="${icons}#icon-run-men2"></use>
             </svg>
             <h3 class="card__title">${capitalizeFirstLetter(name)}</h3>
           </div>
@@ -47,20 +48,20 @@ export function createCardsString(arr) {
             <span class="card_tag">Workout</span>
             <span class="card_rating">
               <span>${rating}</span>
-              <svg width="34" height="32">
-                <use href="./img/icons.svg#icon-star-yellow"></use>
+              <svg width="18" height="18">
+                <use href="${icons}#icon-star-yellow"></use>
               </svg>
             </span>
             <button data-id="${_id}" class="card__btn" data-exmod-open>
               Start
               <svg class="card__btn-arrow" width="32" height="32">
-                <use href="./img/icons.svg#icon-right-arrow"></use>
+                <use href="${icons}#icon-right-arrow"></use>
               </svg>
             </button>
           </div>
           <div class="card__middle">
             <svg class="card__title-svg" width="32" height="32">
-              <use href="./img/icons.svg#icon-run-men2"></use>
+              <use href="${icons}#icon-run-men2"></use>
             </svg>
             <h3 class="card__title">${capitalizeFirstLetter(name)}</h3>
           </div>
@@ -84,7 +85,7 @@ export function createCardsSkeleton(amount) {
   let skeleton = '';
   for (let i = 0; i < amount; i++) {
     skeleton +=
-      '<li class="exercises__skeleton-loader"> <span class="skeleton-loader"></span></li>';
+      '<li class="exercises__skeleton-loader"><span class="skeleton-loader"></span></li>';
   }
   return skeleton;
 }

@@ -219,12 +219,16 @@
   display: flex;
   flex-grow: 1;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
 }
 .card__text,
 .card_rating span,
 .card__btn {
   line-height: 1.5;
+}
+
+.card_rating span {
+  padding-top: 3px;
 }
 .card_rating svg {
   fill: var(--orange-color);
