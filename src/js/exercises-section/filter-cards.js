@@ -8,6 +8,8 @@ import {
 } from './filter-card-template';
 import { filterCardsListRef, activeFilter } from '../components/refs';
 import { createSmoothScrollUp, createSmoothScrollBottom } from '../scrolls';
+import { searchRefs } from './exercises-cards';
+
 // ************************************************************
 
 window.addEventListener('load', () => {
@@ -34,6 +36,7 @@ function getFilters() {
       underlineActiveFilter();
 
       displayPagination(data.totalPages);
+      searchRefs();
     } catch (error) {
       console.log(error);
     }

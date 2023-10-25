@@ -10,6 +10,7 @@ import './rating';
 import './exercises-section/exercise-modal';
 import './exercises-section/exercise-modal-template';
 import './notiflix';
+import './components/mode';
 // import './js/scroll-up';
 import './exercises-section/exercises-cards';
 import './scrolls';

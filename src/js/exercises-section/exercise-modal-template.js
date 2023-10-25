@@ -25,7 +25,14 @@ export function renderExerciseModal({
               <h2 class="exercise-modal__title">${capitalizeFirstLetter(
                 name
               )}</h2>
-              <p class="exercise-modal-rating__number">${rating}</p>
+            
+             <div class="exercises-modal__rating-body">
+               <p class="exercise-modal-rating__number">${rating.toFixed(1)}</p>
+             <div class="exercise-modal__rating_active" style="width: ${
+               rating / 0.05
+             }%"></div>
+             
+             </div>   
 
               <div class='exercise-modal-tumb_list'>
               <ul class="exercise-modal-list">

@@ -38,7 +38,9 @@
   position: relative;
   min-height: 150px;
 }
-
+.darkmode .info__block {
+  border: 1px solid var(--accent-color);
+}
 .info__wrapper-title {
   color: var(--accent-color);
   font-size: 20px;
@@ -86,10 +88,21 @@
   font-weight: 500;
   line-height: 1;
 }
+.darkmode .info__trhd-title {
+  color: var(--dark-color);
+}
+.darkmode .info__trhd-text {
+  color: var(--dark-color);
+}
 .info__trhd-text {
   opacity: 0.6;
   margin-bottom: 16px;
 }
+
+.darkmode .info__trhd-recommendation {
+  color: var(--dark-color);
+}
+
 .info__button {
   position: relative;
 }

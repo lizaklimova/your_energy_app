@@ -3,14 +3,24 @@
   align-items: center;
   justify-content: space-between;
 }
+.darkmode .header__logo {
+  fill: var(--accent-color);
+}
 
 .header__logo:hover {
   animation-name: hvr-pulse;
-    animation-duration: 1s;
-    animation-delay: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    filter: drop-shadow(-1px 1px 5px rgb(9, 129, 21));
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(-1px 1px 5px rgb(9, 129, 21));
+}
+
+.darkmode .button__svg {
+  stroke: var(--accent-color);
+}
+.button__svg {
+  stroke: var(--dark-color);
 }
 
 .header__button-open {
@@ -54,7 +64,15 @@
     border-radius: 60px;
     background: var(--dark-color);
   }
-
+  .darkmode .header__menu {
+    background: var(--accent-color);
+  }
+  .darkmode .header__home {
+    color: var(--dark-color);
+  }
+  .darkmode .header__favorites {
+    color: var(--dark-color);
+  }
   .header__home {
     min-width: 66px;
     height: 36px;
@@ -72,7 +90,11 @@
     color: var(--dark-color);
     background: var(--accent-color);
   }
-
+  .darkmode .header__home:hover,
+  .darkmode .header__home:focus {
+    color: var(--accent-color);
+    background: var(--dark-color);
+  }
   .header__favorites {
     min-width: 87px;
     height: 36px;
@@ -90,7 +112,11 @@
     color: var(--dark-color);
     background: var(--accent-color);
   }
-
+  .darkmode .header__favorites:hover,
+  .darkmode .header__favorites:focus {
+    color: var(--accent-color);
+    background: var(--dark-color);
+  }
   .header__menu-link {
     cursor: pointer;
     font-size: 16px;
@@ -115,7 +141,10 @@
     opacity: 0.8;
     transition: color var(--transition), background-color var(--transition);
   }
-
+  .darkmode .header__soc-link {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+  }
   .header__soc-link:hover,
   .header__soc-link:focus {
     border-radius: 10px;
@@ -123,7 +152,11 @@
     color: var(--accent-color);
     opacity: 0.8;
   }
-
+  .darkmode .header__soc-link:hover,
+  .darkmode .header__soc-link:focus {
+    color: var(--dark-color);
+    background-color: var(--accent-color);
+  }
   .header__soc-icon {
     fill: currentColor;
   }

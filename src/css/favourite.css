@@ -1,3 +1,7 @@
+body.darkmode {
+  background-color: var(--dark-color);
+  color: #fff;
+}
 .favorite.container {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -12,6 +16,12 @@
   margin-bottom: 20px;
 }
 
+.darkmode .favorite__title {
+  color: var(--accent-color);
+}
+.favorite__info-container {
+}
+
 .favorite__quote-block {
   display: flex;
   gap: 18px;
@@ -24,7 +34,9 @@
   padding: 20px;
   position: relative;
 }
-
+.darkmode .favorite__quote-block {
+  border: 1px solid var(--accent-color);
+}
 .info__block-icon-commas {
   position: absolute;
   top: 20px;
