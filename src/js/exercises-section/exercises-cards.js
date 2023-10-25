@@ -6,7 +6,7 @@ import {
   createCardsSkeleton,
   createCardsString,
 } from '../components/cards-template';
-import { handleModalOpen } from '../exercises-section/exercise-modal';
+import { handleModalOpen } from './exercise-modal';
 
 function replaceSpace(text) {
   const words = text.trim().split(' ');

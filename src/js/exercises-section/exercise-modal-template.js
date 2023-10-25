@@ -1,6 +1,7 @@
 import { capitalizeFirstLetter } from '../components/fn-helpers';
 
 export function renderExerciseModal({
+  _id,
   bodyPart,
   equipment,
   gifUrl,
