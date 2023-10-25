@@ -54,7 +54,7 @@ const exercisesCard = e => {
       exerciseOpenBtn.forEach(btn => {
         btn.addEventListener('click', e => {
           const data = e.currentTarget.dataset.id;
-          handleModalOpen(e, data);
+          handleModalOpen(data);
         });
       });
 

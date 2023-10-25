@@ -21,9 +21,9 @@ refs.modalBackdrop.addEventListener('click', e => {
 refs.openModalBtn.addEventListener('click', handleModalOpen);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
-export async function handleModalOpen() {
+export async function handleModalOpen(exId) {
   try {
-    const data = await fetchExercise('64f389465ae26083f39b17a6');
+    const data = await fetchExercise(exId);
     renderCard(data);
     scrollController.disabledScroll();
   } catch (error) {

@@ -35,9 +35,9 @@ export function replaceSpace(text) {
 }
 
 export const cardBtnRef = () => {
-  const cardBtns = document.querySelectorAll('.card__btn')
+  const cardBtns = document.querySelectorAll('.card__btn');
   cardBtns.forEach(cardBtn => {
     cardBtn.addEventListener('click', needFunction);
     console.log(cardBtn);
   });
-}
+};
