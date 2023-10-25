@@ -51,6 +51,9 @@ export function createCardsString(arr) {
               <svg width="18" height="18">
                 <use href="${icons}#icon-star-yellow"></use>
               </svg>
+              <span class="is-hidden"><button data-id="${_id}"><svg width="16" height="16">
+                <use href="${icons}#icon-trash"></use>
+              </svg></button></span>
             </span>
             <button data-id="${_id}" class="card__btn" data-exmod-open>
               Start

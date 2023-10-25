@@ -11,9 +11,10 @@ export function renderExerciseModal({
   burnedCalories,
   time,
   popularity,
+  _id
 }) {
   return ` 
-    <div class="exercise-modal-tumb">
+    <div class="exercise-modal-tumb" data-id="${_id}">
             <img
               class="exercise-modal__img"
               src="${gifUrl}" 
