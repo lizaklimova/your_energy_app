@@ -54,14 +54,14 @@
                ${T(o)}
               </p>
             </div>
-          </div>`}let se=document.getElementById("buttonTop"),pe=null;window.addEventListener("scroll",function(){document.body.scrollTop>700||document.documentElement.scrollTop>700?se.style.display="block":se.style.display="none"});se.addEventListener("click",function(){Xe()});function Xe(){const e=document.documentElement.scrollTop||document.body.scrollTop;e>0&&(pe=window.requestAnimationFrame(Xe),window.scrollTo(0,e-e/30))}window.addEventListener("wheel",function(){cancelAnimationFrame(pe)});window.addEventListener("keyup",function(){cancelAnimationFrame(pe)});function In(e,t){const{height:n}=e,r=n*t;window.scrollBy({top:r,behavior:"smooth"})}function Hn(e){e.scrollIntoView({behavior:"smooth",block:"start"})}const P={scrollPosition:0,disabledScroll(){P.scrollPosition=window.scrollY,document.body.style.cssText=`
-      overflow:hidden;
-      position:fixed;
-      top: -${P.scrollPosition}px;
-      left:0;
-      height:100vh;
-      width:100vw;
-      padding-right: ${window.innerWidth-document.body.offsetWidth}
+          </div>`}let se=document.getElementById("buttonTop"),pe=null;window.addEventListener("scroll",function(){document.body.scrollTop>700||document.documentElement.scrollTop>700?se.style.display="block":se.style.display="none"});se.addEventListener("click",function(){Xe()});function Xe(){const e=document.documentElement.scrollTop||document.body.scrollTop;e>0&&(pe=window.requestAnimationFrame(Xe),window.scrollTo(0,e-e/30))}window.addEventListener("wheel",function(){cancelAnimationFrame(pe)});window.addEventListener("keyup",function(){cancelAnimationFrame(pe)});function In(e,t){const{height:n}=e,r=n*t;window.scrollBy({top:r,behavior:"smooth"})}function Hn(e){e.scrollIntoView({behavior:"smooth",block:"start"})}const P={scrollPosition:0,disabledScroll(){P.scrollPosition=window.scrollY,document.body.style.cssText=` 
+      overflow:hidden; 
+      position:fixed; 
+      top: -${P.scrollPosition}px; 
+      left:0; 
+      height:100vh; 
+      width:100vw; 
+      padding-right: ${window.innerWidth-document.body.offsetWidth} 
       `,document.documentElement.style.scrollBehavior="unset"},enabledScroll(){document.body.style.cssText="",window.scroll({top:P.scrollPosition}),document.documentElement.style.scrollBehavior=""}},F={closeModalBtn:document.querySelector("[data-exmod-close]"),modal:document.querySelector("[data-exmodal]"),modalContentContainer:document.querySelector(".exercise-modal__content"),modalBackdrop:document.querySelector(".js-backdrop")},me=document.querySelector(".exercise-modal-button__favorite"),xn=document.querySelector(".exercise-modal-button__remove");F.modalBackdrop.addEventListener("click",e=>{e.target===e.currentTarget&&(C(F.modal,"is-hidden"),P.enabledScroll())});F.closeModalBtn.addEventListener("click",Ye);async function Mn(e){try{const t=await Ke(e);On(t),P.disabledScroll(),me.addEventListener("click",An)}catch(t){console.error(t.message)}}function On(e){const t=_n(e);F.modalContentContainer.innerHTML=t;const n=document.querySelector(".exercise-modal-button__remove");C(n,"is-hidden"),n.addEventListener("click",function(){C(n,"is-hidden"),fe(me,"is-hidden")}),F.modal.classList.remove("is-hidden"),document.addEventListener("keydown",Ze)}function Ye(){F.modal.classList.add("is-hidden"),document.removeEventListener("keydown",Ze),P.enabledScroll()}function Ze(e){e.code==="Escape"&&Ye()}const j="/your_energy_app/assets/icons-a71d8ab6.svg";function Rn(e){return e.map(({bodyPart:n,name:r,target:s,rating:o,burnedCalories:i,time:l,_id:d})=>`<li class="exercises__item-card">
         <div class="card">
           <div class="card__top">
