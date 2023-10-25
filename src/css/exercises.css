@@ -63,6 +63,22 @@
   font-size: 28px;
   line-height: 1.36;
   letter-spacing: -0.56px;
+  display: inline-block;
+}
+
+.exercises__categories-subtitle {
+  display: inline-flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+.exercises__categories-subtitle span {
+  display: inline-block;
+  font-size: 20px;
+  padding: 9px;
+  color: var(--dark-color);
+  opacity: 0.5;
 }
 
 .darkmode .exercises__title {
@@ -366,6 +382,13 @@
     font-size: 24px;
     line-height: 1.33;
   }
+  .exercises__categories-subtitle {
+    font-size: 44px;
+    align-items: baseline;
+  }
+  .exercises__categories-subtitle span {
+    font-size: 24px;
+  }
 }
 @media screen and (min-width: 1440px) {
   .exercises {
@@ -399,6 +422,9 @@
   /* .exercises__filter-cards-list {
     min-height: 1064px;
   } */
+  .exercises__categories-subtitle{
+    display: none;
+  }
 }
 
 @keyframes animloader {
