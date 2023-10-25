@@ -96,11 +96,19 @@
   font-weight: 500;
   line-height: 1;
 }
+.darkmode .info__trhd-title {
+  color: var(--dark-color);
+}
+.darkmode .info__trhd-text {
+  color: var(--dark-color);
+}
 .info__trhd-text {
   opacity: 0.6;
   margin-bottom: 16px;
 }
-
+.darkmode .info__trhd-recommendation {
+  color: var(--dark-color);
+}
 .info__exercise {
   display: none;
 }

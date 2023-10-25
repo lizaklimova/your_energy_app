@@ -8,6 +8,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin: 0 auto;
   cursor: pointer;
   padding: 5px;
 }
@@ -99,7 +100,7 @@ body.darkmode {
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .hero__block-item:not(:last-child) {
@@ -124,6 +125,9 @@ body.darkmode {
 }
 
 @media screen and (min-width: 768px) {
+  .btn {
+    margin: 0;
+  }
   .hero {
     padding-top: 100px;
   }

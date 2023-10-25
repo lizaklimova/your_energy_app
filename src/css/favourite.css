@@ -15,7 +15,9 @@ body.darkmode {
   letter-spacing: -0.56px;
   margin-bottom: 20px;
 }
-
+.darkmode .favorite__title {
+  color: var(--accent-color);
+}
 .favorite__info-container {
 }
 
