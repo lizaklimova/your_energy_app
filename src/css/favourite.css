@@ -34,7 +34,9 @@ body.darkmode {
   padding: 20px;
   position: relative;
 }
-
+.darkmode .favorite__quote-block {
+  border: 1px solid var(--accent-color);
+}
 .info__block-icon-commas {
   position: absolute;
   top: 20px;

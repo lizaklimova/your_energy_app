@@ -175,7 +175,10 @@
   padding: 6px 10px;
   color: var(--dark-color);
 }
-
+.darkmode .exercises__pagination-item_active {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -401,12 +404,17 @@
   margin-bottom: 20px;
   transition: 0.8s;
 }
-
+.darkmode .exercises__filter-search-input {
+  border: 1px solid var(--accent-color);
+}
 .exercises__filter-search-input:hover,
 .exercises__filter-search-input:focus {
   outline: 1.5px solid var(--dark-color);
 }
-
+.darkmode .exercises__filter-search-input:hover,
+.darkmode .exercises__filter-search-input:focus {
+  outline: 1.5px solid var(--accent-color);
+}
 .exercises__form-submit-btn {
   position: absolute;
   background: transparent;
@@ -416,13 +424,15 @@
   right: 15px;
   padding: 0;
 }
-.exercises__form-submit-icon {
+.exercises__form-submit-btn-icon {
   stroke: var(--dark-color);
   fill: transparent;
   width: 18px;
   height: 18px;
 }
-
+.darkmode .exercises__form-submit-btn-icon {
+  stroke: var(--accent-color);
+}
 .exercises__form-reset-btn {
   position: absolute;
   background: transparent;

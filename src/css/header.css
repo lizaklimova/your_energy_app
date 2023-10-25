@@ -65,7 +65,7 @@
     background: var(--dark-color);
   }
   .darkmode .header__menu {
-    background-color: var(--accent-color);
+    background: var(--accent-color);
   }
   .darkmode .header__home {
     color: var(--dark-color);
@@ -90,7 +90,11 @@
     color: var(--dark-color);
     background: var(--accent-color);
   }
-
+  .darkmode .header__home:hover,
+  .darkmode .header__home:focus {
+    color: var(--accent-color);
+    background: var(--dark-color);
+  }
   .header__favorites {
     min-width: 87px;
     height: 36px;
@@ -108,7 +112,11 @@
     color: var(--dark-color);
     background: var(--accent-color);
   }
-
+  .darkmode .header__favorites:hover,
+  .darkmode .header__favorites:focus {
+    color: var(--accent-color);
+    background: var(--dark-color);
+  }
   .header__menu-link {
     cursor: pointer;
     font-size: 16px;
