@@ -2,9 +2,8 @@ import { fetchExercise } from '../api';
 import { renderExerciseModal } from './exercise-modal-template';
 import { addClass, removeClass } from '../components/fn-helpers';
 import { scrollController } from '../scrolls';
-
-
 const refs = {
+  // openModalBtn: document.querySelector('[data-exmod-open]'),
   closeModalBtn: document.querySelector('[data-exmod-close]'),
   modal: document.querySelector('[data-exmodal]'),
   modalContentContainer: document.querySelector('.exercise-modal__content'),
@@ -18,7 +17,6 @@ const addToFavoritesButton = document.querySelector(
     '.exercise-modal-button__remove'
   );
 
-
 refs.modalBackdrop.addEventListener('click', e => {
   if (e.target === e.currentTarget) {
     addClass(refs.modal, 'is-hidden');
@@ -26,6 +24,7 @@ refs.modalBackdrop.addEventListener('click', e => {
   }
 });
 
+// refs.openModalBtn.addEventListener('click', handleModalOpen);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
 export async function handleModalOpen(exId) {
@@ -35,6 +34,7 @@ export async function handleModalOpen(exId) {
     scrollController.disabledScroll();
     removeFromFavoritesButton.addEventListener('click', removeFavorite);
     addToFavoritesButton.addEventListener('click', addToFavorite);
+
   } catch (error) {
     console.error(error.message);
   }

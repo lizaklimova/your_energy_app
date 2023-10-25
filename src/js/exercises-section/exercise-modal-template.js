@@ -1,6 +1,7 @@
 import { capitalizeFirstLetter } from '../components/fn-helpers';
 
 export function renderExerciseModal({
+  _id,
   bodyPart,
   equipment,
   gifUrl,
@@ -11,7 +12,6 @@ export function renderExerciseModal({
   burnedCalories,
   time,
   popularity,
-  _id
 }) {
   return ` 
     <div class="exercise-modal-tumb" data-id="${_id}">

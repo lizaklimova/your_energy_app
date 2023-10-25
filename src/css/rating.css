@@ -25,6 +25,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  transition: width 200ms ease-in;
 }
 .rating__active::before {
   content: '★★★★★';
