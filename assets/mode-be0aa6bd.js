@@ -8,21 +8,21 @@
    ${t}
   </p>
   <p class="info__wrapper-author">${e}</p>
-</div>`;pn.forEach(r=>{r.innerHTML=n})}function hn({author:e,quote:t}){const n={author:e,quote:t,date:new Date().getDate()};try{const r=JSON.stringify(n);localStorage.setItem($e,r)}catch(r){console.log(r.message)}}function yn(){try{const e=localStorage.getItem($e);if(e){let t=JSON.parse(e),n=new Date().getDate();t.date!==n&&ze()}}catch(e){console.log(e.message)}}yn();const D=(e,t)=>{e.classList.add(t)},re=(e,t)=>{e.classList.remove(t)};function B(e){return e.slice(0,1).toUpperCase()+e.slice(1)}function Pn(e,t,n){e.forEach(r=>{re(r,n)}),D(t,n)}const Ln=(e,t)=>{e.innerHTML=t};function bn({bodyPart:e,equipment:t,gifUrl:n,name:r,target:s,description:o,rating:i,burnedCalories:l,time:d,popularity:f}){return` 
-    <div class="exercise-modal-tumb" data-id="${_id}">
+</div>`;pn.forEach(r=>{r.innerHTML=n})}function hn({author:e,quote:t}){const n={author:e,quote:t,date:new Date().getDate()};try{const r=JSON.stringify(n);localStorage.setItem($e,r)}catch(r){console.log(r.message)}}function yn(){try{const e=localStorage.getItem($e);if(e){let t=JSON.parse(e),n=new Date().getDate();t.date!==n&&ze()}}catch(e){console.log(e.message)}}yn();const D=(e,t)=>{e.classList.add(t)},re=(e,t)=>{e.classList.remove(t)};function B(e){return e.slice(0,1).toUpperCase()+e.slice(1)}function Pn(e,t,n){e.forEach(r=>{re(r,n)}),D(t,n)}const Ln=(e,t)=>{e.innerHTML=t};function bn({_id:e,bodyPart:t,equipment:n,gifUrl:r,name:s,target:o,description:i,rating:l,burnedCalories:d,time:f,popularity:c}){return` 
+    <div class="exercise-modal-tumb" data-id="${e}">
             <img
               class="exercise-modal__img"
-              src="${n}" 
+              src="${r}" 
               alt="exercise"
               width="295"
               height="259"
             />
             <div class="exercise-modal-tumb_card">
-              <h2 class="exercise-modal__title">${B(r)}</h2>
+              <h2 class="exercise-modal__title">${B(s)}</h2>
             
              <div class="exercises-modal__rating-body">
-               <p class="exercise-modal-rating__number">${i.toFixed(1)}</p>
-             <div class="exercise-modal__rating_active" style="width: ${i/.05}%"></div>
+               <p class="exercise-modal-rating__number">${l.toFixed(1)}</p>
+             <div class="exercise-modal__rating_active" style="width: ${l/.05}%"></div>
              
              </div>   
 
@@ -30,28 +30,28 @@
               <ul class="exercise-modal-list">
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Target</h3>
-                  <p class="exercise-modal-list__text">${B(s)}</p>
+                  <p class="exercise-modal-list__text">${B(o)}</p>
                 </li>
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Body Part</h3>
-                  <p class="exercise-modal-list__text">${B(e)}</p>
-                </li>
-                <li class="exercise-modal-list-item">
-                  <h3 class="exercise-modal-list__title">Equipment</h3>
                   <p class="exercise-modal-list__text">${B(t)}</p>
                 </li>
                 <li class="exercise-modal-list-item">
+                  <h3 class="exercise-modal-list__title">Equipment</h3>
+                  <p class="exercise-modal-list__text">${B(n)}</p>
+                </li>
+                <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Popular</h3>
-                  <p class="exercise-modal-list__text">${f}</p>
+                  <p class="exercise-modal-list__text">${c}</p>
                 </li>
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Burned calories</h3>
-                  <p class="exercise-modal-list__text">${l}/${d}min</p>
+                  <p class="exercise-modal-list__text">${d}/${f}min</p>
                 </li>
               </ul>
               </div>
               <p class="exercise-modal__description">
-               ${B(o)}
+               ${B(i)}
               </p>
             </div>
           </div>`}let se=document.getElementById("buttonTop"),de=null;window.addEventListener("scroll",function(){document.body.scrollTop>700||document.documentElement.scrollTop>700?se.style.display="block":se.style.display="none"});se.addEventListener("click",function(){Je()});function Je(){const e=document.documentElement.scrollTop||document.body.scrollTop;e>0&&(de=window.requestAnimationFrame(Je),window.scrollTo(0,e-e/30))}window.addEventListener("wheel",function(){cancelAnimationFrame(de)});window.addEventListener("keyup",function(){cancelAnimationFrame(de)});function Fn(e,t){const{height:n}=e,r=n*t;window.scrollBy({top:r,behavior:"smooth"})}function Bn(e){e.scrollIntoView({behavior:"smooth",block:"start"})}const C={scrollPosition:0,disabledScroll(){C.scrollPosition=window.scrollY,document.body.style.cssText=` 
