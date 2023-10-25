@@ -4,7 +4,7 @@ import { addClass, removeClass } from '../components/fn-helpers';
 import { scrollController } from '../scrolls';
 
 const refs = {
-  openModalBtn: document.querySelector('[data-exmod-open]'),
+  // openModalBtn: document.querySelector('[data-exmod-open]'),
   closeModalBtn: document.querySelector('[data-exmod-close]'),
   modal: document.querySelector('[data-exmodal]'),
   modalContentContainer: document.querySelector('.exercise-modal__content'),
@@ -18,7 +18,7 @@ refs.modalBackdrop.addEventListener('click', e => {
   }
 });
 
-refs.openModalBtn.addEventListener('click', handleModalOpen);
+// refs.openModalBtn.addEventListener('click', handleModalOpen);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
 export async function handleModalOpen(exId) {
