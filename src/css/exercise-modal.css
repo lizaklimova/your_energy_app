@@ -76,14 +76,14 @@
   display: block;
   color: rgba(244, 244, 244, 0.2);
   position: absolute;
-  left: 26.7px;
+  left: 20.7px;
 }
 .exercise-modal__rating_active {
   position: absolute;
   width: 0%;
   height: 100%;
   top: 1.5px;
-  left: 26.3px;
+  left: 20.3px;
   overflow: hidden;
 }
 
@@ -173,10 +173,6 @@
   color: var(--dark-color);
 }
 
-/* .exercise-modal-button__rating {
-  width: 90px;
-} */
-
 .exercise-modal-button__favorite:hover,
 .exercise-modal-button__favorite:focus,
 .exercise-modal-button__remove:hover,
@@ -243,7 +239,6 @@
   stroke: var(--dark-color);
   fill: transparent;
   transition: fill var(--transition), stroke var(--transition);
-  /* padding-top: 5px; */
 }
 
 .exercise-modal-button__remove:hover .exercise-modal-button__remove-icon,
