@@ -38,7 +38,9 @@
   position: relative;
   min-height: 150px;
 }
-
+.darkmode .info__block {
+  border: 1px solid var(--accent-color);
+}
 .info__wrapper-title {
   color: var(--accent-color);
   font-size: 20px;
