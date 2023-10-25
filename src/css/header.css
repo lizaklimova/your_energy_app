@@ -6,9 +6,7 @@
 .darkmode .header__logo {
   fill: var(--accent-color);
 }
-/* .darkmode .header__button-open {
-  stroke: var(--accent-color);
-} */
+
 .darkmode .button__svg {
   stroke: var(--accent-color);
 }
