@@ -124,6 +124,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  transition: width var(--transition);
 }
 .rating__active::before {
   content: '★★★★★';
