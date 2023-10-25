@@ -47,8 +47,8 @@ export function createCardsString(arr) {
           <div class="card__top">
             <span class="card_tag">Workout</span>
             <span class="card_rating">
-              <span>${rating.toFixed(1)}</span>
-              <svg width="18" height="18">
+              <span class="span_rating">${rating.toFixed(1)}</span>
+              <svg class="star" width="18" height="18">
                 <use href="${icons}#icon-star-yellow"></use>
               </svg>
               <span class="is-hidden"><button data-id="${_id}"><svg width="16" height="16">
