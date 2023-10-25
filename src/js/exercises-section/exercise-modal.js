@@ -11,17 +11,17 @@ const refs = {
   modalBackdrop: document.querySelector('.js-backdrop'),
 };
 
-// refs.modalBackdrop.addEventListener('click', e => {
-//   if (e.target === e.currentTarget) {
-//     addClass(refs.modal, 'is-hidden');
-//     scrollController.enabledScroll();
-//   }
-// });
+refs.modalBackdrop.addEventListener('click', e => {
+  if (e.target === e.currentTarget) {
+    addClass(refs.modal, 'is-hidden');
+    scrollController.enabledScroll();
+  }
+});
 
 refs.openModalBtn.addEventListener('click', handleModalOpen);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
-async function handleModalOpen() {
+export async function handleModalOpen() {
   try {
     const data = await fetchExercise('64f389465ae26083f39b17a6');
     renderCard(data);

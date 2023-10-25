@@ -6,6 +6,7 @@ import {
   createCardsSkeleton,
   createCardsString,
 } from '../components/cards-template';
+import { handleModalOpen } from '../exercises-section/exercise-modal';
 
 function replaceSpace(text) {
   const words = text.trim().split(' ');
@@ -48,6 +49,15 @@ const exercisesCard = e => {
       removeClass(filterCardsListRef, 'exercises__filter-cards-list');
       apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
       exerciseCardListRef.innerHTML = createCardsString(data.results);
+
+      const exerciseOpenBtn = document.querySelectorAll('[data-exmod-open]');
+      exerciseOpenBtn.forEach(btn => {
+        btn.addEventListener('click', e => {
+          const data = e.currentTarget.dataset.id;
+          handleModalOpen(e, data);
+        });
+      });
+
       cardBtnRef();
     })
     .catch(er => console.log(er));

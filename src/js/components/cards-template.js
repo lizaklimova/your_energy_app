@@ -11,7 +11,7 @@ function returnMarkup() {
                 <use href="./img/icons.svg#icon-star-yellow"></use>
               </svg>
             </span>
-            <button class="card__btn">
+            <button class="card__btn" data-exmod-open>
               Start
               <svg class="card__btn-arrow" width="32" height="32">
                 <use href="./img/icons.svg#icon-right-arrow"></use>
@@ -51,7 +51,7 @@ export function createCardsString(arr) {
                 <use href="./img/icons.svg#icon-star-yellow"></use>
               </svg>
             </span>
-            <button data-id="${_id}" class="card__btn">
+            <button data-id="${_id}" class="card__btn" data-exmod-open>
               Start
               <svg class="card__btn-arrow" width="32" height="32">
                 <use href="./img/icons.svg#icon-right-arrow"></use>
