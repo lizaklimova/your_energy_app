@@ -34,4 +34,20 @@ export function replaceSpace(text) {
   }
 }
 
+export function minimiseFirstLetter(str) {
+  const words = str.slice(0, 1).toLowerCase() + str.slice(1);
+  const word = words.split(' ');
+  if (word.length === 2) {
+    return word.join('');
+  } else {
+    return words;
+  }
+}
 
+export function spliceLastLetter(filter) {
+  if (filter === 'Body parts') {
+    return filter.slice(0, filter.length - 1);
+  } else {
+    return filter;
+  }
+}
