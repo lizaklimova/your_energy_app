@@ -35,10 +35,6 @@
   fill: var(--accent-color);
 }
 
-/* .exercise-modal__content {
-  padding: 40px 20px;
-} */
-
 .exercise-modal-tumb {
   padding-bottom: 40px;
 }
@@ -59,8 +55,13 @@
   color: var(--accent-color);
   letter-spacing: -0.02em;
 }
+
 .exercises-modal__rating-body {
+  position: relative;
+  width: 60px;
+  font-size: 12px;
 }
+
 .exercise-modal-rating__number {
   margin-bottom: 28px;
   font-size: 12px;
@@ -68,7 +69,6 @@
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: var(--accent-color);
-  position: relative;
 }
 
 .exercise-modal-rating__number::before {
@@ -76,14 +76,14 @@
   display: block;
   color: rgba(244, 244, 244, 0.2);
   position: absolute;
-  left: 12px;
+  left: 26.7px;
 }
 .exercise-modal__rating_active {
   position: absolute;
   width: 0%;
   height: 100%;
-  top: 0;
-  left: 0;
+  top: 1.5px;
+  left: 26.3px;
   overflow: hidden;
 }
 
@@ -94,7 +94,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  color: #eea10c;
+  color: var(--orange-color);
 }
 .exercise-modal-tumb_list {
   margin-bottom: 28px;

@@ -64,9 +64,11 @@
   line-height: 1.36;
   letter-spacing: -0.56px;
 }
+
 .darkmode .exercises__title {
   color: var(--accent-color);
 }
+
 .exercises__filter-list {
   display: flex;
   align-items: center;
@@ -106,9 +108,11 @@
   height: 4px;
   content: '';
 }
+
 .darkmode .exercises__filter-btn_active::after {
   background-color: var(--accent-color);
 }
+
 .exercises__filter-card {
   margin-bottom: 20px;
 }
@@ -163,12 +167,6 @@
   letter-spacing: 0.8px;
 }
 
-/* .exercises__pagination-btn:disabled {
-  cursor: not-allowed;
-  border: none;
-  color: #d4d4d4;
-} */
-
 .exercises__pagination-item_active {
   border: 1px solid var(--dark-color);
   border-radius: 50%;
@@ -188,6 +186,7 @@
   font-size: 12px;
   width: 100%;
 }
+
 .card__top,
 .card__middle,
 .card__bottom {
@@ -195,19 +194,21 @@
   flex-direction: row;
   align-items: center;
 }
+
 .card__top {
   justify-content: space-between;
   gap: var(--gap);
   padding-bottom: 27px;
 }
+
 .card__middle {
   gap: var(--gap);
   padding-bottom: 8px;
 }
+
 .card__bottom {
   gap: 10px;
   flex-wrap: wrap;
-  /* font-size: 9px; */
 }
 
 .card_tag {
@@ -223,12 +224,14 @@
   font-size: 12px;
   text-transform: uppercase;
 }
+
 .card_rating {
   display: flex;
   flex-grow: 1;
   align-items: center;
   gap: 3px;
 }
+
 .card__text,
 .card_rating span,
 .card__btn {
@@ -238,6 +241,7 @@
 .card_rating span {
   padding-top: 3px;
 }
+
 .card_rating svg {
   fill: var(--orange-color);
   width: 18px;
@@ -284,6 +288,7 @@
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
+
 .exercises__item-card {
   width: calc((100% - 16px) / 1);
 }

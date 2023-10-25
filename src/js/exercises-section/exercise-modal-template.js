@@ -26,8 +26,14 @@ export function renderExerciseModal({
                 name
               )}</h2>
             
-              <p class="exercise-modal-rating__number">${rating}</p>
-             <div class="exercise-modal__rating_active"></div>
+             <div class="exercises-modal__rating-body">
+               <p class="exercise-modal-rating__number">${rating}</p>
+             <div class="exercise-modal__rating_active" style="width: ${
+               rating / 0.05
+             }%"></div>
+             
+             </div>   
+
               <div class='exercise-modal-tumb_list'>
               <ul class="exercise-modal-list">
                 <li class="exercise-modal-list-item">
