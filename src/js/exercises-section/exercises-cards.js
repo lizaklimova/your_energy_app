@@ -24,77 +24,57 @@ export const searchRefs = () => {
   });
 };
 
-// let name;
-// let minimisedFilter;
-// let page = 1;
-// let perPage = 10;
-
-function exercisesCard(e) {
-  let name = e.currentTarget.dataset;
-  let minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
-
+function controlPagination(page, perPage, totalPages) {
   const paginList = document.getElementById('tui-pagination-container');
   const instance = new Pagination(paginList, {
-    totalItems: 17 * 10,
-    itemsPerPage: 10,
+    totalItems: totalPages * perPage,
+    itemsPerPage: perPage,
     visiblePages: 5,
     centerAlign: true,
   });
 
   instance.on('afterMove', event => {
     exerciseCardListRef.innerHTML = '';
-    getCard(event.page);
+    page = event.page;
   });
+}
 
-  getCard();
+let limit;
+let currentPage = 1;
 
-  async function getCard(perPage = 1, limit = 10) {
-    try {
-      const data = await fetchCards(
-        perPage,
-        limit,
-        minimisedFilter,
-        minimiseFirstLetter(name.name)
-      );
+function exercisesCard(e) {
+  let name = e.currentTarget.dataset;
+  let minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
+  let minimisedName = minimiseFirstLetter(name.name);
 
-      console.log(data);
+  screen.width >= 768 ? (limit = 10) : (limit = 8);
+  getCard(currentPage, limit, minimisedFilter, minimisedName);
 
-      addClass(filterCardsListRef, 'is-hidden');
-      removeClass(filterCardsListRef, 'exercises__filter-cards-list');
-      apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
-      exerciseCardListRef.innerHTML = createCardsString(data.results);
+  console.log(limit);
+  console.log(currentPage);
+  console.log(minimisedFilter);
+  console.log(minimisedName);
+}
 
-      const exerciseOpenBtn = document.querySelectorAll('[data-exmod-open]');
-      exerciseOpenBtn.forEach(btn => {
-        btn.addEventListener('click', e => {
-          const data = e.currentTarget.dataset.id;
-          handleModalOpen(data);
-        });
+async function getCard(page = 1, limit = 10, filter, name) {
+  try {
+    const data = await fetchCards(page, limit, filter, name);
+
+    console.log(data);
+
+    addClass(filterCardsListRef, 'is-hidden');
+    removeClass(filterCardsListRef, 'exercises__filter-cards-list');
+    apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
+    apendMarkup(exerciseCardListRef, createCardsString(data.results));
+
+    const exerciseOpenBtn = document.querySelectorAll('[data-exmod-open]');
+    exerciseOpenBtn.forEach(btn => {
+      btn.addEventListener('click', e => {
+        const data = e.currentTarget.dataset.id;
+        handleModalOpen(data);
       });
-    } catch (error) {
-      console.log(error);
-    }
+    });
+  } catch (error) {
+    console.log(error);
   }
-
-  //   fetchCards(page, perPage, minimisedFilter, minimiseFirstLetter(name.name))
-  //     .then(data => {
-  //       console.log(data);
-
-  //       addClass(filterCardsListRef, 'is-hidden');
-  //       removeClass(filterCardsListRef, 'exercises__filter-cards-list');
-  //       apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
-  //       exerciseCardListRef.innerHTML = createCardsString(data.results);
-
-  //       const exerciseOpenBtn = document.querySelectorAll('[data-exmod-open]');
-  //       exerciseOpenBtn.forEach(btn => {
-  //         btn.addEventListener('click', e => {
-  //           const data = e.currentTarget.dataset.id;
-  //           handleModalOpen(data);
-  //         });
-  //       });
-
-  //       // cardBtnRef();
-  //     })
-  //     .catch(er => console.log(er));
-  // }
 }

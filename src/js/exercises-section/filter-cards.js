@@ -14,9 +14,7 @@ import {
 import { createSmoothScrollUp, createSmoothScrollBottom } from '../scrolls';
 import { searchRefs } from './exercises-cards';
 
-
 // ********************************************************
-
 
 window.addEventListener('load', () => {
   addClass(activeFilter, 'exercises__filter-btn_active');
