@@ -9,6 +9,7 @@
   color: var(--accent-color);
   background-color: var(--dark-color);
   overflow: auto;
+  padding: 40px 20px;
 }
 
 .exercise-modal__close-btn:hover .exercise-modal__close-icon,
@@ -34,9 +35,9 @@
   fill: var(--accent-color);
 }
 
-.exercise-modal__content {
+/* .exercise-modal__content {
   padding: 40px 20px;
-}
+} */
 
 .exercise-modal-tumb {
   padding-bottom: 40px;
@@ -58,15 +59,43 @@
   color: var(--accent-color);
   letter-spacing: -0.02em;
 }
-
+.exercises-modal__rating-body {
+}
 .exercise-modal-rating__number {
   margin-bottom: 28px;
   font-size: 12px;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: var(--accent-color);
+  position: relative;
 }
 
+.exercise-modal-rating__number::before {
+  content: '★★★★★';
+  display: block;
+  color: rgba(244, 244, 244, 0.2);
+  position: absolute;
+  left: 12px;
+}
+.exercise-modal__rating_active {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.exercise-modal__rating_active::before {
+  content: '★★★★★';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: #eea10c;
+}
 .exercise-modal-tumb_list {
   margin-bottom: 28px;
 }
@@ -94,7 +123,7 @@
 
 .exercise-modal-list__title {
   letter-spacing: -0.02em;
-
+  font-weight: 400;
   color: var(--accent-color);
   opacity: 0.4;
   font-size: 12px;
@@ -118,8 +147,9 @@
 
 .exercise-modal-button {
   display: flex;
-  justify-content: flex-start;
-  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
   letter-spacing: -0.02em;
 }
 
@@ -129,21 +159,23 @@
 
 .exercise-modal-button__favorite,
 .exercise-modal-button__rating {
-  text-align: center;
-  width: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 167px;
   height: 42px;
-
+  gap: 6px;
   border-radius: 30px;
   border: 1px solid transparent;
   letter-spacing: -0.02em;
-
+  transition: all var(--transition);
   background-color: var(--accent-color);
   color: var(--dark-color);
 }
 
-.exercise-modal-button__rating {
-  width: 100px;
-}
+/* .exercise-modal-button__rating {
+  width: 90px;
+} */
 
 .exercise-modal-button__favorite:hover,
 .exercise-modal-button__favorite:focus,
@@ -161,7 +193,7 @@
 }
 
 .exercise-modal-button__rating {
-  width: 133px;
+  width: 122px;
   background-color: transparent;
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
@@ -180,27 +212,38 @@
   height: 18px;
   stroke: var(--dark-color);
   fill: transparent;
+  transition: stroke var(--transition);
+  align-self: flex-end;
 }
 
 .exercise-modal-button__remove {
-  max-height: 42px;
   border-radius: 30px;
   border: 1px solid transparent;
   letter-spacing: -0.02em;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
   background-color: var(--accent-color);
   color: var(--dark-color);
   transition: all var(--transition);
-  width: 235px;
-  height: 48px;
-  margin-left: 30px;
+  width: 167px;
+  height: 42px;
+}
+
+.exercise-modal-button__favorite.is-hidden,
+.exercise-modal-button__rating.is-hidden,
+.exercise-modal-button__remove.is-hidden {
+  display: none;
 }
 
 .exercise-modal-button__remove-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   stroke: var(--dark-color);
   fill: transparent;
+  transition: fill var(--transition), stroke var(--transition);
+  /* padding-top: 5px; */
 }
 
 .exercise-modal-button__remove:hover .exercise-modal-button__remove-icon,
@@ -213,16 +256,12 @@
   .exercise-modal {
     width: 335px;
   }
-
-  .exercise-modal-button__favorite {
-    width: 157px;
-    gap: 6px;
-  }
 }
 
 @media screen and (min-width: 768px) {
   .exercise-modal {
     width: 704px;
+    padding: 32px;
   }
 
   .exercise-modal__close-btn {
@@ -234,8 +273,9 @@
   }
 
   .exercise-modal__content {
-    width: 708px;
-    padding: 32px;
+    width: 644px;
+    display: flex;
+    flex-direction: row;
   }
 
   .exercise-modal-tumb {
@@ -269,8 +309,20 @@
   .exercise-modal-list {
     gap: 16px;
   }
+
+  .modal-exercise-heart-icon {
+    width: 20px;
+    height: 20px;
+    padding-top: 3px;
+  }
+
+  .exercise-modal-button {
+    justify-content: flex-start;
+  }
+
   .exercise-modal-button__favorite,
   .exercise-modal-button__rating {
+    width: 183px;
     font-size: 16px;
   }
 
@@ -280,6 +332,7 @@
 
   .exercise-modal-button__remove {
     font-size: 16px;
+    width: 228px;
   }
 }
 

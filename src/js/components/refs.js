@@ -4,6 +4,9 @@ export const filterCardsListRef = document.querySelector(
   '.exercises__filter-cards-list'
 );
 
+// Bread Crumbs
+export const breadCrumbsRef = document.querySelector('.bread-crumbs');
+
 // export const cardsListRef = document.querySelector('.exercises__cards-list');
 
 export const filterListRef = document.querySelector('.exercises__filter-list ');

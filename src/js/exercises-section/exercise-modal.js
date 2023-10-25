@@ -1,41 +1,29 @@
 import { fetchExercise } from '../api';
 import { renderExerciseModal } from './exercise-modal-template';
+import { addClass, removeClass } from '../components/fn-helpers';
+import { scrollController } from '../scrolls';
 
 const refs = {
   openModalBtn: document.querySelector('[data-exmod-open]'),
   closeModalBtn: document.querySelector('[data-exmod-close]'),
   modal: document.querySelector('[data-exmodal]'),
   modalContentContainer: document.querySelector('.exercise-modal__content'),
+  modalBackdrop: document.querySelector('.js-backdrop'),
 };
 
-const scrollController = {
-  scrollPosition: 0,
-  disabledScroll() {
-    scrollController.scrollPosition = window.scrollY;
-    document.body.style.cssText = `
-      overflow:hidden;
-      position:fixed;
-      top: -${scrollController.scrollPosition}px;
-      left:0;
-      height:100vh;
-      width:100vw;
-      padding-right: ${window.innerWidth - document.body.offsetWidth}
-      `;
-    document.documentElement.style.scrollBehavior = 'unset';
-  },
-  enabledScroll() {
-    document.body.style.cssText = '';
-    window.scroll({ top: scrollController.scrollPosition });
-    document.documentElement.style.scrollBehavior = '';
-  },
-};
+refs.modalBackdrop.addEventListener('click', e => {
+  if (e.target === e.currentTarget) {
+    addClass(refs.modal, 'is-hidden');
+    scrollController.enabledScroll();
+  }
+});
 
 refs.openModalBtn.addEventListener('click', handleModalOpen);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
-async function handleModalOpen() {
+export async function handleModalOpen(exId) {
   try {
-    const data = await fetchExercise('64f389465ae26083f39b17a4');
+    const data = await fetchExercise(exId);
     renderCard(data);
     scrollController.disabledScroll();
   } catch (error) {
@@ -50,23 +38,21 @@ function renderCard(data) {
   const addToFavoritesButton = document.querySelector(
     '.exercise-modal-button__favorite'
   );
-  const giveARatingButton = document.querySelector(
-    '.exercise-modal-button__rating'
-  );
+
   const removeFromFavoritesButton = document.querySelector(
     '.exercise-modal-button__remove'
   );
 
-  removeFromFavoritesButton.classList.add('is-hidden');
+  addClass(removeFromFavoritesButton, 'is-hidden');
 
   addToFavoritesButton.addEventListener('click', function () {
-    addToFavoritesButton.classList.add('is-hidden');
-    removeFromFavoritesButton.classList.remove('is-hidden');
+    addClass(addToFavoritesButton, 'is-hidden');
+    removeClass(removeFromFavoritesButton, 'is-hidden');
   });
 
   removeFromFavoritesButton.addEventListener('click', function () {
-    removeFromFavoritesButton.classList.add('is-hidden');
-    addToFavoritesButton.classList.remove('is-hidden');
+    addClass(removeFromFavoritesButton, 'is-hidden');
+    removeClass(addToFavoritesButton, 'is-hidden');
   });
 
   refs.modal.classList.remove('is-hidden');

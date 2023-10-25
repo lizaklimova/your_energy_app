@@ -1,4 +1,4 @@
-import { addClass, removeClass } from './components/classFunctions';
+import { addClass, removeClass } from './components/fn-helpers';
 import { favouriteTexte } from './components/refs';
 
 let exerciseState = {};

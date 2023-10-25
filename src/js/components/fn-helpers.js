@@ -1,4 +1,9 @@
-import { addClass, removeClass } from './classFunctions';
+export const addClass = (obj, className) => {
+  obj.classList.add(className);
+};
+export const removeClass = (obj, className) => {
+  obj.classList.remove(className);
+};
 
 export function capitalizeFirstLetter(str) {
   return str.slice(0, 1).toUpperCase() + str.slice(1);
@@ -28,3 +33,11 @@ export function replaceSpace(text) {
     return text;
   }
 }
+
+export const cardBtnRef = () => {
+  const cardBtns = document.querySelectorAll('.card__btn');
+  cardBtns.forEach(cardBtn => {
+    cardBtn.addEventListener('click', needFunction);
+    console.log(cardBtn);
+  });
+};
