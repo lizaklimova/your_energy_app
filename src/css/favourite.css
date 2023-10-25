@@ -112,7 +112,9 @@ body.darkmode {
   text-align: center;
   max-width: 318px;
 }
-
+.darkmode .favourite__text {
+  color: var(--accent-color);
+}
 /* styles for 768 */
 
 @media screen and (min-width: 768px) {
