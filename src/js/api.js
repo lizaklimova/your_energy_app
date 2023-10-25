@@ -18,7 +18,7 @@ export async function fetchFilter(page, perPage, filter) {
 //   get for cards
 export async function fetchCards(page, perPage, filter, name) {
   return await axios
-    .get(`/exercises?${filter}=${name}&${page}=1&limit=${perPage}`)
+    .get(`/exercises?${filter}=${name}&page=${page}&limit=${perPage}`)
     .then(response => response.data);
 }
 
@@ -41,21 +41,21 @@ export async function fetchQuote() {
 //add rating
 export async function patchRating(id, data) {
   return await axios
-      .patch(`/exercises/${id}/rating`, data, {
-          headers: {
-              'content-type': 'application/json'
-          }
-      })
+    .patch(`/exercises/${id}/rating`, data, {
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
     .then(response => response.data);
 }
 
 //subscribe
-  export async function subscribe(data) {
+export async function subscribe(data) {
   return await axios
-      .post(`/subscription`, data, {
-        headers: {
-        'content-type': 'application/json'
-    }
+    .post(`/subscription`, data, {
+      headers: {
+        'content-type': 'application/json',
+      },
     })
     .then(response => response.data);
 }

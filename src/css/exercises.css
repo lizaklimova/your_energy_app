@@ -188,8 +188,14 @@
   font-weight: 400;
   font-size: 12px;
   width: 100%;
+  min-height: 150px;
+  max-height: 190px;
 }
 
+.card:hover,
+.card:focus {
+  outline: var(--dark-color);
+}
 .card__top,
 .card__middle,
 .card__bottom {
@@ -261,6 +267,12 @@
   width: 58px;
   height: 24px;
   font-size: var(--font-size);
+  transition: transform var(--transition);
+}
+
+.card__btn:hover,
+.card__btn:focus {
+  transform: scale(1.1);
 }
 
 .card__btn-arrow {
@@ -286,10 +298,12 @@
 .exercises__cards-list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   column-gap: var(--gap);
   row-gap: calc(var(--gap) * 2);
   flex-wrap: wrap;
   margin-bottom: 20px;
+  /* min-width: 90vh; */
 }
 
 .exercises__item-card {
