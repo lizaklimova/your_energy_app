@@ -1,3 +1,4 @@
+import icons from '../img/icons.svg';
 import './components/refs';
 import './api';
 import './exercises-section/filter-cards';
