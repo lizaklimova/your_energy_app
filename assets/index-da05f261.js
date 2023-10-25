@@ -1,4 +1,4 @@
-import{d as bt,i as we,a as ot,f as ae,r as xt,m as Yt,s as ke,e as Ne,g as ut,b as wt,h as Ce,c as ze,j as Kt,k as Zt,l as Se,n as Ee,o as Le,p as _e,q as Me}from"./mobile-menu-294ea810.js";function Ae({_id:v,bodyPart:f,equipment:t,gifUrl:l,name:i,target:n,description:o,rating:y,burnedCalories:h,time:p,popularity:u}){return` 
+import{d as bt,i as we,a as ot,f as ae,r as xt,m as Yt,s as ke,e as Ne,g as ut,b as wt,h as Ce,c as ze,j as Kt,k as Zt,l as Se,n as Ee,o as Le,p as _e,q as Me}from"./mobile-menu-8cd15455.js";function Ae({_id:v,bodyPart:f,equipment:t,gifUrl:l,name:i,target:n,description:o,rating:y,burnedCalories:h,time:p,popularity:u}){return` 
     <div class="exercise-modal-tumb" data-id="${v}">
             <img
               class="exercise-modal__img"
