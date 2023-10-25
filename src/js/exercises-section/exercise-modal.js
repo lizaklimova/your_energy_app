@@ -2,7 +2,7 @@ import { fetchExercise } from '../api';
 import { renderExerciseModal } from './exercise-modal-template';
 import { addClass, removeClass } from '../components/fn-helpers';
 import { scrollController } from '../scrolls';
-import {findDivExercises} from '../favorite'
+import {addToFavorite} from '../favorite'
 
 const refs = {
   closeModalBtn: document.querySelector('[data-exmod-close]'),
@@ -11,6 +11,13 @@ const refs = {
   modalBackdrop: document.querySelector('.js-backdrop'),
 };
 
+ export const addToFavoritesButton = document.querySelector(
+    '.exercise-modal-button__favorite'
+);
+  
+export const removeFromFavoritesButton = document.querySelector(
+    '.exercise-modal-button__remove'
+  );
 
 refs.modalBackdrop.addEventListener('click', e => {
   if (e.target === e.currentTarget) {
@@ -27,7 +34,7 @@ export async function handleModalOpen(exId) {
     renderCard(data);
     scrollController.disabledScroll();
 
-    
+    addToFavoritesButton.addEventListener('click', addToFavorite);
 
   } catch (error) {
     console.error(error.message);
@@ -38,9 +45,9 @@ function renderCard(data) {
   const markup = renderExerciseModal(data);
   refs.modalContentContainer.innerHTML = markup;
 
-  const addToFavoritesButton = document.querySelector(
-    '.exercise-modal-button__favorite'
-  );
+  // const addToFavoritesButton = document.querySelector(
+  //   '.exercise-modal-button__favorite'
+  // );
 
   const removeFromFavoritesButton = document.querySelector(
     '.exercise-modal-button__remove'
@@ -48,10 +55,10 @@ function renderCard(data) {
 
   addClass(removeFromFavoritesButton, 'is-hidden');
 
-  addToFavoritesButton.addEventListener('click', function () {
-    addClass(addToFavoritesButton, 'is-hidden');
-    removeClass(removeFromFavoritesButton, 'is-hidden');
-  });
+  // addToFavoritesButton.addEventListener('click', function () {
+  //   addClass(addToFavoritesButton, 'is-hidden');
+  //   removeClass(removeFromFavoritesButton, 'is-hidden');
+  // });
 
   removeFromFavoritesButton.addEventListener('click', function () {
     addClass(removeFromFavoritesButton, 'is-hidden');
