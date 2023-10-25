@@ -1,3 +1,55 @@
+.btn {
+  background-color: #ffffff;
+  width: 60px;
+  height: 32px;
+  border-radius: 30px;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+    inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 5px;
+}
+.btn__indicator {
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: inset 0 8px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.btn__icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn__icon {
+  width: 14px;
+  height: 14px;
+  justify-content: center;
+  align-items: center;
+}
+.darkmode .btn__indicator {
+  transform: translateX(25px);
+  background-color: var(--dark-color);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 3);
+}
+body.darkmode {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+.darkmode .btn__icon {
+  fill: #fff;
+}
+.darkmode .btn {
+  box-shadow: inset 8 0px 60px rgba(0, 0, 0, 0.3),
+    inset 0 -4px 4px rgba(0, 0, 0, 0.3);
+}
 .hero {
   padding-top: 80px;
 }
@@ -28,13 +80,18 @@
 .hero__header-helper {
   padding-left: 40px;
 }
+.darkmode .hero__text {
+  color: var(--ligth-color);
+}
 
 .hero__text {
   color: var(--dark-color);
   letter-spacing: -0.28px;
   margin-bottom: 40px;
 }
-
+.darkmode .hero__text {
+  color: var(--light-color);
+}
 .hero__main-image {
   height: 450px;
   border-radius: 30px;
@@ -45,12 +102,15 @@
   display: flex;
   margin-top: 20px;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .hero__block-item:not(:last-child) {
   margin-right: 6px;
 }
-
+.darkmode .hero__block-div {
+  border-color: 1px solid var(--ligth-color);
+}
 .hero__block-div {
   padding: 4px 16px;
   border-radius: 30px;
@@ -67,6 +127,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .btn {
+    margin: 0;
+  }
   .hero {
     padding-top: 100px;
   }

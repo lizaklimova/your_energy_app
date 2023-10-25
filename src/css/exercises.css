@@ -64,7 +64,9 @@
   line-height: 1.36;
   letter-spacing: -0.56px;
 }
-
+.darkmode .exercises__title {
+  color: var(--accent-color);
+}
 .exercises__filter-list {
   display: flex;
   align-items: center;
@@ -85,6 +87,10 @@
   cursor: not-allowed;
 }
 
+.darkmode .exercises__filter-btn {
+  color: var(--accent-color);
+}
+
 .exercises__filter-btn_active {
   color: var(--dark-color);
 }
@@ -100,7 +106,9 @@
   height: 4px;
   content: '';
 }
-
+.darkmode .exercises__filter-btn_active::after {
+  background-color: var(--accent-color);
+}
 .exercises__filter-card {
   margin-bottom: 20px;
 }
