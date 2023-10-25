@@ -1,4 +1,4 @@
-import{c as Nt,f as de,a as pt,b as dt,r as Lt,d as Ct,h as ue,e as Gt,g as Qt,i as xe,s as ge,j as be,k as ye,l as he,m as ve,n as Ft,p as ke}from"./mode-42534c37.js";const bt="/your_energy_app/assets/icons-a71d8ab6.svg";function we(k){return k.map(({bodyPart:e,name:c,target:i,rating:n,burnedCalories:o,time:b,_id:y})=>`<li class="exercises__item-card">
+import{c as Nt,f as de,a as pt,b as dt,r as Lt,d as Ct,h as ue,e as Gt,g as Qt,i as xe,s as ge,j as be,k as ye,l as he,m as ve,n as Ft,p as ke}from"./mode-132817c7.js";const bt="/your_energy_app/assets/icons-a71d8ab6.svg";function we(k){return k.map(({bodyPart:e,name:c,target:i,rating:n,burnedCalories:o,time:b,_id:y})=>`<li class="exercises__item-card">
         <div class="card">
           <div class="card__top">
             <span class="card_tag">Workout</span>
