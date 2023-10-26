@@ -42,16 +42,20 @@ function returnMarkup() {
 export function createCardsString(arr) {
   const cardsString = arr
     .map(({ bodyPart, name, target, rating, burnedCalories, time, _id }) => {
-      return `<li class="exercises__item-card">
+      const capName = capitalizeFirstLetter(name);
+      const capBodyPart = capitalizeFirstLetter(bodyPart);
+      const capTarget = capitalizeFirstLetter(target);
+      const fixedRating = rating.toFixed(1);
+      return `<li class="exercises__item-card" data-name="${_id}">
         <div class="card">
           <div class="card__top">
             <span class="card_tag">Workout</span>
             <span class="card_rating">
-              <span class="span_rating">${rating.toFixed(1)}</span>
+              <span class="span_rating">${fixedRating}</span>
               <svg class="star" width="18" height="18">
                 <use href="${icons}#icon-star-yellow"></use>
               </svg>
-              <span class="is-hidden"><button data-id="${_id}"><svg width="16" height="16">
+              <span class="is-hidden"><button type="button" data-id="${_id}" data-name="fovourite-delete"><svg width="16" height="16">
                 <use href="${icons}#icon-trash"></use>
               </svg></button></span>
             </span>
@@ -66,29 +70,16 @@ export function createCardsString(arr) {
             <svg class="card__title-svg" width="32" height="32">
               <use href="${icons}#icon-run-men2"></use>
             </svg>
-            <h3 class="card__title">${capitalizeFirstLetter(name)}</h3>
+            <h3 class="card__title">${capName}</h3>
           </div>
           <div class="card__bottom">
             <p class="card__text"><span>Burned calories:</span> ${burnedCalories} / ${time} min</p>
-            <p class="card__text"><span>Body part:</span> ${capitalizeFirstLetter(
-              bodyPart
-            )}</p>
-            <p class="card__text"><span>Target:</span> ${capitalizeFirstLetter(
-              target
-            )}</p>
+            <p class="card__text"><span>Body part:</span> ${capBodyPart}</p>
+            <p class="card__text"><span>Target:</span> ${capTarget}</p>
           </div>
         </div>
       </li>`;
     })
     .join('');
   return cardsString;
-}
-
-export function createCardsSkeleton(amount) {
-  let skeleton = '';
-  for (let i = 0; i < amount; i++) {
-    skeleton +=
-      '<li class="exercises__skeleton-loader"><span class="skeleton-loader"></span></li>';
-  }
-  return skeleton;
 }

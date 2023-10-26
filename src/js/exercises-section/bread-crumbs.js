@@ -1,13 +1,13 @@
-import { fetchExercise } from '../api';
-import { breadCrumbsRef } from './components/refs';
+import { capitalizeFirstLetter } from '../components/fn-helpers';
+export const breadCrumbs = () => {
+  const filterImgCard = document.querySelectorAll('.exercises__filter-card');
+  filterImgCard.forEach(img => {
+    img.addEventListener('click', createBreadCrumbs);
+  });
+};
+export function createBreadCrumbs(event) {
+  const crumb = event.currentTarget.dataset.name;
+  const capitalizedCrumb = capitalizeFirstLetter(crumb);
 
-refs.breadCrumbsRef.addEventListener('click', breadCrumbs);
-
-async function breadCrumbs() {
-  try {
-    const data = await fetchExercise('64f389465ae26083f39b17a6');
-    console.log(data);
-  } catch (error) {
-    console.error(error.message);
-  }
+  let exerciseHeader;
 }

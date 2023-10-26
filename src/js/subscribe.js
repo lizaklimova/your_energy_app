@@ -33,9 +33,12 @@ async function onSubmit(e) {
 
     Notiflix.Notify.info(email.message);
   } catch (error) {
+    console.log(error);
     if (error.message === 'Request failed with status code 409') {
       Notiflix.Notify.info(error.response.data.message);
+    } else if (error.response.request.status === 404) {
+      Notiflix.Notify.info('Error');
     }
+    e.target.reset();
   }
-  e.target.reset();
 }

@@ -7,8 +7,6 @@ export const filterCardsListRef = document.querySelector(
 // Bread Crumbs
 export const breadCrumbsRef = document.querySelector('.bread-crumbs');
 
-// export const cardsListRef = document.querySelector('.exercises__cards-list');
-
 export const filterListRef = document.querySelector('.exercises__filter-list ');
 export const filterBtnsRefs = document.querySelectorAll(
   '.exercises__filter-list button'
@@ -34,3 +32,7 @@ export const breadCrumbsSlash = document.querySelector(
   '.exercises__breadcrumbs-slash'
 );
 export const favouriteTexte = document.querySelector('.favourite__text');
+
+export const exerciseCardListRef = document.querySelector(
+  '.exercises__cards-list'
+);

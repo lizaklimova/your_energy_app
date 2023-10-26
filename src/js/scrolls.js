@@ -1,4 +1,4 @@
-let buttonTop = document.getElementById('buttonTop');
+let buttonTop = document.querySelector('#buttonTop');
 let idAnimationScroll = null;
 
 window.addEventListener('scroll', function () {
@@ -29,6 +29,9 @@ window.addEventListener('wheel', function () {
 });
 
 window.addEventListener('keyup', function () {
+  cancelAnimationFrame(idAnimationScroll);
+});
+window.addEventListener('touchmove', function () {
   cancelAnimationFrame(idAnimationScroll);
 });
 

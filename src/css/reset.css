@@ -69,3 +69,15 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+::-webkit-scrollbar {
+  border-radius: 12px;
+  background: rgba(36, 36, 36, 0.1);
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #242424;
+  height: 153px;
+}
