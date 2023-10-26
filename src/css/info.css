@@ -127,6 +127,9 @@
 /************ 768 ************/
 
 @media (min-width: 768px) {
+  .info__exercise-block {
+    display: none;
+  }
   .js {
     display: flex;
     flex-direction: column;
@@ -198,6 +201,9 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .info__exercise-block {
+    display: block;
+  }
   .info__exercise {
     display: inline-block;
     font-size: 44px;
