@@ -3,6 +3,8 @@ import { exerciseCardListRef } from './components/refs';
 import { createCardsString } from './components/cards-template';
 import { createPaginItems } from './exercises-section/pagination';
 
+// const searchInput = document.querySelector('.exercises__filter-search-input');
+
 let cardName;
 let filterName;
 let currentPage = 1;
@@ -14,8 +16,28 @@ export const searchInputContainer = document.querySelector(
   '.exercises__input-div'
 );
 
-searchForm.addEventListener('submit', getInputValue);
+const searchIcon = document.querySelector('.exercises__form-submit-btn');
+const resetIcon = document.querySelector('.exercises__form-reset-btn');
 
+searchForm.addEventListener('submit', getInputValue);
+resetIcon.addEventListener('click', onClick);
+searchInput.addEventListener('input', onInputSearch);
+
+function onInputSearch(e) {
+  console.log(e.currentTarget.value);
+  if (e.currentTarget.value !== '') {
+    searchIcon.classList.add('is-hidden');
+    resetIcon.classList.remove('is-hidden');
+  } else {
+    searchIcon.classList.remove('is-hidden');
+    resetIcon.classList.add('is-hidden');
+  }
+}
+function onClick(e) {
+  if (e.currentTarget) {
+    searchInput.reset();
+  }
+}
 export function getNameAndFilter(category, filter) {
   cardName = category;
   filterName = filter;
