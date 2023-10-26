@@ -1,10 +1,11 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
+import debounce from 'lodash.debounce';
 import { exerciseCardListRef } from './components/refs';
 import { createCardsString } from './components/cards-template';
 import { createPaginItems } from './exercises-section/pagination';
 import { addClass } from './components/fn-helpers';
-import debounce from 'lodash.debounce';
+import { getCard } from './exercises-section/exercises-cards';
 
 let cardName;
 let filterName;
@@ -35,6 +36,7 @@ function onInputSearch(e) {
 function onClick(e) {
   if (e.currentTarget) {
     searchInput.value = '';
+    getCard(currentPage);
   }
 }
 

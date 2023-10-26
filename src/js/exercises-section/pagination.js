@@ -121,7 +121,7 @@ export function createPaginItems(totalPages, currentPage) {
   }
 }
 
-export function checkCurrentList() {
+function checkCurrentList() {
   return filterCardsListRef.classList.contains('is-hidden') ? true : false;
 }
 

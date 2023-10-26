@@ -13,11 +13,23 @@
     <load ="partials/mob-menu.html" />
 
     <div class="favorite container">
+
+     <div class="favorite__mode-wrap">
+    
       <h1 class="favorite__title">Favorites</h1>
+
+         <div class="btn">
+        <div class="btn__indicator">
+          <div class="btn__icon-container">
+           
+          </div>
+        </div>
+      </div>
+     </div>
 
       <div class="favorite__general-block">
         <div class="favorite__info-container">
-          <!--  для цитати -->
+         
           <div class="favorite__quote-block quote-block">
             <div class="favorite__quote-icon-block">
               <svg class="favorite__quote-icon" width="34" height="32">
@@ -36,7 +48,7 @@
           </div>
 
           <div class="favorite__botton-block">
-            <!-- бокс для інфо з хвилинами для спорту -->
+           
             <div class="favorite__info-block">
               <svg class="favorite__info-icon" width="20" height="20">
                 <use href="./img/icons.svg#icon-barbell"></use>
@@ -46,7 +58,7 @@
               <p class="favorite__info-text">Daily norm of sports</p>
             </div>
 
-            <!-- картинка -->
+        
 
             <picture>
               <source
@@ -87,6 +99,9 @@
             </picture>
           </div>
         </div>
+
+      
+
         <div class="favourite__text-block" >
           <p class="favourite__text" data-name="text-block">
             It appears that you haven't added any exercises to your favorites
@@ -94,24 +109,11 @@
             favorites for easier access in the future.
           </p>
         </div>
-        <div >
+        <div>
           <ul class="favourite__card-block" data-name="card-block"></ul>
         </div>
       </div>
-      <div class="btn">
-        <div class="btn__indicator">
-          <div class="btn__icon-container">
-            <svg class="btn__icon">
-              <use
-                class="icon"
-                href="./img/icons.svg#icon-brightness-contrast"
-                width="14"
-                height="14"
-              ></use>
-            </svg>
-          </div>
-        </div>
-      </div>
+    
  </div>
     </div>
     <div class="backdrop is-hidden js-backdrop" data-exmodal>
@@ -168,7 +170,7 @@
   </div>
 </div>
     
- <load ="partials/scroll-up.html" />
+    <load ="partials/scroll-up.html" />
 
 
       <script type="module" src="./js/components/mode.js"></script>

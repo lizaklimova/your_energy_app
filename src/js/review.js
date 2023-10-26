@@ -5,7 +5,6 @@ import Notiflix from 'notiflix';
 
 const reviewModal = document.querySelector('[data-review-modal]');
 const reviewBackdrop = document.querySelector('.js-backdrop');
-// const reviewBtn = document.querySelector('.modal-form__send');
 const reviewForm = document.querySelector('.modal-form');
 const ratingValue = document.querySelector('.rating__value');
 
@@ -64,9 +63,8 @@ async function onSubmit(e) {
       review: textareaValue,
     };
     const form = await patchRating(id, formReview);
-
-    closeReviewModal();
     Notiflix.Notify.info('Thanks for your review');
+    closeReviewModal();
   } catch (error) {
     console.log(error);
   }
