@@ -1,11 +1,10 @@
 const favouriteTexte = document.querySelector('[data-name="text-block"]');
 const favouriteCardRef = document.querySelector('[data-name="card-block"]');
-const favouriteModalBackdrop = document.querySelector('[data-exmodal]')
+const favouriteModalBackdrop = document.querySelector('[data-exmodal]');
 import { createCardsString } from './components/cards-template';
 import { addClass, removeClass, apendMarkup } from './components/fn-helpers';
 import { renderExerciseModal } from './exercises-section/exercise-modal-template';
 import { fetchExercise } from './api';
-
 
 let exerciseState = {};
 let allEx = [];
@@ -51,11 +50,13 @@ const loadFavourite = () => {
 window.addEventListener('load', loadFavourite);
 const modalMarkup = document.querySelector('[data-name="modalfavourite"]');
 const addToFavoritesButton = document.querySelector(
-    '.exercise-modal-button__favorite'
+  '.exercise-modal-button__favorite'
 );
 const closeModalBtn = document.querySelector('[data-exmod-close]');
 const giveRating = document.querySelector('.exercise-modal-button__rating');
-const remouveFromTheFavourites = document.querySelector('.exercise-modal-button__remove');
+const remouveFromTheFavourites = document.querySelector(
+  '.exercise-modal-button__remove'
+);
 const remouveRating = () => {
   const ratingTrash = document.querySelectorAll('.card_rating');
   ratingTrash.forEach(el => {
@@ -63,24 +64,19 @@ const remouveRating = () => {
     removeClass(el.firstElementChild, 'span_rating');
     addClass(el.lastElementChild, 'icon_trash');
     removeClass(el.lastElementChild, 'is-hidden');
-  })
+  });
   const starRemouve = document.querySelectorAll('.star');
   starRemouve.forEach(el => {
     addClass(el, 'is-hidden');
     removeClass(el, 'star');
-  })
-}
+  });
+};
 const findTrashBtn = () => {
   const trashBtn = document.querySelectorAll('[data-name="fovourite-delete"]');
   trashBtn.forEach(btn => {
     btn.addEventListener('click', deleteOne);
-  })
-}
-
-
-
-
- 
+  });
+};
 
 favouriteModalBackdrop.addEventListener('click', e => {
   if (e.target === e.currentTarget) {
@@ -90,7 +86,6 @@ favouriteModalBackdrop.addEventListener('click', e => {
 function closeModal() {
   favouriteModalBackdrop.classList.add('is-hidden');
   document.removeEventListener('keydown', closeModalOnEsc);
-
 }
 function closeModalOnEsc(event) {
   if (event.code === 'Escape') {
@@ -113,7 +108,7 @@ const openExercises = e => {
     .then(data => {
       const markup = renderExerciseModal(data);
       modalMarkup.insertAdjacentHTML('beforeend', markup);
-      removeClass(favouriteModalBackdrop, 'is-hidden')
+      removeClass(favouriteModalBackdrop, 'is-hidden');
       addClass(addToFavoritesButton, 'is-hidden');
       addClass(giveRating, 'is-hidden');
     })
@@ -125,15 +120,14 @@ const deleteOne = event => {
   localStorage.removeItem(id.id);
   const delet = document.querySelector(`[data-name = "${id.id}"]`);
   delet.innerHTML = '';
-}
+};
 
 const removeFavorite = event => {
-    const divExercises = document.querySelector('.exercise-modal-tumb');
+  const divExercises = document.querySelector('.exercise-modal-tumb');
   const id = divExercises.dataset;
   localStorage.removeItem(id.id);
   const delet = document.querySelector(`[data-name = "${id.id}"]`);
   delet.innerHTML = '';
   closeModal();
-
 };
 remouveFromTheFavourites.addEventListener('click', removeFavorite);

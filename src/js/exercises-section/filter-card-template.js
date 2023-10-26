@@ -5,19 +5,21 @@ import icons from '../../img/icons.svg';
 export function createFilterString(arr) {
   const filterCardString = arr
     .map(({ imgURL, filter, name }) => {
+      const capitalizedName = capitalizeFirstLetter(name);
+
       return `<li class="exercises__filter-card" data-filter="${filter}" data-name="${name}">
 
-   <div class="exercises__filter-img-container"  style=" background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), 
-              url('${imgURL}') ;
-               background-size: cover;
-background-position:center;
-background-repeat: no-repeat;
-              "
-</div>
-<div class="exercises__filter-text-wrap">
- <p class="exercises__filter-category">${capitalizeFirstLetter(name)}</p>
-    <p class="exercises__filter-name">${filter}</p>
-</div>
+          <div class="exercises__filter-img-container"  style=" background: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), 
+                url('${imgURL}') ;
+                background-size: cover;
+                background-position:center;
+                background-repeat: no-repeat;"
+          </div>
+
+          <div class="exercises__filter-text-wrap">
+            <p class="exercises__filter-category">${capitalizedName}</p>
+            <p class="exercises__filter-name">${filter}</p>
+          </div>
   </li>`;
     })
     .join('');

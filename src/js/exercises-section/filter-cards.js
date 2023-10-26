@@ -1,7 +1,11 @@
 import Notiflix from 'notiflix';
 import { fetchFilter } from '../api';
-import { addClass, removeClass } from '../components/fn-helpers';
-import { setActiveItem, apendMarkup } from '../components/fn-helpers';
+import {
+  addClass,
+  removeClass,
+  setActiveItem,
+  apendMarkup,
+} from '../components/fn-helpers';
 import {
   createFilterString,
   createFiltersCardsSkeleton,
@@ -15,7 +19,7 @@ import {
 import { createSmoothScrollBottom } from '../scrolls';
 import { searchRefs } from './exercises-cards';
 import { createPaginItems } from './pagination';
-
+import { breadCrumbs } from './bread-crumbs';
 // ********************************************************
 
 window.addEventListener('load', () => {
@@ -39,14 +43,13 @@ export async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
     }
     apendMarkup(filterCardsListRef, createFilterString(data.results));
     underlineActiveFilter();
-
+    createPaginItems(data.totalPages, page);
     searchRefs();
+    breadCrumbs();
   } catch (error) {
     console.log(error);
   } finally {
     filterBtnsRefs.forEach(btn => (btn.disabled = false));
-    createPaginItems(data.totalPages, page);
-    createSmoothScrollUp(filterCardsListRef);
   }
 }
 

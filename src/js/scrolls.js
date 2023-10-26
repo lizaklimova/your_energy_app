@@ -1,4 +1,4 @@
-let buttonTop = document.getElementById('buttonTop');
+let buttonTop = document.querySelector('#buttonTop');
 let idAnimationScroll = null;
 
 window.addEventListener('scroll', function () {

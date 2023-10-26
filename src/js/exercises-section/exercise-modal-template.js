@@ -13,6 +13,12 @@ export function renderExerciseModal({
   time,
   popularity,
 }) {
+  const capitName = capitalizeFirstLetter(name);
+  const fixRating = rating.toFixed(1);
+  const capitTarget = capitalizeFirstLetter(target);
+  const capitBodPart = capitalizeFirstLetter(bodyPart);
+  const capitEq = capitalizeFirstLetter(equipment);
+  const capitDescr = capitalizeFirstLetter(description);
   return ` 
     <div class="exercise-modal-tumb" data-id="${_id}">
             <img
@@ -23,12 +29,10 @@ export function renderExerciseModal({
               height="259"
             />
             <div class="exercise-modal-tumb_card">
-              <h2 class="exercise-modal__title">${capitalizeFirstLetter(
-                name
-              )}</h2>
+              <h2 class="exercise-modal__title">${capitName}</h2>
             
              <div class="exercises-modal__rating-body">
-               <p class="exercise-modal-rating__number">${rating.toFixed(1)}</p>
+               <p class="exercise-modal-rating__number">${fixRating}</p>
              <div class="exercise-modal__rating_active" style="width: ${
                rating / 0.05
              }%"></div>
@@ -39,21 +43,15 @@ export function renderExerciseModal({
               <ul class="exercise-modal-list">
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Target</h3>
-                  <p class="exercise-modal-list__text">${capitalizeFirstLetter(
-                    target
-                  )}</p>
+                  <p class="exercise-modal-list__text">${capitTarget}</p>
                 </li>
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Body Part</h3>
-                  <p class="exercise-modal-list__text">${capitalizeFirstLetter(
-                    bodyPart
-                  )}</p>
+                  <p class="exercise-modal-list__text">${capitBodPart}</p>
                 </li>
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Equipment</h3>
-                  <p class="exercise-modal-list__text">${capitalizeFirstLetter(
-                    equipment
-                  )}</p>
+                  <p class="exercise-modal-list__text">${capitEq}</p>
                 </li>
                 <li class="exercise-modal-list-item">
                   <h3 class="exercise-modal-list__title">Popular</h3>
@@ -66,7 +64,7 @@ export function renderExerciseModal({
               </ul>
               </div>
               <p class="exercise-modal__description">
-               ${capitalizeFirstLetter(description)}
+               ${capitDescr}
               </p>
             </div>
           </div>`;
