@@ -31,8 +31,8 @@ export async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
   filterBtnsRefs.forEach(btn => (btn.disabled = true));
   try {
     if (screen.width > 767) {
+      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(12));
       data = await fetchFilter(page, 12, filter);
-      apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(data.length));
     } else {
       apendMarkup(filterCardsListRef, createFiltersCardsSkeleton(9));
       data = await fetchFilter(page, 9, filter);
@@ -46,6 +46,7 @@ export async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
   } finally {
     filterBtnsRefs.forEach(btn => (btn.disabled = false));
     createPaginItems(data.totalPages, page);
+    createSmoothScrollUp(filterCardsListRef);
   }
 }
 

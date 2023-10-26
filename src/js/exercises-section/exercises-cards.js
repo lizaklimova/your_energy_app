@@ -8,10 +8,7 @@ import {
   minimiseFirstLetter,
   replaceSpace,
 } from '../components/fn-helpers';
-import {
-  createCardsSkeleton,
-  createCardsString,
-} from '../components/cards-template';
+import { createCardsString } from '../components/cards-template';
 import { handleModalOpen } from './exercise-modal';
 import { createPaginItems } from './pagination';
 
@@ -44,7 +41,6 @@ export function getCard(currentPage) {
       removeClass(filterCardsListRef, 'exercises__filter-cards-list');
       removeClass(exerciseCardListRef, 'is-hidden');
       addClass(exerciseCardListRef, 'exercises__cards-list');
-      apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
       apendMarkup(exerciseCardListRef, createCardsString(data.results));
 
       const exerciseOpenBtn = document.querySelectorAll('[data-exmod-open]');
