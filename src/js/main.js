@@ -18,7 +18,7 @@ import './exercises-section/exercise-modal-template';
 import './exercises-section/pagination';
 
 import './api';
-import './favorite';
+// import './favorite';
 import './info';
 import './subscribe';
 import './quote';

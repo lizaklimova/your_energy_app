@@ -1,8 +1,9 @@
+import Notiflix from 'notiflix';
 import { filterCardsListRef, exerciseCardListRef } from '../components/refs';
 import { createSmoothScrollUp } from '../scrolls';
 import { fetchDataFromFilter } from './filter-cards';
 import { getCard } from './exercises-cards';
-import Notiflix from 'notiflix';
+import { renderMarkupSearch } from '../search';
 
 export function createPaginItems(totalPages, currentPage) {
   const paginList = document.querySelector('.exercises__pagination');
@@ -66,7 +67,10 @@ export function createPaginItems(totalPages, currentPage) {
       currentPage = pageNumber;
       createPaginItems(totalPages, pageNumber);
 
-      if (checkCurrentList()) {
+      if (checkSearch()) {
+        renderMarkupSearch(currentPage);
+        createSmoothScrollUp(exerciseCardListRef);
+      } else if (checkCurrentList()) {
         getCard(currentPage);
         createSmoothScrollUp(exerciseCardListRef);
       } else {
@@ -82,7 +86,10 @@ export function createPaginItems(totalPages, currentPage) {
         currentPage--;
         createPaginItems(totalPages, currentPage);
 
-        if (checkCurrentList()) {
+        if (checkSearch()) {
+          renderMarkupSearch(currentPage);
+          createSmoothScrollUp(exerciseCardListRef);
+        } else if (checkCurrentList()) {
           getCard(currentPage);
           createSmoothScrollUp(exerciseCardListRef);
         } else {
@@ -99,7 +106,10 @@ export function createPaginItems(totalPages, currentPage) {
         currentPage++;
         createPaginItems(totalPages, currentPage);
 
-        if (checkCurrentList()) {
+        if (checkSearch()) {
+          renderMarkupSearch(currentPage);
+          createSmoothScrollUp(exerciseCardListRef);
+        } else if (checkCurrentList()) {
           getCard(currentPage);
           createSmoothScrollUp(exerciseCardListRef);
         } else {
@@ -111,6 +121,10 @@ export function createPaginItems(totalPages, currentPage) {
   }
 }
 
-export function checkCurrentList() {
+function checkCurrentList() {
   return filterCardsListRef.classList.contains('is-hidden') ? true : false;
+}
+
+function checkSearch() {
+  return exerciseCardListRef.classList.contains('search-list') ? true : false;
 }

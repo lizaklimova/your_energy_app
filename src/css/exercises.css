@@ -185,6 +185,10 @@
   transition: transform var(--transition);
 }
 
+.darkmode .pagin-btn {
+  border-color: var(--accent-color);
+}
+
 .pagin-btn.prev:hover,
 .pagin-btn.prev:focus {
   transform: translateX(-7px);
@@ -204,11 +208,15 @@
   line-height: 1.33;
 }
 
+.darkmode .pagin-btn span {
+  color: var(--accent-color);
+}
+
 .pagin-dots {
   align-self: center;
 }
 
-.exercises__pagination-item {
+.darkmode .exercises__pagination-item {
   background-color: transparent;
   padding: 0;
   cursor: pointer;
@@ -348,6 +356,7 @@
 .card__text span {
   opacity: 0.4;
 }
+
 .exercises__cards-list {
   display: flex;
   justify-content: space-between;
@@ -356,7 +365,6 @@
   row-gap: calc(var(--gap) * 2);
   flex-wrap: wrap;
   margin-bottom: 20px;
-  /* min-width: 90vh; */
 }
 
 .exercises__item-card {
@@ -469,19 +477,26 @@
 .exercises__input-div {
   margin-top: 40px;
   position: relative;
+  width: 100%;
+  /* padding-right: 15px; */
 }
 
 .exercises__filter-search-input {
   border-radius: 30px;
   border: 1px solid var(--dark-color);
   padding: 12px 14px 12px 14px;
-  width: 100%;
-  max-width: 335px;
+  width: 320px;
   background-color: transparent;
   outline: none;
   margin-bottom: 20px;
   transition: 0.8s;
 }
+
+.exercises__filter-search-input:focus::placeholder {
+  font-size: 12px;
+  transition: font-size var(--transition);
+}
+
 .darkmode .exercises__filter-search-input {
   border: 1px solid var(--accent-color);
   outline: none;
@@ -500,7 +515,7 @@
   border: none;
   top: 21px;
   transform: translateY(-50%);
-  right: 15px;
+  right: 9%;
   padding: 0;
 }
 .exercises__form-submit-btn-icon {
@@ -508,18 +523,33 @@
   fill: transparent;
   width: 18px;
   height: 18px;
+  transition: scale var(--transition);
 }
+
+.exercises__form-submit-btn-icon:hover,
+.exercises__form-submit-btn-icon:focus {
+  transform: scale(1.1);
+}
+
 .darkmode .exercises__form-submit-btn-icon {
   stroke: var(--accent-color);
 }
+
 .exercises__form-reset-btn {
   position: absolute;
   background: transparent;
   border: none;
-  top: 25px;
+  top: 37%;
   transform: translateY(-50%);
-  right: 11px;
+  right: 9%;
   padding: 0;
+  transition: scale var(--transition), stroke var(--transition);
+}
+
+.exercises__form-reset-btn:hover .exercises__form-reset-btn-icon,
+.exercises__form-reset-btn:focus .exercises__form-reset-btn-icon {
+  stroke: rgb(236, 116, 116);
+  transform: scale(1.1);
 }
 
 .exercises__form-reset-btn-icon {
@@ -542,6 +572,14 @@
   .exercises__form-submit-btn {
     top: 23px;
     right: 15px;
+  }
+
+  .exercises__form-reset-btn {
+    right: 6%;
+  }
+
+  .exercises__form-submit-btn-icon {
+    right: 7%;
   }
 }
 

@@ -1,16 +1,17 @@
 import axios from 'axios';
+import Notiflix from 'notiflix';
+import debounce from 'lodash.debounce';
 import { exerciseCardListRef } from './components/refs';
 import { createCardsString } from './components/cards-template';
 import { createPaginItems } from './exercises-section/pagination';
-
-// const searchInput = document.querySelector('.exercises__filter-search-input');
+import { addClass } from './components/fn-helpers';
+import { getCard } from './exercises-section/exercises-cards';
 
 let cardName;
 let filterName;
 let currentPage = 1;
 let keyWord = '';
 
-const searchForm = document.querySelector('#exercises__search-form');
 const searchInput = document.querySelector('.exercises__filter-search-input');
 export const searchInputContainer = document.querySelector(
   '.exercises__input-div'
@@ -19,12 +20,11 @@ export const searchInputContainer = document.querySelector(
 const searchIcon = document.querySelector('.exercises__form-submit-btn');
 const resetIcon = document.querySelector('.exercises__form-reset-btn');
 
-searchForm.addEventListener('submit', getInputValue);
 resetIcon.addEventListener('click', onClick);
 searchInput.addEventListener('input', onInputSearch);
+searchInput.addEventListener('input', debounce(getInputValue, 300));
 
 function onInputSearch(e) {
-  console.log(e.currentTarget.value);
   if (e.currentTarget.value !== '') {
     searchIcon.classList.add('is-hidden');
     resetIcon.classList.remove('is-hidden');
@@ -35,9 +35,11 @@ function onInputSearch(e) {
 }
 function onClick(e) {
   if (e.currentTarget) {
-    searchInput.reset();
+    searchInput.value = '';
+    getCard(currentPage);
   }
 }
+
 export function getNameAndFilter(category, filter) {
   cardName = category;
   filterName = filter;
@@ -48,11 +50,31 @@ function getInputValue(e) {
 
   keyWord = searchInput.value.toLowerCase().trim();
 
-  serviceGetByKeyWord(filterName, cardName, keyWord).then(data => {
-    console.log(data);
-    exerciseCardListRef.innerHTML = createCardsString(data.results);
-    createPaginItems(data.totalPages, currentPage);
-  });
+  renderMarkupSearch(currentPage);
+}
+
+export function renderMarkupSearch(currentPage) {
+  serviceGetByKeyWord(filterName, cardName, keyWord, currentPage)
+    .then(data => {
+      let hasBeenClassAdded = false;
+      if (!hasBeenClassAdded) {
+        addClass(exerciseCardListRef, 'search-list');
+        hasBeenClassAdded = true;
+      }
+
+      exerciseCardListRef.innerHTML = createCardsString(data.results);
+      createPaginItems(data.totalPages, currentPage);
+
+      const dataLength = data.results.length;
+
+      if (!dataLength) {
+        Notiflix.Notify.info('Sorry, there are no results 😭');
+
+        const paginList = document.querySelector('.exercises__pagination');
+        paginList.innerHTML = '';
+      }
+    })
+    .catch(error => console.log(error));
 }
 
 async function serviceGetByKeyWord(

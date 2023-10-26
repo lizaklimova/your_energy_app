@@ -1,4 +1,3 @@
-// const favouriteTexte = document.querySelector('[data-name="text-block"]');
 const favouriteCardRef = document.querySelector('[data-name="card-block"]');
 const favouriteModalBackdrop = document.querySelector('[data-exmodal]');
 import { createCardsString } from './components/cards-template';
@@ -22,7 +21,7 @@ const loadFavourite = () => {
     }
   }
   if (!exercisesKeys.length) {
-    addClass(favouriteTexte, 'favourite__text');
+    addClass(favouriteTexte, 'favourite__text-block');
     removeClass(favouriteTexte, 'is-hidden');
     addClass(favouriteCardRef, 'is-hidden');
     removeClass(favouriteCardRef, 'favourite__card-block');
@@ -38,11 +37,17 @@ const loadFavourite = () => {
   } catch {
     error;
   }
+
   addClass(favouriteTexte, 'is-hidden');
-  removeClass(favouriteTexte, 'favourite__text');
+  removeClass(favouriteTexte, 'favourite__text-block');
   addClass(favouriteCardRef, 'favourite__card-block');
   removeClass(favouriteCardRef, 'is-hidden');
-  apendMarkup(favouriteCardRef, createCardsString(allEx));
+
+  if (allEx.length > 0) {
+    console.log(allEx);
+    apendMarkup(favouriteCardRef, createCardsString(allEx));
+  }
+
   startExercises();
   remouveRating();
   findTrashBtn();
@@ -127,7 +132,9 @@ const removeFavorite = event => {
   const divExercises = document.querySelector('.exercise-modal-tumb');
   const id = divExercises.dataset;
   localStorage.removeItem(id.id);
-  const delet = document.querySelector(`[data-name = "${id.id}"]`);
+  const delet = document.querySelector(
+    `.favourite__card-block [data-name = "${id.id}"]`
+  );
   delet.innerHTML = '';
   closeModal();
 };

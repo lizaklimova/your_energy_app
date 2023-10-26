@@ -68,7 +68,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
 }
 .footer__input-group {
   position: relative;
