@@ -10,9 +10,8 @@ function searchValue(e) {
   console.log(keyWord);
 
   if (keyWord === '') {
-    // функція маркап карток всіх
+    reset();
   }
-  return;
 }
 
 serviceGetByKeyWord(keyWord);
@@ -24,12 +23,20 @@ async function serviceGetByKeyWord(keyWord = '') {
       title: keyWord,
     },
   });
-  const dataEl = response.data;
+  const dataEl = response.data.results.map(data =>
+    console.log({
+      name: data.name,
+      equipment: data.equipment,
+      bodyPart: data.bodyPart,
+    })
+  );
+
   console.log(dataEl);
 }
-function reset() {
-  keyWord.value = '';
-}
+
+// function reset() {
+//   keyWord.value = '';
+// }
 
 //    Notiflix.Notify.failure(
 //      'Sorry, there is nothing matching your search query. Please try again.'
