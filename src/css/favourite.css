@@ -147,7 +147,6 @@ body.darkmode {
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .favourite__card-block .exercises__item-card {
     width: 335px;
-    /* margin-bottom: 20px; */
   }
 }
 
@@ -225,9 +224,7 @@ body.darkmode {
     column-gap: var(--gap);
     row-gap: calc(var(--gap) * 2);
     flex-wrap: wrap;
-    margin-bottom: 20px;
   }
-
   .favourite__card-block .exercises__item-card {
     width: 344px;
     margin-bottom: 0px;
@@ -268,7 +265,17 @@ body.darkmode {
   }
   .favourite__card-block {
   }
-}
-.favourite__text-block {
-  display: none;
+
+  .favourite__text-block {
+    display: none;
+  }
+
+  .favourite__card-block {
+    justify-content: flex-start;
+  }
+
+  .favourite__card-block .exercises__item-card {
+    width: 405px;
+    margin-bottom: 0px;
+  }
 }
