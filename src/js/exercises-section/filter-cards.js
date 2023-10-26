@@ -25,7 +25,7 @@ let filterName = '';
 let data;
 let currentPage = 1;
 
-async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
+ async function fetchDataFromFilter(filter = 'Body parts', page = 1) {
   filterBtnsRefs.forEach(btn => (btn.disabled = true));
   try {
     if (screen.width > 767) {
