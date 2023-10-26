@@ -160,9 +160,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .rating {
-    /* padding-left: 20px; */
-  }
   .modal-review {
     width: 430px;
     min-height: 412px;

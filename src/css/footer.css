@@ -10,13 +10,13 @@
   margin-bottom: 20px;
 }
 .footer__logo:hover {
-    animation-name: hvr-pulse;
-    animation-duration: 1s;
-    animation-delay: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    filter: drop-shadow(-1px 1px 5px rgba(244, 244, 244, 1));
-  }
+  animation-name: hvr-pulse;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(-1px 1px 5px rgba(244, 244, 244, 1));
+}
 .footer__soc-list {
   display: flex;
   gap: 12px;
@@ -84,13 +84,17 @@
   width: 100%;
   margin-bottom: 20px;
   color: var(--accent-color);
-  z-index: 1;
 }
 
+.footer__input:hover,
 .footer__input:focus {
   outline: 0;
   box-shadow: 1px 1px 4px 3px rgba(244, 244, 244, 0.843);
-  z-index: 1;
+}
+
+.footer__input:focus::placeholder {
+  font-size: 12px;
+  transition: font-size var(--transition);
 }
 
 .footer__btn {
