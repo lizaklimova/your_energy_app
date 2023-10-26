@@ -77,12 +77,12 @@ body.darkmode {
   width: 38px;
   height: 38px;
 }
-
+.darkmode .hero__icon {
+  fill: var(--accent-color);
+  background-color: transparent;
+}
 .hero__header-helper {
   padding-left: 40px;
-}
-.darkmode .hero__text {
-  color: var(--ligth-color);
 }
 
 .hero__text {
@@ -91,7 +91,7 @@ body.darkmode {
   margin-bottom: 40px;
 }
 .darkmode .hero__text {
-  color: var(--light-color);
+  color: var(--accent-color);
 }
 .hero__main-image {
   height: 450px;
@@ -109,15 +109,15 @@ body.darkmode {
 .hero__block-item:not(:last-child) {
   margin-right: 6px;
 }
-.darkmode .hero__block-div {
-  border-color: 1px solid var(--ligth-color);
-}
+
 .hero__block-div {
   padding: 4px 16px;
   border-radius: 30px;
   border: 1px solid var(--dark-color);
 }
-
+.darkmode .hero__block-div {
+  border-color: 1px solid var(--accent-color);
+}
 .hero__header-body {
   font-size: 39px;
   font-style: italic;
@@ -219,7 +219,9 @@ body.darkmode {
     border: 1px solid var(--dark-color);
     padding: 4px 16px;
   }
-
+  .darkmode .hero__hash-wrap {
+    border: 1px solid var(--accent-color);
+  }
   .hero__hash-section {
     display: block;
     margin-left: auto;
