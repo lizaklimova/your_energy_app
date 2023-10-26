@@ -45,16 +45,17 @@ const loadFavourite = () => {
   apendMarkup(favouriteCardRef, createCardsString(allEx));
   startExercises();
   remouveRating();
+  findTrashBtn();
 };
+
 window.addEventListener('load', loadFavourite);
 const modalMarkup = document.querySelector('[data-name="modalfavourite"]');
 const addToFavoritesButton = document.querySelector(
     '.exercise-modal-button__favorite'
 );
 const closeModalBtn = document.querySelector('[data-exmod-close]');
-
-
-
+const giveRating = document.querySelector('.exercise-modal-button__rating');
+const remouveFromTheFavourites = document.querySelector('.exercise-modal-button__remove');
 const remouveRating = () => {
   const ratingTrash = document.querySelectorAll('.card_rating');
   ratingTrash.forEach(el => {
@@ -69,6 +70,18 @@ const remouveRating = () => {
     removeClass(el, 'star');
   })
 }
+const findTrashBtn = () => {
+  const trashBtn = document.querySelectorAll('[data-name="fovourite-delete"]');
+  trashBtn.forEach(btn => {
+    btn.addEventListener('click', deleteOne);
+  })
+}
+
+
+
+
+ 
+
 favouriteModalBackdrop.addEventListener('click', e => {
   if (e.target === e.currentTarget) {
     addClass(favouriteModalBackdrop, 'is-hidden');
@@ -102,7 +115,25 @@ const openExercises = e => {
       modalMarkup.insertAdjacentHTML('beforeend', markup);
       removeClass(favouriteModalBackdrop, 'is-hidden')
       addClass(addToFavoritesButton, 'is-hidden');
+      addClass(giveRating, 'is-hidden');
     })
     .catch(er => console.log(er));
 };
 
+const deleteOne = event => {
+  const id = event.currentTarget.dataset;
+  localStorage.removeItem(id.id);
+  const delet = document.querySelector(`[data-name = "${id.id}"]`);
+  delet.innerHTML = '';
+}
+
+const removeFavorite = event => {
+    const divExercises = document.querySelector('.exercise-modal-tumb');
+  const id = divExercises.dataset;
+  localStorage.removeItem(id.id);
+  const delet = document.querySelector(`[data-name = "${id.id}"]`);
+  delet.innerHTML = '';
+  closeModal();
+
+};
+remouveFromTheFavourites.addEventListener('click', removeFavorite);

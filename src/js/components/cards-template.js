@@ -42,7 +42,7 @@ function returnMarkup() {
 export function createCardsString(arr) {
   const cardsString = arr
     .map(({ bodyPart, name, target, rating, burnedCalories, time, _id }) => {
-      return `<li class="exercises__item-card">
+      return `<li class="exercises__item-card" data-name="${_id}">
         <div class="card">
           <div class="card__top">
             <span class="card_tag">Workout</span>
@@ -51,7 +51,7 @@ export function createCardsString(arr) {
               <svg class="star" width="18" height="18">
                 <use href="${icons}#icon-star-yellow"></use>
               </svg>
-              <span class="is-hidden"><button data-id="${_id}"><svg width="16" height="16">
+              <span class="is-hidden"><button type="button" data-id="${_id}" data-name="fovourite-delete"><svg width="16" height="16">
                 <use href="${icons}#icon-trash"></use>
               </svg></button></span>
             </span>
