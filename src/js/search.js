@@ -3,13 +3,15 @@ import debounce from 'lodash.debounce';
 
 const searchInput = document.querySelector('.exercises__filter-search-input');
 let keyWord = '';
+let dataEl = [];
 
 searchInput.addEventListener('input', debounce(searchValue, 300));
 async function searchValue(e) {
   let keyWord = e.target.value.toLowerCase().trim();
   console.log(keyWord);
-  const dataEl = serviceGetByKeyWord(keyWord);
-  filterByKeyword(dataEl);
+  dataEl = await serviceGetByKeyWord();
+  // console.log(dataEl);
+  filterByKeyword(keyWord);
 }
 if (keyWord === '') {
 }
@@ -17,28 +19,23 @@ if (keyWord === '') {
 async function serviceGetByKeyWord() {
   const BASE_URL = 'https://your-energy.b.goit.study/api';
   const response = await axios.get(`${BASE_URL}/exercises`);
-  const dataEl = response.data.results.map(data =>
-    console.log({
-      name: data.name,
-      equipment: data.equipment,
-      bodyPart: data.bodyPart,
-    })
-  );
-  return dataEl;
+  const data = response.data.results.map(data => ({
+    name: data.name,
+    equipment: data.equipment,
+    bodyPart: data.bodyPart,
+  }));
+  return data;
 }
-let object = [];
-function filterByKeyword(objs) {
-  let object = objs.forEach(obj => {
-    if (
-      obj.bodyPart.includes(keyWord) ||
-      obj.name.includes(keyWord) ||
-      obj.equipment.includes(keyWord)
-    ) {
-      object.push(obj);
-      console.log(object);
-    }
+
+function filterByKeyword(keyWord) {
+  let filteredData = dataEl.filter(({ bodyPart, name, equipment }) => {
+    bodyPart.includes(keyWord) ||
+      name.includes(keyWord) ||
+      equipment.includes(keyWord);
   });
+  return filteredData;
 }
+console.log(filteredData);
 // export async function serviceGetByKeyWord(
 //   bodyPart = '',
 //   name = '',
