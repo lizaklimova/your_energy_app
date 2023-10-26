@@ -3,7 +3,7 @@
   height: 48px;
   display: inline-block;
   position: relative;
-  display: none;
+  /* display: none; */
 }
 .loader::after,
 .loader::before {

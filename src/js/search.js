@@ -7,6 +7,8 @@ let currentPage = 1;
 let keyWord = '';
 
 const searchInput = document.querySelector('.exercises__filter-search-input');
+const submitBtn = document.querySelector('.exercises__form-submit-btn');
+
 export const searchInputContainer = document.querySelector(
   '.exercises__input-div'
 );
