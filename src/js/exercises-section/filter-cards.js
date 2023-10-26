@@ -66,12 +66,12 @@ export function underlineActiveFilter() {
       addClass(filterCardsListRef, 'exercises__filter-cards-list');
       addClass(exerciseCardListRef, 'is-hidden');
       removeClass(exerciseCardListRef, 'exercises__cards-list');
-
-      // filterCardsListRef.classList.toggle('exercises__filter-cards-list');
-      // exerciseCardListRef.classList.toggle('exercises__cards-list');
-      // exerciseCardListRef.classList.toggle('is-hidden');
-      // filterCardsListRef.classList.toggle('is-hidden');
-
+      let exHeaderInfo = document.querySelector(
+        '.info__exercises__categories-subtitle'
+      );
+      let exHeader = document.querySelector('.exercises__categories-subtitle');
+      exHeaderInfo.innerHTML = '';
+      exHeader.innerHTML = '';
       filterName = event.target.textContent;
       fetchDataFromFilter(filterName.trim());
       createSmoothScrollBottom(

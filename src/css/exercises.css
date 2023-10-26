@@ -546,6 +546,8 @@
 
 @media screen and (min-width: 1440px) {
   .exercises__heading-wrap {
+    /* display: flex;
+    align-items: center; */
     gap: 31px;
   }
 
