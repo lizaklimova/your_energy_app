@@ -11,7 +11,7 @@ import {
 import { createCardsString } from '../components/cards-template';
 import { handleModalOpen } from './exercise-modal';
 import { createPaginItems } from './pagination';
-import { getCardsOnInput, searchInputContainer } from '../search';
+import { getNameAndFilter, searchInputContainer } from '../search';
 
 export const searchRefs = () => {
   const imgClick = document.querySelectorAll('.exercises__filter-card');
@@ -31,7 +31,7 @@ export function exercisesCard(e) {
   minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
   minimisedName = minimiseFirstLetter(replaceSpace(name.name));
 
-  getCardsOnInput(minimisedName, minimisedFilter);
+  getNameAndFilter(minimisedName, minimisedFilter);
   removeClass(searchInputContainer, 'is-hidden');
 
   screen.width >= 768 ? (limit = 10) : (limit = 8);
