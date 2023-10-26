@@ -34,7 +34,7 @@ function openReviewModal() {
 
 function closeReviewModal() {
   reviewModal.classList.add('is-hidden');
-  removeClass(exerciseModal, 'is-hidden');
+  // removeClass(exerciseModal, 'is-hidden');
   document.removeEventListener('keydown', closeModalOnEsc);
   scrollController.enabledScroll();
 }

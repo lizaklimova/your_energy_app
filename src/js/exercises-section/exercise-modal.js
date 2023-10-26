@@ -10,12 +10,12 @@ const refs = {
   modalBackdrop: document.querySelector('.js-backdrop'),
 };
 const addToFavoritesButton = document.querySelector(
-    '.exercise-modal-button__favorite'
-  );
+  '.exercise-modal-button__favorite'
+);
 
-  const removeFromFavoritesButton = document.querySelector(
-    '.exercise-modal-button__remove'
-  );
+const removeFromFavoritesButton = document.querySelector(
+  '.exercise-modal-button__remove'
+);
 
 refs.modalBackdrop.addEventListener('click', e => {
   if (e.target === e.currentTarget) {
@@ -33,14 +33,13 @@ export async function handleModalOpen(exId) {
     renderCard(data);
     scrollController.disabledScroll();
     if (!localStorage.getItem(data._id)) {
-
       removeClass(addToFavoritesButton, 'is-hidden');
-    } else {removeClass(removeFromFavoritesButton, 'is-hidden')}
-    
-    
+    } else {
+      removeClass(removeFromFavoritesButton, 'is-hidden');
+    }
+
     removeFromFavoritesButton.addEventListener('click', removeFavorite);
     addToFavoritesButton.addEventListener('click', addToFavorite);
-
   } catch (error) {
     console.error(error.message);
   }
@@ -86,22 +85,22 @@ function closeModalOnEsc(event) {
   }
 }
 
-const addToFavorite = (e) => {
+const addToFavorite = e => {
   const divExercises = document.querySelector('.exercise-modal-tumb');
   const id = divExercises.dataset;
   fetchExercise(id.id)
-  .then(data => {
-    localStorage.setItem(data._id, JSON.stringify(data));
-  })
-  .catch(error => console.log(error))
-    addClass(addToFavoritesButton, 'is-hidden');
-    removeClass(removeFromFavoritesButton, 'is-hidden');
-}
+    .then(data => {
+      localStorage.setItem(data._id, JSON.stringify(data));
+    })
+    .catch(error => console.log(error));
+  addClass(addToFavoritesButton, 'is-hidden');
+  removeClass(removeFromFavoritesButton, 'is-hidden');
+};
 
 const removeFavorite = event => {
-    const divExercises = document.querySelector('.exercise-modal-tumb');
+  const divExercises = document.querySelector('.exercise-modal-tumb');
   const id = divExercises.dataset;
   localStorage.removeItem(id.id);
   addClass(removeFromFavoritesButton, 'is-hidden');
-    removeClass(addToFavoritesButton, 'is-hidden');
+  removeClass(addToFavoritesButton, 'is-hidden');
 };
