@@ -31,6 +31,9 @@ window.addEventListener('wheel', function () {
 window.addEventListener('keyup', function () {
   cancelAnimationFrame(idAnimationScroll);
 });
+window.addEventListener('touchmove', function () {
+  cancelAnimationFrame(idAnimationScroll);
+});
 
 export function createSmoothScrollBottom(elementWidth, direction) {
   const { height: cardHeight } = elementWidth;
