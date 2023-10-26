@@ -6,25 +6,27 @@
       <!-- Input-search -->
       <div class="exercises__input-div is-hidden">
         <!-- <label class="exercises__input-label" for="input-search"></label> -->
-        <input
-          id="input-search"
-          type="text"
-          name="filter-search"
-          placeholder="Search"
-          class="exercises__filter-search-input"
-        />
+        <form id="exercises__search-form">
+          <input
+            id="input-search"
+            type="text"
+            name="filter-search"
+            placeholder="Search"
+            class="exercises__filter-search-input"
+          />
 
-        <button class="exercises__form-submit-btn" type="submit">
-          <svg class="exercises__form-submit-btn-icon" width="18" height="18">
-            <use href="./img/icons.svg#icon-search"></use>
-          </svg>
-        </button>
+          <button class="exercises__form-submit-btn" type="submit">
+            <svg class="exercises__form-submit-btn-icon" width="18" height="18">
+              <use href="./img/icons.svg#icon-search"></use>
+            </svg>
+          </button>
 
-        <button class="exercises__form-reset-btn is-hidden">
-          <svg class="exercises__form-reset-btn-icon" width="18" height="18">
-            <use href="./img/icons.svg#modalclose"></use>
-          </svg>
-        </button>
+          <button class="exercises__form-reset-btn is-hidden">
+            <svg class="exercises__form-reset-btn-icon" width="18" height="18">
+              <use href="./img/icons.svg#modalclose"></use>
+            </svg>
+          </button>
+        </form>
       </div>
       <!---->
       <ul class="exercises__filter-list">

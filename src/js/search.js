@@ -1,100 +1,49 @@
 import axios from 'axios';
-import debounce from 'lodash.debounce';
+import { exerciseCardListRef } from './components/refs';
+import { createCardsString } from './components/cards-template';
+import { createPaginItems } from './exercises-section/pagination';
 
 let cardName;
 let filterName;
 let currentPage = 1;
 let keyWord = '';
 
+const searchForm = document.querySelector('#exercises__search-form');
 const searchInput = document.querySelector('.exercises__filter-search-input');
-const submitBtn = document.querySelector('.exercises__form-submit-btn');
 export const searchInputContainer = document.querySelector(
   '.exercises__input-div'
 );
 
-submitBtn.addEventListener('submit', getInputValue);
-// searchInput.addEventListener('input', debounce(getInputValue, 300));
+searchForm.addEventListener('submit', getInputValue);
 
-const imgClick = document.querySelectorAll('.exercises__filter-card');
-imgClick.forEach(needBtn => {
-  needBtn.addEventListener('click', getNameAndFilter);
-});
-
-function getNameAndFilter(e) {
-  name = e.currentTarget.dataset;
-  minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
-  minimisedName = minimiseFirstLetter(replaceSpace(name.name));
+export function getNameAndFilter(category, filter) {
+  cardName = category;
+  filterName = filter;
 }
 
 function getInputValue(e) {
   e.preventDefault();
 
-  keyWord = e.target.value.toLowerCase().trim();
-  getCardsOnInput();
-}
+  keyWord = searchInput.value.toLowerCase().trim();
 
-export function getCardsOnInput(name, filter, key = keyWord) {
-  serviceGetByKeyWord(filter, name, currentPage, 10, key).then(data =>
-    console.log(data)
-  );
+  serviceGetByKeyWord(filterName, cardName, keyWord).then(data => {
+    console.log(data);
+    exerciseCardListRef.innerHTML = createCardsString(data.results);
+    createPaginItems(data.totalPages, currentPage);
+  });
 }
 
 async function serviceGetByKeyWord(
   filter,
   name,
+  keyword,
   page = 1,
-  perPage = 10,
-  keyWord
+  perPage = 10
 ) {
   const BASE_URL = 'https://your-energy.b.goit.study/api';
   const response = await axios.get(
-    `${BASE_URL}/exercises?${filter}=${name}&page=${page}&limit=${perPage}&keyword=${keyWord}`
+    `${BASE_URL}/exercises?${filter}=${name}&page=${page}&limit=${perPage}&keyword=${keyword}`
   );
 
   return response.data;
 }
-
-// function filterByKeyword(keyWord) {
-//   let filteredData = dataEl.filter(({ bodyPart, name, equipment }) => {
-//     bodyPart.includes(keyWord) ||
-//       name.includes(keyWord) ||
-//       equipment.includes(keyWord);
-//   });
-//   return filteredData;
-// }
-// console.log(filteredData);
-// export async function serviceGetByKeyWord(
-//   bodyPart = '',
-//   name = '',
-//   equipment = '',
-//   keyWord = ''
-// ) {
-//   const BASE_URL = 'https://your-energy.b.goit.study/api/exercises';
-//   const response = await axios.get(`${BASE_URL}`, {
-//     params: {
-//       bodyPart: bodyPart,
-//       name: name,
-//       equipment: equipment,
-//       keyWord: keyWord,
-//     },
-//   });
-//   const dataEl = response.data;
-//   console.log(dataEl);
-// }
-
-// function reset() {
-//   keyWord.value = '';
-// }
-
-//    Notiflix.Notify.failure(
-//      'Sorry, there is nothing matching your search query. Please try again.'
-//    );
-// import { addClass, removeClass } from '../components/fn-helpers';
-
-// const inputRef = document.querySelector('#input-search');
-// const searchBtn = document.querySelector('.exercises__form-submit-btn');
-// const resetBtn = document.querySelector('.exercises__form-reset-btn');
-// inputRef.addEventListener('input', e => {
-//   removeClass(resetBtn, 'is-hidden');
-//   addClass(searchBtn, 'is-hidden');
-// });
