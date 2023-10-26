@@ -17,3 +17,4 @@ import './exercises-section/exercises-cards';
 import './scrolls';
 import './mobile-menu.js';
 import './info';
+import './search';
