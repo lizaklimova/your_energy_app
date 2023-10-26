@@ -11,6 +11,7 @@ import {
 import { createCardsString } from '../components/cards-template';
 import { handleModalOpen } from './exercise-modal';
 import { createPaginItems } from './pagination';
+import { getCardsOnInput } from '../search';
 
 export const searchRefs = () => {
   const imgClick = document.querySelectorAll('.exercises__filter-card');
@@ -25,10 +26,12 @@ let name;
 let minimisedFilter;
 let minimisedName;
 
-function exercisesCard(e) {
+export function exercisesCard(e) {
   name = e.currentTarget.dataset;
   minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
   minimisedName = minimiseFirstLetter(replaceSpace(name.name));
+
+  getCardsOnInput(minimisedName, minimisedFilter);
 
   screen.width >= 768 ? (limit = 10) : (limit = 8);
   getCard(currentPage);

@@ -1,41 +1,51 @@
 import axios from 'axios';
 import debounce from 'lodash.debounce';
 
-const searchInput = document.querySelector('.exercises__filter-search-input');
+let cardName;
+let filterName;
+let currentPage = 1;
 let keyWord = '';
-let dataEl = [];
 
-searchInput.addEventListener('input', debounce(searchValue, 300));
-async function searchValue(e) {
-  let keyWord = e.target.value.toLowerCase().trim();
-  console.log(keyWord);
-  dataEl = await serviceGetByKeyWord();
-  // console.log(dataEl);
-  filterByKeyword(keyWord);
-}
-if (keyWord === '') {
+function onInputSearch() {
+  const searchInput = document.querySelector('.exercises__filter-search-input');
+  searchInput.addEventListener('input', _debounce(getInputValue, 300));
 }
 
-async function serviceGetByKeyWord() {
+function getInputValue(e) {
+  console.log(e.currentTarget.value);
+  keyWord = e.currentTarget.value.toLowerCase().trim();
+}
+
+export function getCardsOnInput(name, filter) {
+  serviceGetByKeyWord(filter, name, currentPage, 10, keyWord).then(data =>
+    console.log(data)
+  );
+}
+
+async function serviceGetByKeyWord(
+  filter,
+  name,
+  page = 1,
+  perPage = 10,
+  keyWord
+) {
   const BASE_URL = 'https://your-energy.b.goit.study/api';
-  const response = await axios.get(`${BASE_URL}/exercises`);
-  const data = response.data.results.map(data => ({
-    name: data.name,
-    equipment: data.equipment,
-    bodyPart: data.bodyPart,
-  }));
-  return data;
+  const response = await axios.get(
+    `${BASE_URL}/exercises?${filter}=${name}&page=${page}&limit=${perPage}&keyword=${keyWord}`
+  );
+
+  return response.data;
 }
 
-function filterByKeyword(keyWord) {
-  let filteredData = dataEl.filter(({ bodyPart, name, equipment }) => {
-    bodyPart.includes(keyWord) ||
-      name.includes(keyWord) ||
-      equipment.includes(keyWord);
-  });
-  return filteredData;
-}
-console.log(filteredData);
+// function filterByKeyword(keyWord) {
+//   let filteredData = dataEl.filter(({ bodyPart, name, equipment }) => {
+//     bodyPart.includes(keyWord) ||
+//       name.includes(keyWord) ||
+//       equipment.includes(keyWord);
+//   });
+//   return filteredData;
+// }
+// console.log(filteredData);
 // export async function serviceGetByKeyWord(
 //   bodyPart = '',
 //   name = '',
@@ -62,3 +72,12 @@ console.log(filteredData);
 //    Notiflix.Notify.failure(
 //      'Sorry, there is nothing matching your search query. Please try again.'
 //    );
+// import { addClass, removeClass } from '../components/fn-helpers';
+
+// const inputRef = document.querySelector('#input-search');
+// const searchBtn = document.querySelector('.exercises__form-submit-btn');
+// const resetBtn = document.querySelector('.exercises__form-reset-btn');
+// inputRef.addEventListener('input', e => {
+//   removeClass(resetBtn, 'is-hidden');
+//   addClass(searchBtn, 'is-hidden');
+// });
