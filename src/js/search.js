@@ -6,18 +6,18 @@ let filterName;
 let currentPage = 1;
 let keyWord = '';
 
-function onInputSearch() {
-  const searchInput = document.querySelector('.exercises__filter-search-input');
-  searchInput.addEventListener('input', _debounce(getInputValue, 300));
-}
+const searchInput = document.querySelector('.exercises__filter-search-input');
+export const searchInputContainer = document.querySelector(
+  '.exercises__input-div'
+);
+searchInput.addEventListener('input', debounce(getInputValue, 300));
 
 function getInputValue(e) {
-  console.log(e.currentTarget.value);
-  keyWord = e.currentTarget.value.toLowerCase().trim();
+  keyWord = e.target.value.toLowerCase().trim();
 }
 
-export function getCardsOnInput(name, filter) {
-  serviceGetByKeyWord(filter, name, currentPage, 10, keyWord).then(data =>
+export function getCardsOnInput(name, filter, key = keyWord) {
+  serviceGetByKeyWord(filter, name, currentPage, 10, key).then(data =>
     console.log(data)
   );
 }
