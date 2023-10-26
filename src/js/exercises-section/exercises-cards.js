@@ -1,7 +1,7 @@
 import { filterCardsListRef, exerciseCardListRef } from '../components/refs';
-import { apendMarkup } from '../components/fn-helpers';
 import { fetchCards } from '../api';
 import {
+  apendMarkup,
   addClass,
   removeClass,
   spliceLastLetter,
@@ -11,6 +11,7 @@ import {
 import { createCardsString } from '../components/cards-template';
 import { handleModalOpen } from './exercise-modal';
 import { createPaginItems } from './pagination';
+import { getNameAndFilter, searchInputContainer } from '../search';
 
 export const searchRefs = () => {
   const imgClick = document.querySelectorAll('.exercises__filter-card');
@@ -25,10 +26,13 @@ let name;
 let minimisedFilter;
 let minimisedName;
 
-function exercisesCard(e) {
+export function exercisesCard(e) {
   name = e.currentTarget.dataset;
   minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
   minimisedName = minimiseFirstLetter(replaceSpace(name.name));
+
+  getNameAndFilter(minimisedName, minimisedFilter);
+  removeClass(searchInputContainer, 'is-hidden');
 
   screen.width >= 768 ? (limit = 10) : (limit = 8);
   getCard(currentPage);

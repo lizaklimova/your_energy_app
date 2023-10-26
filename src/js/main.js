@@ -10,13 +10,12 @@ import './exercises-section/bread-crumbs';
 
 import './exercises-section/filter-cards';
 import './exercises-section/filter-card-template';
-
+import './search';
 import './exercises-section/exercises-cards';
 
 import './exercises-section/exercise-modal';
 import './exercises-section/exercise-modal-template';
 import './exercises-section/pagination';
-import './exercises-section/search';
 
 import './api';
 import './favorite';

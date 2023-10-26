@@ -102,12 +102,6 @@ body.darkmode {
   margin-bottom: 40px;
 }
 
-.favourite__exercise-block {
-}
-
-.favourite__text-block {
-}
-
 .favourite__text {
   color: var(--dark-color);
   text-align: center;
@@ -266,9 +260,9 @@ body.darkmode {
   .favourite__card-block {
   }
 
-  .favourite__text-block {
+  /* .favourite__text-block {
     display: none;
-  }
+  } */
 
   .favourite__card-block {
     justify-content: flex-start;

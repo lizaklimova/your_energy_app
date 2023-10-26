@@ -20,6 +20,7 @@ import { createSmoothScrollBottom } from '../scrolls';
 import { searchRefs } from './exercises-cards';
 import { createPaginItems } from './pagination';
 import { breadCrumbs } from './bread-crumbs';
+import { searchInputContainer } from '../search';
 // ********************************************************
 
 window.addEventListener('load', () => {
@@ -62,6 +63,7 @@ export function underlineActiveFilter() {
 
   filterBtns.forEach(button => {
     button.addEventListener('click', event => {
+      addClass(searchInputContainer, 'is-hidden');
       removeClass(filterCardsListRef, 'is-hidden');
       addClass(filterCardsListRef, 'exercises__filter-cards-list');
       addClass(exerciseCardListRef, 'is-hidden');

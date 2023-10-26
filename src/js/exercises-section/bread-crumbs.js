@@ -16,13 +16,6 @@ export function createBreadCrumbs(event) {
   );
   let exHeader = document.querySelector('.exercises__categories-subtitle');
 
-  let subCategoryInfo = document.querySelector(
-    '.info__exercises__categories-subtitle span'
-  );
-  let subCategory = document.querySelector(
-    '.exercises__categories-subtitle span'
-  );
-
   if (checkCurrentList) {
     if (screen.width >= 1440) {
       exHeaderInfo.innerHTML = `&nbsp;/<span>${capitalizedCrumb}</span>`;

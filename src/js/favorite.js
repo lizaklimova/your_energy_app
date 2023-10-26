@@ -1,11 +1,11 @@
-const favouriteTexte = document.querySelector('[data-name="text-block"]');
+// const favouriteTexte = document.querySelector('[data-name="text-block"]');
 const favouriteCardRef = document.querySelector('[data-name="card-block"]');
 const favouriteModalBackdrop = document.querySelector('[data-exmodal]');
 import { createCardsString } from './components/cards-template';
 import { addClass, removeClass, apendMarkup } from './components/fn-helpers';
 import { renderExerciseModal } from './exercises-section/exercise-modal-template';
 import { fetchExercise } from './api';
-
+import { favouriteTexte } from './components/refs';
 let exerciseState = {};
 let allEx = [];
 let exercisesKeys = [];
@@ -28,6 +28,7 @@ const loadFavourite = () => {
     removeClass(favouriteCardRef, 'favourite__card-block');
     return;
   }
+
   try {
     exercisesKeys.map(key => {
       const savedExercises = localStorage.getItem(key);
@@ -130,4 +131,5 @@ const removeFavorite = event => {
   delet.innerHTML = '';
   closeModal();
 };
+
 remouveFromTheFavourites.addEventListener('click', removeFavorite);

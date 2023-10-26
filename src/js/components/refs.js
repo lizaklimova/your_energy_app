@@ -31,6 +31,7 @@ export const breadCrumbsList = document.querySelector(
 export const breadCrumbsSlash = document.querySelector(
   '.exercises__breadcrumbs-slash'
 );
+
 export const favouriteTexte = document.querySelector('.favourite__text');
 
 export const exerciseCardListRef = document.querySelector(
