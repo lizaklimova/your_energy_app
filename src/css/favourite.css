@@ -266,10 +266,6 @@ body.darkmode {
   .favourite__card-block {
   }
 
-  .favourite__text-block {
-    display: none;
-  }
-
   .favourite__card-block {
     justify-content: flex-start;
   }
