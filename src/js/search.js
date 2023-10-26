@@ -8,14 +8,29 @@ let keyWord = '';
 
 const searchInput = document.querySelector('.exercises__filter-search-input');
 const submitBtn = document.querySelector('.exercises__form-submit-btn');
-
 export const searchInputContainer = document.querySelector(
   '.exercises__input-div'
 );
-searchInput.addEventListener('input', debounce(getInputValue, 300));
+
+submitBtn.addEventListener('submit', getInputValue);
+// searchInput.addEventListener('input', debounce(getInputValue, 300));
+
+const imgClick = document.querySelectorAll('.exercises__filter-card');
+imgClick.forEach(needBtn => {
+  needBtn.addEventListener('click', getNameAndFilter);
+});
+
+function getNameAndFilter(e) {
+  name = e.currentTarget.dataset;
+  minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
+  minimisedName = minimiseFirstLetter(replaceSpace(name.name));
+}
 
 function getInputValue(e) {
+  e.preventDefault();
+
   keyWord = e.target.value.toLowerCase().trim();
+  getCardsOnInput();
 }
 
 export function getCardsOnInput(name, filter, key = keyWord) {
