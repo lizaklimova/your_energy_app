@@ -91,10 +91,10 @@
   outline: 0;
   box-shadow: 1px 1px 4px 3px rgba(244, 244, 244, 0.843);
   z-index: 1;
-  opacity: 0.4;
+  /* opacity: 0.4; */
 }
 
-.placeholder {
+/* .placeholder {
   position: absolute;
   top: 8px;
   left: 15px;
@@ -105,9 +105,9 @@
   pointer-events: none;
   background-color: transparent;
   z-index: 2;
-}
+} */
 
-.footer__input:focus + .placeholder,
+/* .footer__input:focus + .placeholder,
 .footer__input:not(:placeholder-shown) + .placeholder {
   transform: translateY(-0.1em);
   top: -12px;
@@ -115,7 +115,7 @@
 }
 .footer__input::placeholder {
   color: transparent;
-}
+} */
 
 .footer__btn {
   border-radius: 30px;

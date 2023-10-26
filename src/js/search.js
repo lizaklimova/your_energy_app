@@ -5,16 +5,16 @@ const searchInput = document.querySelector('.exercises__filter-search-input');
 let keyWord = '';
 
 searchInput.addEventListener('input', debounce(searchValue, 300));
-function searchValue(e) {
+async function searchValue(e) {
   let keyWord = e.target.value.toLowerCase().trim();
   console.log(keyWord);
+  const dataEl = serviceGetByKeyWord(keyWord);
+  filterByKeyword(dataEl);
 }
 if (keyWord === '') {
 }
 
-serviceGetByKeyWord(keyWord);
-
-async function serviceGetByKeyWord(keyWord = '') {
+async function serviceGetByKeyWord() {
   const BASE_URL = 'https://your-energy.b.goit.study/api';
   const response = await axios.get(`${BASE_URL}/exercises`);
   const dataEl = response.data.results.map(data =>
@@ -26,6 +26,37 @@ async function serviceGetByKeyWord(keyWord = '') {
   );
   return dataEl;
 }
+let object = [];
+function filterByKeyword(objs) {
+  let object = objs.forEach(obj => {
+    if (
+      obj.bodyPart.includes(keyWord) ||
+      obj.name.includes(keyWord) ||
+      obj.equipment.includes(keyWord)
+    ) {
+      object.push(obj);
+      console.log(object);
+    }
+  });
+}
+// export async function serviceGetByKeyWord(
+//   bodyPart = '',
+//   name = '',
+//   equipment = '',
+//   keyWord = ''
+// ) {
+//   const BASE_URL = 'https://your-energy.b.goit.study/api/exercises';
+//   const response = await axios.get(`${BASE_URL}`, {
+//     params: {
+//       bodyPart: bodyPart,
+//       name: name,
+//       equipment: equipment,
+//       keyWord: keyWord,
+//     },
+//   });
+//   const dataEl = response.data;
+//   console.log(dataEl);
+// }
 
 // function reset() {
 //   keyWord.value = '';
