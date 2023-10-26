@@ -1,21 +1,19 @@
-import 'tui-pagination/dist/tui-pagination.css';
-import Pagination from 'tui-pagination';
-import { filterCardsListRef } from '../components/refs';
-import { apendMarkup, insertHtml } from '../components/fn-helpers';
+import { filterCardsListRef, exerciseCardListRef } from '../components/refs';
+import { apendMarkup } from '../components/fn-helpers';
 import { fetchCards } from '../api';
 import {
   addClass,
   removeClass,
   spliceLastLetter,
   minimiseFirstLetter,
+  replaceSpace,
 } from '../components/fn-helpers';
 import {
   createCardsSkeleton,
   createCardsString,
 } from '../components/cards-template';
 import { handleModalOpen } from './exercise-modal';
-
-const exerciseCardListRef = document.querySelector('.exercises__cards-list');
+import { createPaginItems } from './pagination';
 
 export const searchRefs = () => {
   const imgClick = document.querySelectorAll('.exercises__filter-card');
@@ -24,54 +22,42 @@ export const searchRefs = () => {
   });
 };
 
+let limit;
+let currentPage = 1;
+let name;
+let minimisedFilter;
+let minimisedName;
+
 function exercisesCard(e) {
-  let limit = 10;
-  let currentPage = 1;
+  name = e.currentTarget.dataset;
+  minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
+  minimisedName = minimiseFirstLetter(replaceSpace(name.name));
 
-  addClass(filterCardsListRef, 'is-hidden');
-  removeClass(filterCardsListRef, 'exercises__filter-cards-list');
-  apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
+  screen.width >= 768 ? (limit = 10) : (limit = 8);
+  getCard(currentPage);
+}
 
-  let name = e.currentTarget.dataset;
-  let minimisedFilter = minimiseFirstLetter(spliceLastLetter(name.filter));
-  let minimisedName = minimiseFirstLetter(name.name);
-
-  function controlPagination(currentPage, totalPages) {
-    const paginList = document.querySelector('.exercises__pagination');
-    let liEl = '';
-
-    if (currentPage > 1) {
-      liEl = `<li class="pagin-btn prev"><span></span></li>`;
-    }
-  }
-
-  getCards(currentPage, limit, minimisedFilter, minimisedName);
-
-  async function getCards(currentPage, limit, filter, name) {
-    screen.width >= 768 ? (limit = 10) : (limit = 8);
-
-    console.log(limit);
-    console.log(currentPage);
-    console.log(filter);
-    console.log(name);
-
-    try {
-      const data = await fetchCards(currentPage, limit, filter, name);
-
-      controlPagination(data.perPage, data.totalPages);
-
+export function getCard(currentPage) {
+  fetchCards(currentPage, limit, minimisedFilter, minimisedName)
+    .then(data => {
+      addClass(filterCardsListRef, 'is-hidden');
+      removeClass(filterCardsListRef, 'exercises__filter-cards-list');
+      removeClass(exerciseCardListRef, 'is-hidden');
+      addClass(exerciseCardListRef, 'exercises__cards-list');
+      apendMarkup(exerciseCardListRef, createCardsSkeleton(10));
       apendMarkup(exerciseCardListRef, createCardsString(data.results));
 
       const exerciseOpenBtn = document.querySelectorAll('[data-exmod-open]');
-
       exerciseOpenBtn.forEach(btn => {
         btn.addEventListener('click', e => {
           const data = e.currentTarget.dataset.id;
           handleModalOpen(data);
         });
       });
-    } catch (error) {
-      console.log(error);
-    }
-  }
+      return data;
+    })
+    .then(data => {
+      createPaginItems(data.totalPages, currentPage);
+    })
+    .catch(error => console.log(error));
 }

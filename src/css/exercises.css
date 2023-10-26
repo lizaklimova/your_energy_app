@@ -154,7 +154,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+
+.pagin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  background-color: transparent;
+  border: 1px solid #242424;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+
+.pagin-btn.prev:hover,
+.pagin-btn.prev:focus {
+  transform: translateX(-7px);
+  box-shadow: 1px 1px 1px var(--dark-color);
+}
+
+.pagin-btn.next:hover,
+.pagin-btn.next:focus {
+  transform: translateX(7px);
+  box-shadow: 1px 1px 1px var(--dark-color);
+}
+
+.pagin-btn span {
+  color: var(--dark-color);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+.pagin-dots {
+  align-self: center;
 }
 
 .exercises__pagination-item {
@@ -168,11 +203,13 @@
 }
 
 .exercises__pagination-item_active {
+  box-sizing: border-box;
   border: 1px solid var(--dark-color);
   border-radius: 50%;
-  padding: 6px 10px;
+  padding: 3% 4%;
   color: var(--dark-color);
 }
+
 .darkmode .exercises__pagination-item_active {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
@@ -395,10 +432,6 @@
   .card__title {
     width: 345px;
   }
-
-  /* .exercises__filter-cards-list {
-    min-height: 1064px;
-  } */
 }
 
 @keyframes animloader {

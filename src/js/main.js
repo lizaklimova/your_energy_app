@@ -7,6 +7,7 @@ import './quote';
 import './components/fn-helpers';
 import './review';
 import './rating';
+import './exercises-section/pagination';
 import './exercises-section/exercise-modal';
 import './exercises-section/exercise-modal-template';
 import './notiflix';
