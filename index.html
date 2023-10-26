@@ -10,9 +10,9 @@
       href="https://unpkg.com/slim-select@latest/dist/slimselect.css"
     />
     
-    <script type="module" crossorigin src="/your_energy_app/assets/index-329263a4.js"></script>
-    <link rel="modulepreload" crossorigin href="/your_energy_app/assets/scrolls-6cf21bb6.js">
-    <link rel="stylesheet" href="/your_energy_app/assets/scrolls-8fd46e6e.css">
+    <script type="module" crossorigin src="/your_energy_app/assets/index-89768a5e.js"></script>
+    <link rel="modulepreload" crossorigin href="/your_energy_app/assets/scrolls-3857f932.js">
+    <link rel="stylesheet" href="/your_energy_app/assets/scrolls-cbe97652.css">
   </head>
   <body>
     <header class="header">
@@ -246,13 +246,18 @@
       <h3 class="exercises__categories-subtitle"></h3>
       <!-- Input-search -->
       <div class="exercises__input-div is-hidden">
-        <input
-          id="input-search"
-          type="text"
-          name="filter-search"
-          placeholder="Search"
-          class="exercises__filter-search-input"
-        />
+
+        <!-- <label class="exercises__input-label" for="input-search"></label> -->
+        <form id="exercises__search-form">
+          <input
+            id="input-search"
+            type="text"
+            name="filter-search"
+            placeholder="Search"
+            class="exercises__filter-search-input"
+            autocomplete="off"
+          />
+
 
         <button class="exercises__form-submit-btn" type="submit">
           <svg class="exercises__form-submit-btn-icon" width="18" height="18">
