@@ -3,13 +3,22 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 320px;
   max-height: 90%;
   border-radius: 20px;
   color: var(--accent-color);
   background-color: var(--dark-color);
   overflow: auto;
   padding: 40px 20px;
+  animation: zoomIn 1s;
+}
+@keyframes zoomIn {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .exercise-modal__close-btn:hover .exercise-modal__close-icon,

@@ -8,6 +8,15 @@
   border-radius: 20px;
   background: var(--dark-color);
   padding: 40px 20px 40px 20px;
+  animation: zoomIn 1s;
+}
+@keyframes zoomIn {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .modal-title {
