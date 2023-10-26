@@ -8,7 +8,7 @@
    ${t}
   </p>
   <p class="info__wrapper-author">${e}</p>
-</div>`;on.forEach(r=>{r.innerHTML=n})}function cn({author:e,quote:t}){const n={author:e,quote:t,date:new Date().getDate()};try{const r=JSON.stringify(n);localStorage.setItem($e,r)}catch(r){console.log(r.message)}}function ln(){try{const e=localStorage.getItem($e);if(e){let t=JSON.parse(e),n=new Date().getDate();t.date!==n&&Ie()}}catch(e){console.log(e.message)}}ln();const un=(e,t)=>{e.classList.add(t)},dn=(e,t)=>{e.classList.remove(t)};function T(e){return e.slice(0,1).toUpperCase()+e.slice(1)}function Rn(e,t,n){e.forEach(r=>{dn(r,n)}),un(t,n)}const On=(e,t)=>{e.innerHTML=t};function An(e){const t=e.slice(0,1).toLowerCase()+e.slice(1),n=t.split(" ");return n.length===2?n.join(""):t}function Tn(e){return e==="Body parts"?e.slice(0,e.length-1):e}const k="/your_energy_app/assets/icons-df0d6227.svg";function Cn(e){return e.map(({bodyPart:n,name:r,target:s,rating:o,burnedCalories:i,time:l,_id:d})=>`<li class="exercises__item-card">
+</div>`;on.forEach(r=>{r.innerHTML=n})}function cn({author:e,quote:t}){const n={author:e,quote:t,date:new Date().getDate()};try{const r=JSON.stringify(n);localStorage.setItem($e,r)}catch(r){console.log(r.message)}}function ln(){try{const e=localStorage.getItem($e);if(e){let t=JSON.parse(e),n=new Date().getDate();t.date!==n&&Ie()}}catch(e){console.log(e.message)}}ln();const un=(e,t)=>{e.classList.add(t)},dn=(e,t)=>{e.classList.remove(t)};function T(e){return e.slice(0,1).toUpperCase()+e.slice(1)}function Rn(e,t,n){e.forEach(r=>{dn(r,n)}),un(t,n)}const On=(e,t)=>{e.innerHTML=t};function An(e){const t=e.slice(0,1).toLowerCase()+e.slice(1),n=t.split(" ");return n.length===2?n.join(""):t}function Tn(e){return e==="Body parts"?e.slice(0,e.length-1):e}const k="/your_energy_app/assets/icons-df0d6227.svg";function Cn(e){return e.map(({bodyPart:n,name:r,target:s,rating:o,burnedCalories:i,time:l,_id:d})=>`<li class="exercises__item-card" data-name="${d}">
         <div class="card">
           <div class="card__top">
             <span class="card_tag">Workout</span>
@@ -17,7 +17,7 @@
               <svg class="star" width="18" height="18">
                 <use href="${k}#icon-star-yellow"></use>
               </svg>
-              <span class="is-hidden"><button data-id="${d}"><svg width="16" height="16">
+              <span class="is-hidden"><button type="button" data-id="${d}" data-name="fovourite-delete"><svg width="16" height="16">
                 <use href="${k}#icon-trash"></use>
               </svg></button></span>
             </span>
