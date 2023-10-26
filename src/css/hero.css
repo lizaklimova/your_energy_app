@@ -45,6 +45,7 @@ body.darkmode {
 }
 .darkmode .btn__icon {
   fill: #fff;
+  z-index: 999;
 }
 .darkmode .btn {
   box-shadow: inset 8 0px 60px rgba(0, 0, 0, 0.3),
