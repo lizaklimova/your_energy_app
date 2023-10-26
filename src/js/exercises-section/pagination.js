@@ -1,7 +1,8 @@
-import { filterCardsListRef } from '../components/refs';
+import { filterCardsListRef, exerciseCardListRef } from '../components/refs';
 import { createSmoothScrollUp } from '../scrolls';
 import { fetchDataFromFilter } from './filter-cards';
 import { getCard } from './exercises-cards';
+import Notiflix from 'notiflix';
 
 export function createPaginItems(totalPages, currentPage) {
   const paginList = document.querySelector('.exercises__pagination');
@@ -49,6 +50,9 @@ export function createPaginItems(totalPages, currentPage) {
     paginItem += `<li class="pagin-btn next"><span>Next→</span></li>`;
   }
 
+  //   if (currentPage >= totalPages) {
+  //   }
+
   paginList.innerHTML = paginItem;
 
   const paginItems = paginList.querySelectorAll('.exercises__pagination-item');
@@ -62,9 +66,13 @@ export function createPaginItems(totalPages, currentPage) {
       currentPage = pageNumber;
       createPaginItems(totalPages, pageNumber);
 
-      checkCurrentList()
-        ? getCard(currentPage)
-        : fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
+      if (checkCurrentList()) {
+        getCard(currentPage);
+        createSmoothScrollUp(exerciseCardListRef);
+      } else {
+        fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
+        createSmoothScrollUp(filterCardsListRef);
+      }
     });
   });
 
@@ -74,12 +82,13 @@ export function createPaginItems(totalPages, currentPage) {
         currentPage--;
         createPaginItems(totalPages, currentPage);
 
-        checkCurrentList()
-          ? getCard(currentPage)
-          : fetchDataFromFilter(
-              activeFilterRef.textContent.trim(),
-              currentPage
-            );
+        if (checkCurrentList()) {
+          getCard(currentPage);
+          createSmoothScrollUp(exerciseCardListRef);
+        } else {
+          fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
+          createSmoothScrollUp(filterCardsListRef);
+        }
       }
     });
   }
@@ -90,17 +99,16 @@ export function createPaginItems(totalPages, currentPage) {
         currentPage++;
         createPaginItems(totalPages, currentPage);
 
-        checkCurrentList()
-          ? getCard(currentPage)
-          : fetchDataFromFilter(
-              activeFilterRef.textContent.trim(),
-              currentPage
-            );
+        if (checkCurrentList()) {
+          getCard(currentPage);
+          createSmoothScrollUp(exerciseCardListRef);
+        } else {
+          fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
+          createSmoothScrollUp(filterCardsListRef);
+        }
       }
     });
   }
-
-  createSmoothScrollUp(filterCardsListRef);
 }
 
 function checkCurrentList() {
