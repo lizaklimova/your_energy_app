@@ -32,7 +32,12 @@ export async function handleModalOpen(exId) {
     const data = await fetchExercise(exId);
     renderCard(data);
     scrollController.disabledScroll();
-    removeClass(addToFavoritesButton, 'is-hidden');
+    if (!localStorage.getItem(data._id)) {
+
+      removeClass(addToFavoritesButton, 'is-hidden');
+    } else {removeClass(removeFromFavoritesButton, 'is-hidden')}
+    
+    
     removeFromFavoritesButton.addEventListener('click', removeFavorite);
     addToFavoritesButton.addEventListener('click', addToFavorite);
 
