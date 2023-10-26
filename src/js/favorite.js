@@ -6,6 +6,7 @@ import { addClass, removeClass, apendMarkup } from './components/fn-helpers';
 import { renderExerciseModal } from './exercises-section/exercise-modal-template';
 import { fetchExercise } from './api';
 
+
 let exerciseState = {};
 let allEx = [];
 let exercisesKeys = [];
@@ -15,7 +16,6 @@ const knownKeys = [
   'TOAST UI pagination for localhost: Statistics',
 ];
 const loadFavourite = () => {
-  const keys = Object.keys(localStorage);
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
     if (!knownKeys.includes(key)) {
@@ -43,11 +43,17 @@ const loadFavourite = () => {
   addClass(favouriteCardRef, 'favourite__card-block');
   removeClass(favouriteCardRef, 'is-hidden');
   apendMarkup(favouriteCardRef, createCardsString(allEx));
-  // startExercises();
+  startExercises();
   remouveRating();
 };
 window.addEventListener('load', loadFavourite);
-// const modalMarkup = document.querySelector('[data-name="modalfavourite"]');
+const modalMarkup = document.querySelector('[data-name="modalfavourite"]');
+const addToFavoritesButton = document.querySelector(
+    '.exercise-modal-button__favorite'
+);
+const closeModalBtn = document.querySelector('[data-exmod-close]');
+
+
 
 const remouveRating = () => {
   const ratingTrash = document.querySelectorAll('.card_rating');
@@ -63,22 +69,40 @@ const remouveRating = () => {
     removeClass(el, 'star');
   })
 }
+favouriteModalBackdrop.addEventListener('click', e => {
+  if (e.target === e.currentTarget) {
+    addClass(favouriteModalBackdrop, 'is-hidden');
+  }
+});
+function closeModal() {
+  favouriteModalBackdrop.classList.add('is-hidden');
+  document.removeEventListener('keydown', closeModalOnEsc);
 
-// const startExercises = () => {
-//   const startBtn = document.querySelectorAll('[data-exmod-open]');
-//   startBtn.forEach(needBtn => {
-//     needBtn.addEventListener('click', openExercises);
-//   });
-// };
-// const openExercises = e => {
-//   const data = e.currentTarget.dataset.id;
-//   removeClass(favouriteModalBackdrop, 'js-backdrop');
-//   fetchExercise(data)
-//     .then(data => {
-//       const markup = renderExerciseModal(data);
-//       console.log(markup);
-//       modalMarkup.insertAdjacentHTML('afterend', markup);
-//       console.log(data);
-//     })
-//     .catch(er => console.log(er));
-// };
+}
+function closeModalOnEsc(event) {
+  if (event.code === 'Escape') {
+    closeModal();
+  }
+}
+document.addEventListener('keydown', closeModalOnEsc);
+closeModalBtn.addEventListener('click', closeModal);
+
+const startExercises = () => {
+  const startBtn = document.querySelectorAll('[data-exmod-open]');
+  startBtn.forEach(needBtn => {
+    needBtn.addEventListener('click', openExercises);
+  });
+};
+const openExercises = e => {
+  const data = e.currentTarget.dataset.id;
+  modalMarkup.innerHTML = ' ';
+  fetchExercise(data)
+    .then(data => {
+      const markup = renderExerciseModal(data);
+      modalMarkup.insertAdjacentHTML('beforeend', markup);
+      removeClass(favouriteModalBackdrop, 'is-hidden')
+      addClass(addToFavoritesButton, 'is-hidden');
+    })
+    .catch(er => console.log(er));
+};
+
