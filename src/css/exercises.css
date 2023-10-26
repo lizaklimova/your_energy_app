@@ -484,6 +484,7 @@
 }
 .darkmode .exercises__filter-search-input {
   border: 1px solid var(--accent-color);
+  outline: none;
 }
 .exercises__filter-search-input:hover,
 .exercises__filter-search-input:focus {
@@ -515,7 +516,7 @@
   position: absolute;
   background: transparent;
   border: none;
-  top: 50%;
+  top: 25px;
   transform: translateY(-50%);
   right: 11px;
   padding: 0;

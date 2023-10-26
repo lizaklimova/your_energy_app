@@ -1,9 +1,9 @@
 import iconSun from '../../img/icons.svg';
 const iconDiv = document.querySelector('.btn__icon-container');
 
-const iconMarkup = `  <svg class="btn__icon">
+const iconMarkup = `<svg class="btn__icon">
               <use
-                class="btn__icon"
+                class="icon"
                 href="${iconSun}#icon-brightness-contrast"
                 width="14"
                 height="14"
@@ -13,7 +13,6 @@ iconDiv.insertAdjacentHTML('beforeend', iconMarkup);
 
 const body = document.querySelector('body');
 const btn = document.querySelector('.btn');
-const icon = document.querySelector('.btn__icon');
 
 const theme = localStorage.getItem('theme');
 theme && document.body.classList.add(theme);
