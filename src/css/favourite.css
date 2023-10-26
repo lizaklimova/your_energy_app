@@ -139,7 +139,7 @@ body.darkmode {
   height: 141px;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 767px) {
   .favourite__card-block .exercises__item-card {
     width: 335px;
     margin-bottom: 20px;
