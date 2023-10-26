@@ -8,21 +8,15 @@ searchInput.addEventListener('input', debounce(searchValue, 300));
 function searchValue(e) {
   let keyWord = e.target.value.toLowerCase().trim();
   console.log(keyWord);
-
-  if (keyWord === '') {
-    reset();
-  }
+}
+if (keyWord === '') {
 }
 
 serviceGetByKeyWord(keyWord);
 
 async function serviceGetByKeyWord(keyWord = '') {
   const BASE_URL = 'https://your-energy.b.goit.study/api';
-  const response = await axios.get(`${BASE_URL}/exercises`, {
-    params: {
-      title: keyWord,
-    },
-  });
+  const response = await axios.get(`${BASE_URL}/exercises`);
   const dataEl = response.data.results.map(data =>
     console.log({
       name: data.name,
@@ -30,8 +24,7 @@ async function serviceGetByKeyWord(keyWord = '') {
       bodyPart: data.bodyPart,
     })
   );
-
-  console.log(dataEl);
+  return dataEl;
 }
 
 // function reset() {
