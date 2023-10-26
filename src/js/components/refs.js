@@ -32,7 +32,7 @@ export const breadCrumbsSlash = document.querySelector(
   '.exercises__breadcrumbs-slash'
 );
 
-export const favouriteTexte = document.querySelector('.favourite__text');
+export const favouriteTexte = document.querySelector('.favourite__text-block');
 
 export const exerciseCardListRef = document.querySelector(
   '.exercises__cards-list'

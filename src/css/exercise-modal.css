@@ -259,6 +259,11 @@
   stroke: var(--accent-color);
 }
 
+.exercise-modal-button__remove.is-hidden,
+.exercise-modal-button__favorite.is-hidden {
+  display: none;
+}
+
 @media screen and (min-width: 375px) {
   .exercise-modal {
     width: 335px;
