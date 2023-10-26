@@ -1,5 +1,4 @@
 const favouriteCardRef = document.querySelector('[data-name="card-block"]');
-console.log(favouriteCardRef);
 const favouriteModalBackdrop = document.querySelector('[data-exmodal]');
 import { createCardsString } from './components/cards-template';
 import { addClass, removeClass, apendMarkup } from './components/fn-helpers';
@@ -139,4 +138,5 @@ const removeFavorite = event => {
   delet.innerHTML = '';
   closeModal();
 };
+
 remouveFromTheFavourites.addEventListener('click', removeFavorite);
