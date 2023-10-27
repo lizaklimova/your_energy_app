@@ -8,7 +8,7 @@
   border-radius: 20px;
   color: var(--accent-color);
   background-color: var(--dark-color);
-  overflow: hidden;
+  overflow: auto;
   padding: 40px 20px;
   animation: zoomIn 1s;
 }
@@ -274,6 +274,7 @@
   .exercise-modal {
     width: 704px;
     padding: 32px;
+    overflow: hidden;
   }
 
   .exercise-modal__close-btn {
