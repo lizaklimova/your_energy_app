@@ -21,6 +21,7 @@ const searchIcon = document.querySelector('.exercises__form-submit-btn');
 const resetIcon = document.querySelector('.exercises__form-reset-btn');
 
 resetIcon.addEventListener('click', onClick);
+resetIcon.classList.add('is-hidden');
 searchInput.addEventListener('input', onInputSearch);
 searchInput.addEventListener('input', debounce(getInputValue, 300));
 
@@ -33,6 +34,7 @@ function onInputSearch(e) {
     resetIcon.classList.add('is-hidden');
   }
 }
+
 function onClick(e) {
   if (e.currentTarget) {
     searchInput.value = '';

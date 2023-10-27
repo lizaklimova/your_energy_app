@@ -51,9 +51,6 @@ export function createPaginItems(totalPages, currentPage) {
     paginItem += `<li class="pagin-btn next"><span>Next→</span></li>`;
   }
 
-  //   if (currentPage >= totalPages) {
-  //   }
-
   paginList.innerHTML = paginItem;
 
   const paginItems = paginList.querySelectorAll('.exercises__pagination-item');

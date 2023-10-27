@@ -10,7 +10,6 @@ import './exercises-section/bread-crumbs';
 
 import './exercises-section/filter-cards';
 import './exercises-section/filter-card-template';
-import './search';
 import './exercises-section/exercises-cards';
 
 import './exercises-section/exercise-modal';
@@ -19,6 +18,7 @@ import './exercises-section/pagination';
 
 import './api';
 // import './favorite';
+import './search';
 import './info';
 import './subscribe';
 import './quote';
