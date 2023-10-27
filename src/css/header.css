@@ -131,6 +131,11 @@
     color: var(--accent-color);
     background: var(--dark-color);
   }
+.header__active-link {
+  color: var(--dark-color);
+    background: var(--accent-color);
+}
+
   .header__menu-link {
     cursor: pointer;
     font-size: 16px;
