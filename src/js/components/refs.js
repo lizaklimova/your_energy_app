@@ -37,3 +37,13 @@ export const favouriteTexte = document.querySelector('.favourite__text-block');
 export const exerciseCardListRef = document.querySelector(
   '.exercises__cards-list'
 );
+
+// Search
+export const searchInput = document.querySelector(
+  '.exercises__filter-search-input'
+);
+export const searchInputContainer = document.querySelector(
+  '.exercises__input-div'
+);
+export const searchIcon = document.querySelector('.exercises__form-submit-btn');
+export const resetIcon = document.querySelector('.exercises__form-reset-btn');

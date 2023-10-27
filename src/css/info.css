@@ -202,13 +202,14 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .info__exercises__categories-subtitle span {
+    display: inline-block;
+    color: rgba(36, 36, 36, 0.5);
+  }
   .darkmode .info__exercises__categories-subtitle span {
     color: var(--accent-color);
   }
 
-  .darkmode .info__exercises__categories-subtitle span {
-    display: inline-block;
-  }
   .darkmode .info__exercises__categories-subtitle {
     display: inline-block;
   }

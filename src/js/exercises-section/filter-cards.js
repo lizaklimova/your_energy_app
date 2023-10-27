@@ -1,4 +1,3 @@
-import Notiflix from 'notiflix';
 import { fetchFilter } from '../api';
 import {
   addClass,
@@ -15,12 +14,13 @@ import {
   activeFilter,
   filterBtnsRefs,
   exerciseCardListRef,
+  searchInputContainer,
 } from '../components/refs';
 import { createSmoothScrollBottom } from '../scrolls';
 import { searchRefs } from './exercises-cards';
 import { createPaginItems } from './pagination';
 import { breadCrumbs } from './bread-crumbs';
-import { searchInputContainer } from '../search';
+
 // ********************************************************
 
 window.addEventListener('load', () => {
@@ -83,4 +83,12 @@ export function underlineActiveFilter() {
       setActiveItem(filterBtns, button, 'exercises__filter-btn_active');
     });
   });
+}
+
+export function getCurrentPageFilter(page) {
+  currentPage = page;
+  const underlinedFilter = document.querySelector(
+    '.exercises__filter-btn_active'
+  );
+  fetchDataFromFilter(underlinedFilter.textContent.trim(), currentPage);
 }

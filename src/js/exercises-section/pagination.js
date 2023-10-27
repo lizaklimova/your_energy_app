@@ -1,9 +1,8 @@
-import Notiflix from 'notiflix';
 import { filterCardsListRef, exerciseCardListRef } from '../components/refs';
 import { createSmoothScrollUp } from '../scrolls';
-import { fetchDataFromFilter } from './filter-cards';
-import { getCard } from './exercises-cards';
-import { renderMarkupSearch } from '../search';
+import { getCurrentPageCards } from './exercises-cards';
+import { getCurrentPageFilter } from './filter-cards';
+import { getCurrentPageSearch } from '../search';
 
 export function createPaginItems(totalPages, currentPage) {
   const paginList = document.querySelector('.exercises__pagination');
@@ -52,11 +51,9 @@ export function createPaginItems(totalPages, currentPage) {
   }
 
   paginList.innerHTML = paginItem;
-
   const paginItems = paginList.querySelectorAll('.exercises__pagination-item');
   const prevButton = paginList.querySelector('.pagin-btn.prev');
   const nextButton = paginList.querySelector('.pagin-btn.next');
-  let activeFilterRef = document.querySelector('.exercises__filter-btn_active');
 
   paginItems.forEach(item => {
     item.addEventListener('click', event => {
@@ -64,16 +61,14 @@ export function createPaginItems(totalPages, currentPage) {
       currentPage = pageNumber;
       createPaginItems(totalPages, pageNumber);
 
-      if (checkSearch()) {
-        renderMarkupSearch(currentPage);
-        createSmoothScrollUp(exerciseCardListRef);
-      } else if (checkCurrentList()) {
-        getCard(currentPage);
-        createSmoothScrollUp(exerciseCardListRef);
+      if (!checkCurrentList()) {
+        getCurrentPageFilter(currentPage);
       } else {
-        fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
-        createSmoothScrollUp(filterCardsListRef);
+        getCurrentPageCards(currentPage);
       }
+      createSmoothScrollUp(filterCardsListRef);
+      // getCurrentPageSearch(currentPage);
+      return currentPage;
     });
   });
 
@@ -83,16 +78,15 @@ export function createPaginItems(totalPages, currentPage) {
         currentPage--;
         createPaginItems(totalPages, currentPage);
 
-        if (checkSearch()) {
-          renderMarkupSearch(currentPage);
-          createSmoothScrollUp(exerciseCardListRef);
-        } else if (checkCurrentList()) {
-          getCard(currentPage);
-          createSmoothScrollUp(exerciseCardListRef);
+        if (!checkCurrentList()) {
+          getCurrentPageFilter(currentPage);
         } else {
-          fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
-          createSmoothScrollUp(filterCardsListRef);
+          getCurrentPageCards(currentPage);
         }
+
+        // getCurrentPageSearch(currentPage);
+        createSmoothScrollUp(filterCardsListRef);
+        return currentPage;
       }
     });
   }
@@ -103,20 +97,84 @@ export function createPaginItems(totalPages, currentPage) {
         currentPage++;
         createPaginItems(totalPages, currentPage);
 
-        if (checkSearch()) {
-          renderMarkupSearch(currentPage);
-          createSmoothScrollUp(exerciseCardListRef);
-        } else if (checkCurrentList()) {
-          getCard(currentPage);
-          createSmoothScrollUp(exerciseCardListRef);
+        if (!checkCurrentList()) {
+          getCurrentPageFilter(currentPage);
         } else {
-          fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
-          createSmoothScrollUp(filterCardsListRef);
+          getCurrentPageCards(currentPage);
         }
+        createSmoothScrollUp(filterCardsListRef);
+        // getCurrentPageSearch(currentPage);
+        return currentPage;
       }
     });
   }
+
+  return currentPage;
 }
+//   const paginItems = paginList.querySelectorAll('.exercises__pagination-item');
+//   const prevButton = paginList.querySelector('.pagin-btn.prev');
+//   const nextButton = paginList.querySelector('.pagin-btn.next');
+//   let activeFilterRef = document.querySelector('.exercises__filter-btn_active');
+
+//   paginItems.forEach(item => {
+//     item.addEventListener('click', event => {
+//       const pageNumber = Number(event.target.textContent);
+//       currentPage = pageNumber;
+//       createPaginItems(totalPages, pageNumber);
+
+//       if (checkSearch()) {
+//         // renderMarkupSearch(currentPage);
+//         createSmoothScrollUp(exerciseCardListRef);
+//       } else if (checkCurrentList()) {
+//         getCard(currentPage);
+//         createSmoothScrollUp(exerciseCardListRef);
+//       } else {
+//         fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
+//         createSmoothScrollUp(filterCardsListRef);
+//       }
+//     });
+//   });
+
+//   if (prevButton) {
+//     prevButton.addEventListener('click', () => {
+//       if (currentPage > 1) {
+//         currentPage--;
+//         createPaginItems(totalPages, currentPage);
+
+//         if (checkSearch()) {
+//           // renderMarkupSearch(currentPage);
+//           createSmoothScrollUp(exerciseCardListRef);
+//         } else if (checkCurrentList()) {
+//           getCard(currentPage);
+//           createSmoothScrollUp(exerciseCardListRef);
+//         } else {
+//           fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
+//           createSmoothScrollUp(filterCardsListRef);
+//         }
+//       }
+//     });
+//   }
+
+//   if (nextButton) {
+//     nextButton.addEventListener('click', () => {
+//       if (currentPage < totalPages) {
+//         currentPage++;
+//         createPaginItems(totalPages, currentPage);
+
+//         if (checkSearch()) {
+//           renderMarkupSearch(currentPage);
+//           createSmoothScrollUp(exerciseCardListRef);
+//         } else if (checkCurrentList()) {
+//           getCard(currentPage);
+//           createSmoothScrollUp(exerciseCardListRef);
+//         } else {
+//           fetchDataFromFilter(activeFilterRef.textContent.trim(), currentPage);
+//           createSmoothScrollUp(filterCardsListRef);
+//         }
+//       }
+//     });
+//   }
+// }
 
 function checkCurrentList() {
   return filterCardsListRef.classList.contains('is-hidden') ? true : false;

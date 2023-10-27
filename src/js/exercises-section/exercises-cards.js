@@ -1,4 +1,8 @@
-import { filterCardsListRef, exerciseCardListRef } from '../components/refs';
+import {
+  filterCardsListRef,
+  exerciseCardListRef,
+  searchInputContainer,
+} from '../components/refs';
 import { fetchCards } from '../api';
 import {
   apendMarkup,
@@ -11,7 +15,7 @@ import {
 import { createCardsString } from '../components/cards-template';
 import { handleModalOpen } from './exercise-modal';
 import { createPaginItems } from './pagination';
-import { getNameAndFilter, searchInputContainer } from '../search';
+import { getNameAndFilter } from '../search';
 
 export const searchRefs = () => {
   const imgClick = document.querySelectorAll('.exercises__filter-card');
@@ -35,6 +39,11 @@ export function exercisesCard(e) {
   removeClass(searchInputContainer, 'is-hidden');
 
   screen.width >= 768 ? (limit = 10) : (limit = 8);
+  getCard(currentPage);
+}
+
+export function getCurrentPageCards(page) {
+  currentPage = page;
   getCard(currentPage);
 }
 
