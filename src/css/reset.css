@@ -81,3 +81,6 @@ img {
   background: #242424;
   height: 153px;
 }
+.darkmode::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+}
