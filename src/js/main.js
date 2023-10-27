@@ -4,6 +4,7 @@ import './components/mode';
 import './components/fn-helpers';
 import './components/cards-template';
 
+import './header';
 import './mobile-menu';
 
 import './exercises-section/bread-crumbs';
