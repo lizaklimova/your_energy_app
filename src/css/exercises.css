@@ -181,7 +181,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
+  width: 90px;
+  max-width: 100px;
   background-color: transparent;
   border: 1px solid #242424;
   border-radius: 20px;

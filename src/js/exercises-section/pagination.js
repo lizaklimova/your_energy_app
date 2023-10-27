@@ -61,13 +61,25 @@ export function createPaginItems(totalPages, currentPage) {
       currentPage = pageNumber;
       createPaginItems(totalPages, pageNumber);
 
-      if (!checkCurrentList()) {
-        getCurrentPageFilter(currentPage);
-      } else {
-        getCurrentPageCards(currentPage);
+      // if (!checkCurrentList()) {
+      //   getCurrentPageFilter(currentPage);
+      // } else if (isSearch()) {
+      //   getCurrentPageSearch(currentPage);
+      // } else {
+      //   getCurrentPageCards(currentPage);
+      // }
+      if (isSearch()) {
+        getCurrentPageSearch(currentPage);
       }
 
-      getCurrentPageSearch(currentPage);
+      if (!checkCurrentList()) {
+        getCurrentPageFilter(currentPage);
+      }
+
+      if (checkCurrentList() && !isSearch()) {
+        getCurrentPageCards(currentPage);
+      }
+      // getCurrentPageSearch(currentPage);
       createSmoothScrollUp(filterCardsListRef);
 
       return currentPage;
@@ -78,15 +90,27 @@ export function createPaginItems(totalPages, currentPage) {
     prevButton.addEventListener('click', () => {
       if (currentPage > 1) {
         currentPage--;
+
         createPaginItems(totalPages, currentPage);
+        // if (!checkCurrentList()) {
+        //   getCurrentPageFilter(currentPage);
+        // } else if (isSearch()) {
+        //   getCurrentPageSearch(currentPage);
+        // } else {
+        //   getCurrentPageCards(currentPage);
+        // }
+        if (isSearch()) {
+          getCurrentPageSearch(currentPage);
+        }
 
         if (!checkCurrentList()) {
           getCurrentPageFilter(currentPage);
-        } else {
-          getCurrentPageCards(currentPage);
         }
 
-        getCurrentPageSearch(currentPage);
+        if (checkCurrentList() && !isSearch()) {
+          getCurrentPageCards(currentPage);
+        }
+        // getCurrentPageSearch(currentPage);
 
         createSmoothScrollUp(filterCardsListRef);
         return currentPage;
@@ -100,13 +124,25 @@ export function createPaginItems(totalPages, currentPage) {
         currentPage++;
         createPaginItems(totalPages, currentPage);
 
-        if (!checkCurrentList()) {
-          getCurrentPageFilter(currentPage);
-        } else {
-          getCurrentPageCards(currentPage);
+        // if (!checkCurrentList()) {
+        //   getCurrentPageFilter(currentPage);
+        // } else if (isSearch()) {
+        //   getCurrentPageSearch(currentPage);
+        // } else {
+        //   getCurrentPageCards(currentPage);
+        // }
+        if (isSearch()) {
+          getCurrentPageSearch(currentPage);
         }
 
-        getCurrentPageSearch(currentPage);
+        if (!checkCurrentList()) {
+          getCurrentPageFilter(currentPage);
+        }
+
+        if (checkCurrentList() && !isSearch()) {
+          getCurrentPageCards(currentPage);
+        }
+        // getCurrentPageSearch(currentPage);
         createSmoothScrollUp(filterCardsListRef);
         return currentPage;
       }
@@ -118,4 +154,7 @@ export function createPaginItems(totalPages, currentPage) {
 
 function checkCurrentList() {
   return filterCardsListRef.classList.contains('is-hidden') ? true : false;
+}
+function isSearch() {
+  return exerciseCardListRef.classList.contains('search-list') ? true : false;
 }

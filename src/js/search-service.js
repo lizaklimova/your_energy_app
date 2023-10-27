@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import { addClass } from './components/fn-helpers';
+import { addClass, removeClass } from './components/fn-helpers';
 import { exerciseCardListRef, searchInput } from './components/refs';
 import { createCardsString } from './components/cards-template';
 import { createPaginItems } from './exercises-section/pagination';
