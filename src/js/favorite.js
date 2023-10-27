@@ -5,7 +5,7 @@ import { addClass, removeClass, apendMarkup } from './components/fn-helpers';
 import { renderExerciseModal } from './exercises-section/exercise-modal-template';
 import { fetchExercise } from './api';
 import { favouriteTexte } from './components/refs';
-import { createPaginItems } from './exercises-section/pagination';
+// import { createPaginItems } from './exercises-section/pagination';
 
 let exerciseState = {};
 let allEx = [];
