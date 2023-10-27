@@ -3,8 +3,8 @@
   height: 48px;
   display: inline-block;
   position: relative;
-  /* display: none; */
 }
+
 .loader::after,
 .loader::before {
   content: '';
@@ -101,6 +101,13 @@
 
 .darkmode .info__trhd-recommendation {
   color: var(--dark-color);
+}
+
+.info__exercises__categories-subtitle span {
+  display: none;
+}
+.info__exercises__categories-subtitle {
+  display: none;
 }
 
 .info__button {
@@ -201,6 +208,17 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .darkmode .info__exercises__categories-subtitle span {
+    color: var(--accent-color);
+  }
+
+  .darkmode .info__exercises__categories-subtitle span {
+    display: inline-block;
+  }
+  .darkmode .info__exercises__categories-subtitle {
+    display: inline-block;
+  }
+
   .info__exercise-block {
     display: block;
   }

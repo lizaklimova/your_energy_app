@@ -5,6 +5,8 @@ import { addClass, removeClass, apendMarkup } from './components/fn-helpers';
 import { renderExerciseModal } from './exercises-section/exercise-modal-template';
 import { fetchExercise } from './api';
 import { favouriteTexte } from './components/refs';
+import { createPaginItems } from './exercises-section/pagination';
+
 let exerciseState = {};
 let allEx = [];
 let exercisesKeys = [];
@@ -25,6 +27,7 @@ const loadFavourite = () => {
     removeClass(favouriteTexte, 'is-hidden');
     addClass(favouriteCardRef, 'is-hidden');
     removeClass(favouriteCardRef, 'favourite__card-block');
+    // createPaginItems();
     return;
   }
 
@@ -126,6 +129,7 @@ const deleteOne = event => {
   localStorage.removeItem(id.id);
   const delet = document.querySelector(`[data-name = "${id.id}"]`);
   delet.innerHTML = '';
+  location.reload();
 };
 
 const removeFavorite = event => {

@@ -81,6 +81,10 @@
   opacity: 0.5;
 }
 
+.darkmode .exercises__categories-subtitle span {
+  color: var(--accent-color);
+}
+
 .darkmode .exercises__title {
   color: var(--accent-color);
 }
@@ -228,16 +232,6 @@
 
 .darkmode .pagin-dots {
   color: var(--accent-color);
-}
-
-.darkmode .exercises__pagination-item {
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
-  color: #d4d4d4;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: 0.8px;
 }
 
 .exercises__pagination-item_active {
