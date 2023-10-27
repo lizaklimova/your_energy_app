@@ -246,6 +246,7 @@
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
+
 .card {
   display: flex;
   flex-direction: column;
@@ -257,8 +258,10 @@
   font-weight: 400;
   font-size: 12px;
   width: 100%;
-  min-height: 150px;
-  max-height: 190px;
+  height: 170px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card:hover,
@@ -373,8 +376,21 @@
   row-gap: calc(var(--gap) * 2);
   flex-wrap: wrap;
   margin-bottom: 20px;
+  /* min-height: 140px; */
 }
 
+.exercises__undefined-text {
+  height: 300px;
+  color: var(--dark-color);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.36;
+  letter-spacing: -0.56px;
+}
+
+.darkmode .exercises__undefined-text {
+  color: var(--accent-color);
+}
 .exercises__item-card {
   width: calc((100% - 16px) / 1);
 }
@@ -449,6 +465,7 @@
     padding-bottom: 132px;
     width: 900px;
   }
+
   .exercises__title {
     display: none;
   }

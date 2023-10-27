@@ -8,7 +8,7 @@
   border-radius: 20px;
   color: var(--accent-color);
   background-color: var(--dark-color);
-  overflow: auto;
+  overflow: hidden;
   padding: 40px 20px;
   animation: zoomIn 1s;
 }

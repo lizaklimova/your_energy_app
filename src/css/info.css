@@ -18,17 +18,34 @@
   position: relative;
 }
 
+.info-loader {
+  width: 50px;
+  position: absolute;
+  top: 40%;
+  left: 43%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid lightblue;
+  border-right-color: rgb(9, 129, 21);
+  animation: l2 1s infinite linear;
+}
+@keyframes l2 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 .loader {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 30%;
+  left: 30%;
+  transform: translate(-100%, -100%);
   width: 48px;
   height: 48px;
   border: 5px solid #fff;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
-  box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
 
@@ -128,6 +145,11 @@
 /************ 768 ************/
 
 @media (min-width: 768px) {
+  .loader {
+    top: 30%;
+    left: 15%;
+    transform: translate(-100%, -100%);
+  }
   .info__exercise-block {
     display: none;
   }
@@ -202,6 +224,10 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .loader {
+    left: 25%;
+  }
+
   .info__exercises__categories-subtitle span {
     display: inline-block;
     color: rgba(36, 36, 36, 0.5);

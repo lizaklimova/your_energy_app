@@ -4,6 +4,7 @@ import { addClass } from './components/fn-helpers';
 import { exerciseCardListRef, searchInput } from './components/refs';
 import { createCardsString } from './components/cards-template';
 import { createPaginItems } from './exercises-section/pagination';
+import { handleModalOpen } from './exercises-section/exercise-modal';
 
 export function renderMarkupSearch(filter, naming, key, currentPage) {
   serviceGetByKeyWord(filter, naming, key, currentPage)
@@ -22,10 +23,20 @@ export function renderMarkupSearch(filter, naming, key, currentPage) {
         Notiflix.Notify.info('Sorry, there are no results 😭');
 
         const paginList = document.querySelector('.exercises__pagination');
-        paginList.innerHTML = '';
+        paginList.innerHTML =
+          '<p class="exercises__undefined-text">Ooops...</p>';
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log(error))
+    .finally(() => {
+      const exerciseOpenBtns = document.querySelectorAll('[data-exmod-open]');
+      exerciseOpenBtns.forEach(btn => {
+        btn.addEventListener('click', e => {
+          const data = e.currentTarget.dataset.id;
+          handleModalOpen(data);
+        });
+      });
+    });
 }
 
 async function serviceGetByKeyWord(

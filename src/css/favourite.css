@@ -113,7 +113,33 @@ body.darkmode {
   height: 141px;
 }
 
-@media screen and (min-width: 375px) and (max-width: 767px) {
+.favorite__cards-pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.favorite__pagination-item {
+  color: #d4d4d4;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+}
+
+.favorite__pagination-item_active {
+  color: var(--dark-color);
+  padding: 6px 10px;
+  border: 1px solid var(--dark-color);
+  border-radius: 50%;
+}
+
+.darkmode .favorite__pagination-item_active {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+@media screen and (min-width: 375px) {
   .favourite__card-block .exercises__item-card {
     width: 335px;
   }
@@ -231,6 +257,10 @@ body.darkmode {
   .favourite__card-block {
     max-height: 630px;
     overflow-y: scroll;
+  }
+
+  .favorite__cards-pagination {
+    display: none;
   }
 
   .favourite__card-block {

@@ -9,6 +9,7 @@ import { favouriteTexte } from './components/refs';
 let exerciseState = {};
 let allEx = [];
 let exercisesKeys = [];
+
 const knownKeys = [
   'quote',
   'theme',

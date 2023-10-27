@@ -16,6 +16,10 @@
   filter: drop-shadow(-1px 1px 5px rgb(9, 129, 21));
 }
 
+.darkmode .header__logo:hover {
+  filter: drop-shadow(-1px 1px 5px var(--accent-color));
+}
+
 .darkmode .button__svg {
   stroke: var(--accent-color);
 }

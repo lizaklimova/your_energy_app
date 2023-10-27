@@ -2,7 +2,6 @@ import { filterCardsListRef, exerciseCardListRef } from '../components/refs';
 import { createSmoothScrollUp } from '../scrolls';
 import { getCurrentPageCards } from './exercises-cards';
 import { getCurrentPageFilter } from './filter-cards';
-import { getCurrentPageSearch } from '../search';
 
 export function createPaginItems(totalPages, currentPage) {
   const paginList = document.querySelector('.exercises__pagination');
