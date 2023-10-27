@@ -16,6 +16,7 @@ import { createCardsString } from '../components/cards-template';
 import { handleModalOpen } from './exercise-modal';
 import { createPaginItems } from './pagination';
 import { getNameAndFilter } from '../search';
+import { createSmoothScrollUp } from '../scrolls';
 
 export const searchRefs = () => {
   const imgClick = document.querySelectorAll('.exercises__filter-card');
@@ -45,6 +46,7 @@ export function exercisesCard(e) {
 export function getCurrentPageCards(page) {
   currentPage = page;
   getCard(currentPage);
+  createSmoothScrollUp(filterCardsListRef);
 }
 
 export function getCard(currentPage) {
