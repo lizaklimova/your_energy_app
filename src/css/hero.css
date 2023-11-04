@@ -103,20 +103,22 @@ body.darkmode {
   display: flex;
   margin-top: 20px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
-  max-width: 100%;
+  width: 100%;
+}
+
+.hero__block-item {
+  padding: 8px;
+  border-radius: 30px;
+  border: 1px solid var(--dark-color);
 }
 
 .hero__block-item:not(:last-child) {
   margin-right: 6px;
 }
 
-.hero__block-div {
-  padding: 4px 16px;
-  border-radius: 30px;
-  border: 1px solid var(--dark-color);
-}
-.darkmode .hero__block-div {
+.darkmode .hero__block-item {
   border-color: 1px solid var(--accent-color);
 }
 .hero__header-body {
@@ -128,6 +130,11 @@ body.darkmode {
   display: none;
 }
 
+@media screen and (min-width: 375px) {
+  .hero__block-item {
+    padding: 8px 14px;
+  }
+}
 @media screen and (min-width: 768px) {
   .btn {
     margin: 0;
